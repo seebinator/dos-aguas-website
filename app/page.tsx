@@ -5,68 +5,64 @@ export default function Home() {
     <>
       {/* Navigation */}
       <nav className="nav">
-        <div className="container nav-content">
+        <div className="nav-content">
           <Link href="/" className="nav-logo">
-            Dos Aguas
+            <span className="nav-logo-icon">∞</span>
+            <span className="nav-logo-text">
+              <span className="nav-logo-name">Dos Aguas</span>
+              <span className="nav-logo-tagline">Consulting</span>
+            </span>
           </Link>
+          
           <ul className="nav-links">
-            <li><Link href="/services">Services</Link></li>
+            <li><Link href="/services">Services ▾</Link></li>
+            <li><Link href="/team">Team ▾</Link></li>
             <li><Link href="/blog">Blog</Link></li>
             <li><Link href="/docs">Docs</Link></li>
             <li><Link href="/kontakt">Kontakt</Link></li>
           </ul>
+          
+          <div className="nav-actions">
+            <div className="lang-switcher">
+              <button className="lang-btn">🇩🇪 DE</button>
+              <button className="lang-btn active">🇪🇸 ES</button>
+            </div>
+            <button className="btn-nav">Dropbox</button>
+          </div>
         </div>
       </nav>
 
       <main>
         {/* Hero Section */}
         <section className="hero">
-          <div className="hero-bg" />
-          <div className="hero-grid" />
-          <div className="container">
-            <div className="hero-badge">
-              <span className="hero-badge-dot" />
-              Jetzt verfügbar: Odoo 17 Integration
-            </div>
+          <div className="hero-content">
+            <p className="hero-pretitle">Bienvenido al portal interno</p>
             <h1 className="hero-title">
-              <span className="hero-title-gradient">Ihre Brücke</span>
-              <br />
-              Deutschland–Mexiko
+              Dos Aguas Panel de Equipo
             </h1>
-            <p className="hero-description">
-              Steuerberatung, IT-Recht und digitale Transformation – 
-              alles aus einer Hand für Ihr grenzüberschreitendes Geschäft.
-            </p>
-            <div className="hero-cta">
-              <Link href="/kontakt" className="btn btn-primary btn-large">
-                Projekt starten
-              </Link>
-              <Link href="/services" className="btn btn-secondary btn-large">
-                Services entdecken
-              </Link>
-            </div>
+            <Link href="/team" className="hero-cta">
+              Descubrir equipo →
+            </Link>
           </div>
-        </section>
-
-        {/* Stats Section */}
-        <section className="section">
-          <div className="container">
+          
+          {/* Stats Bar */}
+          <div className="stats-bar">
             <div className="stats-grid">
               <div className="stat-item">
                 <div className="stat-value">8</div>
-                <div className="stat-label">Spezialisten im Team</div>
+                <div className="stat-label">Agentes</div>
               </div>
               <div className="stat-item">
-                <div className="stat-value">2</div>
-                <div className="stat-label">Länder, ein Team</div>
+                <div className="stat-value">3</div>
+                <div className="stat-label">Idiomas</div>
               </div>
               <div className="stat-item">
-                <div className="stat-value">50+</div>
-                <div className="stat-label">Erfolgreiche Projekte</div>
+                <div className="stat-value">40%</div>
+                <div className="stat-label">Crecimiento</div>
               </div>
               <div className="stat-item">
-                <div className="stat-value">24/7</div>
-                <div className="stat-label">Support verfügbar</div>
+                <div className="stat-value">/7</div>
+                <div className="stat-label">Soporte</div>
               </div>
             </div>
           </div>
@@ -74,109 +70,80 @@ export default function Home() {
 
         {/* Features Section */}
         <section className="section">
-          <div className="container">
-            <div className="section-header">
-              <span className="section-label">Unsere Expertise</span>
-              <h2 className="section-title">Alles für Ihren Erfolg</h2>
-              <p className="section-description">
-                Von der Steuerberatung bis zur digitalen Transformation – 
-                wir begleiten Sie auf jedem Schritt.
-              </p>
-            </div>
-            <div className="feature-grid">
-              <div className="feature-card">
-                <div className="feature-icon">💼</div>
-                <h3>Steuerberatung</h3>
-                <p>
-                  Kompetente Begleitung in Deutschland und Mexiko. 
-                  Wir kennen beide Steuersysteme und optimieren Ihre steuerliche Situation.
-                </p>
-              </div>
-              <div className="feature-card">
-                <div className="feature-icon">⚖️</div>
-                <h3>IT-Recht & Datenschutz</h3>
-                <p>
-                  DSGVO, LFPDPPP und internationale Compliance. 
-                  Rechtssichere digitale Prozesse für Ihr Unternehmen.
-                </p>
-              </div>
-              <div className="feature-card">
-                <div className="feature-icon">⚙️</div>
-                <h3>Odoo Implementierung</h3>
-                <p>
-                  Maßgeschneiderte ERP-Lösungen, die skalieren. 
-                  Von der Beratung bis zum Go-live an Ihrer Seite.
-                </p>
-              </div>
-              <div className="feature-card">
-                <div className="feature-icon">🚀</div>
-                <h3>Digitale Transformation</h3>
-                <p>
-                  Prozessoptimierung und Business Intelligence. 
-                  Wir bringen Ihr Unternehmen in die digitale Zukunft.
-                </p>
-              </div>
-            </div>
+          <div className="section-header">
+            <p className="section-pretitle">Nuestros servicios</p>
+            <h2 className="section-title">Todo para su éxito</h2>
+            <p className="section-description">
+              De la consultoría fiscal a la transformación digital – 
+              le acompañamos en cada paso.
+            </p>
           </div>
-        </section>
-
-        {/* Terminal Section */}
-        <section className="section">
-          <div className="container-narrow">
-            <div className="section-header">
-              <span className="section-label">Developer First</span>
-              <h2 className="section-title">Modernste Technologie</h2>
-              <p className="section-description">
-                Wir setzen auf bewährte und innovative Technologien 
-                für maximale Effizienz und Skalierbarkeit.
+          
+          <div className="feature-grid">
+            <div className="feature-card">
+              <div className="feature-icon">💼</div>
+              <h3>Asesoría Fiscal</h3>
+              <p>
+                Acompañamiento competente en Alemania y México. 
+                Conocemos ambos sistemas fiscales.
               </p>
             </div>
-            <div className="terminal">
-              <div className="terminal-header">
-                <span className="terminal-dot terminal-dot-red" />
-                <span className="terminal-dot terminal-dot-yellow" />
-                <span className="terminal-dot terminal-dot-green" />
-              </div>
-              <div className="terminal-body">
-                <div><span className="prompt">$</span> dos-aguas init projekt</div>
-                <div style={{ marginTop: '0.5rem', color: '#00d4aa' }}>✓ Projekt initialisiert</div>
-                <div style={{ color: '#00d4aa' }}>✓ Team zugewiesen</div>
-                <div style={{ color: '#00d4aa' }}>✓ Timeline erstellt</div>
-                <div style={{ marginTop: '0.5rem' }}><span className="prompt">$</span> _</div>
-              </div>
+            
+            <div className="feature-card">
+              <div className="feature-icon">⚖️</div>
+              <h3>Derecho IT & Protección de Datos</h3>
+              <p>
+                GDPR, LFPDPPP y cumplimiento internacional. 
+                Procesos digitales seguros.
+              </p>
+            </div>
+            
+            <div className="feature-card">
+              <div className="feature-icon">⚙️</div>
+              <h3>Implementación Odoo</h3>
+              <p>
+                Soluciones ERP a medida que escalan. 
+                Desde la consulta hasta el go-live.
+              </p>
+            </div>
+            
+            <div className="feature-card">
+              <div className="feature-icon">🚀</div>
+              <h3>Transformación Digital</h3>
+              <p>
+                Optimización de procesos e inteligencia de negocios. 
+                Llevamos su empresa al futuro digital.
+              </p>
             </div>
           </div>
         </section>
 
         {/* CTA Section */}
         <section className="cta-section">
-          <div className="container">
-            <h2 className="cta-title">Bereit für den nächsten Schritt?</h2>
-            <p className="cta-description">
-              Lassen Sie uns gemeinsam Ihre digitale Transformation gestalten. 
-              Kontaktieren Sie uns für ein unverbindliches Erstgespräch.
-            </p>
-            <Link href="/kontakt" className="btn btn-primary btn-large">
-              Termin vereinbaren
-            </Link>
-          </div>
+          <p className="cta-pretitle">¿Listo para el siguiente paso?</p>
+          <h2 className="cta-title">Hablemos de su proyecto</h2>
+          <p className="cta-description">
+            Contáctenos para una consulta inicial sin compromiso. 
+            Juntos daremos forma a su transformación digital.
+          </p>
+          <Link href="/kontakt" className="btn-primary">
+            Contactar ahora →
+          </Link>
         </section>
       </main>
 
       {/* Footer */}
       <footer className="footer">
-        <div className="container footer-content">
-          <Link href="/" className="footer-logo">
-            Dos Aguas
-          </Link>
+        <div className="footer-content">
+          <Link href="/" className="footer-logo">Dos Aguas</Link>
+          
           <ul className="footer-links">
             <li><Link href="/impressum">Impressum</Link></li>
             <li><Link href="/datenschutz">Datenschutz</Link></li>
             <li><Link href="/kontakt">Kontakt</Link></li>
           </ul>
-          <span className="footer-copy">
-            © 2026 Dos Aguas Consulting
-          </span>
+          
+          <span className="footer-copy">© 2026 Dos Aguas Consulting</span>
         </div>
       </footer>
     </>
