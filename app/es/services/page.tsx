@@ -5,11 +5,13 @@ const services = [
   { icon: '💱', title: 'Estrategias de Precios de Transferencia', description: 'Optimización de su fijación de precios transfronteriza entre Alemania y México. Conforme fiscal y económicamente eficiente.' },
   { icon: '⚙️', title: 'Implementación Odoo', description: 'Soluciones ERP a medida que escalan. Desde la consulta hasta el go-live a su lado.' },
   { icon: '⚖️', title: 'Derecho IT & Protección de Datos', description: 'GDPR, LFPDPPP y cumplimiento internacional. Procesos digitales seguros para su empresa.' },
+  { icon: '🚀', title: 'Transformación Digital', description: 'Transformación digital integral de su empresa. Desde la estrategia hasta la implementación de nuevas tecnologías.' },
+  { icon: '💼', title: 'Asesoría Fiscal', description: 'Asesoramiento fiscal competente en Alemania y México. Conocemos ambos sistemas fiscales y optimizamos su situación tributaria.' },
 ]
 
 const content = {
   nav: { services: 'Servicios', team: 'Equipo', blog: 'Blog', docs: 'Docs', contact: 'Contacto', dropbox: 'Dropbox' },
-  page: { subtitle: 'Soluciones a medida', title: 'Nuestros Servicios', description: 'De consultoría IA a implementación Odoo – ofrecemos todos los servicios de una sola mano.' },
+  page: { subtitle: 'Soluciones a medida', title: 'Nuestros Servicios', description: 'De consultoría IA a asesoría fiscal – ofrecemos todos los servicios de una sola mano.' },
   cta: { title: 'Trabajemos juntos', desc: 'Contáctenos para una consulta inicial sin compromiso.', button: 'Cita de consultoría' },
   footer: { imprint: 'Aviso Legal', privacy: 'Privacidad', copyright: '© 2026 Dos Aguas Consulting' },
 }
