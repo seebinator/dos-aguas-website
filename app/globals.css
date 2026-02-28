@@ -220,7 +220,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Rotated side text */
 .hero::before {
-  content: 'CONSULTORÍA IA • PRECIOS DE TRANSFERENCIA • MÉXICO';
+  content: attr(data-side-text);
   position: absolute;
   left: var(--space-6);
   top: 50%;

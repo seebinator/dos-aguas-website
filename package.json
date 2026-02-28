@@ -10,10 +10,11 @@
     "deploy": "next build && next export"
   },
   "dependencies": {
+    "gray-matter": "^4.0.3",
     "next": "^14.0.0",
+    "next-intl": "^4.8.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "gray-matter": "^4.0.3",
     "remark": "^15.0.0",
     "remark-html": "^16.0.0"
   },
