@@ -1,15 +1,15 @@
 import Link from 'next/link'
 
 const services = [
-  { icon: '💼', title: 'Steuerberatung', description: 'Kompetente Begleitung in Deutschland und Mexiko. Wir kennen beide Steuersysteme.' },
-  { icon: '⚖️', title: 'IT-Recht & Datenschutz', description: 'DSGVO, LFPDPPP und internationale Compliance. Rechtssichere digitale Prozesse.' },
-  { icon: '⚙️', title: 'Odoo Implementierung', description: 'Maßgeschneiderte ERP-Lösungen, die skalieren. Von der Beratung bis zum Go-live.' },
-  { icon: '🚀', title: 'Digitale Transformation', description: 'Prozessoptimierung und Business Intelligence. Wir bringen Ihr Unternehmen in die digitale Zukunft.' },
+  { icon: '🤖', title: 'KI-Beratung', description: 'Strategische Beratung für den Einsatz von Künstlicher Intelligenz in Ihrem Unternehmen. Von der Prozessanalyse bis zur Implementierung.' },
+  { icon: '💱', title: 'Transferpreis Strategien', description: 'Optimierung Ihrer grenzüberschreitenden Preisgestaltung zwischen Deutschland und Mexiko. Steuerkonform und wirtschaftlich effizient.' },
+  { icon: '⚙️', title: 'Odoo Implementierung', description: 'Maßgeschneiderte ERP-Lösungen, die skalieren. Von der Beratung bis zum Go-live an Ihrer Seite.' },
+  { icon: '⚖️', title: 'IT-Recht & Datenschutz', description: 'DSGVO, LFPDPPP und internationale Compliance. Rechtssichere digitale Prozesse für Ihr Unternehmen.' },
 ]
 
 const content = {
   nav: { services: 'Services', team: 'Team', blog: 'Blog', docs: 'Docs', contact: 'Kontakt', dropbox: 'Dropbox' },
-  page: { subtitle: 'Maßgeschneiderte Lösungen', title: 'Unsere Services', description: 'Von der Steuerberatung bis zur digitalen Transformation – wir bieten alle Services aus einer Hand.' },
+  page: { subtitle: 'Maßgeschneiderte Lösungen', title: 'Unsere Services', description: 'Von KI-Beratung bis Odoo Implementierung – wir bieten alle Services aus einer Hand.' },
   cta: { title: 'Lassen Sie uns zusammenarbeiten', desc: 'Kontaktieren Sie uns für ein unverbindliches Erstgespräch.', button: 'Beratungstermin vereinbaren' },
   footer: { imprint: 'Impressum', privacy: 'Datenschutz', copyright: '© 2026 Dos Aguas Consulting' },
 }

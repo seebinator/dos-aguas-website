@@ -24,11 +24,11 @@ const content = {
   services: {
     pretitle: 'Unsere Leistungen',
     title: 'Alles für Ihren Erfolg',
-    description: 'Von der Steuerberatung bis zur digitalen Transformation – wir begleiten Sie auf jedem Schritt.',
-    tax: { title: 'Steuerberatung', description: 'Kompetente Begleitung in Deutschland und Mexiko. Wir kennen beide Steuersysteme.' },
-    legal: { title: 'IT-Recht & Datenschutz', description: 'DSGVO, LFPDPPP und internationale Compliance. Rechtssichere digitale Prozesse.' },
+    description: 'Von KI-Beratung bis Odoo Implementierung – wir begleiten Sie auf jedem Schritt.',
+    ai: { title: 'KI-Beratung', description: 'Strategische Beratung für den Einsatz von Künstlicher Intelligenz in Ihrem Unternehmen.' },
+    transfer: { title: 'Transferpreis Strategien', description: 'Optimierung Ihrer grenzüberschreitenden Preisgestaltung zwischen Deutschland und Mexiko.' },
     odoo: { title: 'Odoo Implementierung', description: 'Maßgeschneiderte ERP-Lösungen, die skalieren. Von der Beratung bis zum Go-live.' },
-    digital: { title: 'Digitale Transformation', description: 'Prozessoptimierung und Business Intelligence. Wir bringen Ihr Unternehmen in die digitale Zukunft.' },
+    legal: { title: 'IT-Recht & Datenschutz', description: 'DSGVO, LFPDPPP und internationale Compliance. Rechtssichere digitale Prozesse.' },
   },
   cta: {
     pretitle: 'Bereit für den nächsten Schritt?',
@@ -96,10 +96,10 @@ export default function HomeDE() {
           </div>
           
           <div className="feature-grid">
-            <div className="feature-card"><div className="feature-icon">💼</div><h3>{content.services.tax.title}</h3><p>{content.services.tax.description}</p></div>
-            <div className="feature-card"><div className="feature-icon">⚖️</div><h3>{content.services.legal.title}</h3><p>{content.services.legal.description}</p></div>
+            <div className="feature-card"><div className="feature-icon">🤖</div><h3>{content.services.ai.title}</h3><p>{content.services.ai.description}</p></div>
+            <div className="feature-card"><div className="feature-icon">💱</div><h3>{content.services.transfer.title}</h3><p>{content.services.transfer.description}</p></div>
             <div className="feature-card"><div className="feature-icon">⚙️</div><h3>{content.services.odoo.title}</h3><p>{content.services.odoo.description}</p></div>
-            <div className="feature-card"><div className="feature-icon">🚀</div><h3>{content.services.digital.title}</h3><p>{content.services.digital.description}</p></div>
+            <div className="feature-card"><div className="feature-icon">⚖️</div><h3>{content.services.legal.title}</h3><p>{content.services.legal.description}</p></div>
           </div>
         </section>
 

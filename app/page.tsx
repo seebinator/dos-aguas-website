@@ -52,10 +52,10 @@ export default function Home() {
           </div>
           
           <div className="feature-grid">
-            <div className="feature-card"><div className="feature-icon">💼</div><h3>Steuerberatung</h3><p>Kompetente Begleitung in Deutschland und Mexiko. Wir kennen beide Steuersysteme.</p></div>
-            <div className="feature-card"><div className="feature-icon">⚖️</div><h3>IT-Recht & Datenschutz</h3><p>DSGVO, LFPDPPP und internationale Compliance. Rechtssichere digitale Prozesse.</p></div>
+            <div className="feature-card"><div className="feature-icon">🤖</div><h3>KI-Beratung</h3><p>Strategische Beratung für den Einsatz von Künstlicher Intelligenz in Ihrem Unternehmen.</p></div>
+            <div className="feature-card"><div className="feature-icon">💱</div><h3>Transferpreis Strategien</h3><p>Optimierung Ihrer grenzüberschreitenden Preisgestaltung zwischen Deutschland und Mexiko.</p></div>
             <div className="feature-card"><div className="feature-icon">⚙️</div><h3>Odoo Implementierung</h3><p>Maßgeschneiderte ERP-Lösungen, die skalieren. Von der Beratung bis zum Go-live.</p></div>
-            <div className="feature-card"><div className="feature-icon">🚀</div><h3>Digitale Transformation</h3><p>Prozessoptimierung und Business Intelligence. Wir bringen Ihr Unternehmen in die digitale Zukunft.</p></div>
+            <div className="feature-card"><div className="feature-icon">⚖️</div><h3>IT-Recht & Datenschutz</h3><p>DSGVO, LFPDPPP und internationale Compliance. Rechtssichere digitale Prozesse.</p></div>
           </div>
         </section>
 
