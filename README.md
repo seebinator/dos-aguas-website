@@ -58,7 +58,12 @@ Siehe `app/globals.css` für alle Design Tokens.
 
 ## 🚀 Deployment
 
-Automatisches Deployment bei Push auf `main` via GitHub Actions.
+**Vercel** (empfohlen):
+- Automatisches Deployment bei Push auf `main`
+- Globales CDN, HTTPS, Preview-Deployments
+- Siehe [VERCEL.md](./VERCEL.md) für Details
+
+~~Strato~~ (deprecated): Wir haben zu Vercel migriert für bessere Performance.
 
 ## 📧 Kontakt
 

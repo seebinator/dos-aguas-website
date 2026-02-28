@@ -1,36 +1,15 @@
-name: Deploy to Strato
+# DEPRECATED: Strato Deployment
+# Wir nutzen jetzt Vercel - siehe vercel-deploy.yml
+# Diese Datei bleibt als Backup erhalten
+
+name: Deploy to Strato (DEPRECATED)
 
 on:
-  push:
-    branches: [ main, master ]
   workflow_dispatch:
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    
     steps:
-    - name: Checkout
-      uses: actions/checkout@v4
-      
-    - name: Setup Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: '20'
-        cache: 'npm'
-        
-    - name: Install dependencies
-      run: npm ci
-      
-    - name: Build
-      run: npm run build
-      
-    - name: Deploy to Strato
-      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-      with:
-        server: ${{ secrets.STRATO_HOST }}
-        username: ${{ secrets.STRATO_USER }}
-        password: ${{ secrets.STRATO_PASS }}
-        local-dir: ./dist/
-        server-dir: ./
-        dangerous-clean-slate: false
+      - name: Deprecated
+        run: echo "Strato deployment deprecated. Use Vercel instead."
