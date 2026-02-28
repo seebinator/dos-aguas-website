@@ -5,7 +5,7 @@ export default function Home() {
     <>
       <nav className="nav">
         <div className="nav-content">
-          <Link href="/" className="nav-logo">
+          <Link href="/de/" className="nav-logo">
             <span className="nav-logo-icon">∞</span>
             <span className="nav-logo-text">
               <span className="nav-logo-name">Dos Aguas</span>
@@ -13,13 +13,14 @@ export default function Home() {
             </span>
           </Link>
           <ul className="nav-links">
-            <li><Link href="/services/">Services</Link></li>
-            <li><Link href="/team/">Team</Link></li>
-            <li><Link href="/blog/">Blog</Link></li>
-            <li><Link href="/docs/">Docs</Link></li>
-            <li><Link href="/kontakt/">Kontakt</Link></li>
+            <li><Link href="/de/services/">Services</Link></li>
+            <li><Link href="/de/team/">Team</Link></li>
+            <li><Link href="/de/blog/">Blog</Link></li>
+            <li><Link href="/de/docs/">Docs</Link></li>
+            <li><Link href="/de/kontakt/">Kontakt</Link></li>
           </ul>
           <div className="nav-actions">
+            <Link href="/es/" className="lang-btn">🇪🇸 ES</Link>
             <button className="btn-nav">Dropbox</button>
           </div>
         </div>
@@ -30,7 +31,7 @@ export default function Home() {
           <div className="hero-content">
             <p className="hero-pretitle">Willkommen im internen Portal</p>
             <h1 className="hero-title">Dos Aguas Team Panel</h1>
-            <Link href="/team/" className="hero-cta">Team entdecken →</Link>
+            <Link href="/de/team/" className="hero-cta">Team entdecken →</Link>
           </div>
           
           <div className="stats-bar">
@@ -62,17 +63,17 @@ export default function Home() {
           <p className="cta-pretitle">Bereit für den nächsten Schritt?</p>
           <h2 className="cta-title">Lassen Sie uns über Ihr Projekt sprechen</h2>
           <p className="cta-description">Kontaktieren Sie uns für ein unverbindliches Erstgespräch. Gemeinsam gestalten wir Ihre digitale Transformation.</p>
-          <Link href="/kontakt/" className="btn-primary">Jetzt kontaktieren →</Link>
+          <Link href="/de/kontakt/" className="btn-primary">Jetzt kontaktieren →</Link>
         </section>
       </main>
 
       <footer className="footer">
         <div className="footer-content">
-          <Link href="/" className="footer-logo">Dos Aguas</Link>
+          <Link href="/de/" className="footer-logo">Dos Aguas</Link>
           <ul className="footer-links">
-            <li><Link href="/impressum/">Impressum</Link></li>
-            <li><Link href="/datenschutz/">Datenschutz</Link></li>
-            <li><Link href="/kontakt/">Kontakt</Link></li>
+            <li><Link href="/de/impressum/">Impressum</Link></li>
+            <li><Link href="/de/datenschutz/">Datenschutz</Link></li>
+            <li><Link href="/de/kontakt/">Kontakt</Link></li>
           </ul>
           <span className="footer-copy">© 2026 Dos Aguas Consulting</span>
         </div>
