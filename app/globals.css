@@ -4,10 +4,10 @@
   --color-bg-dark: #0a0a0a;
   --color-bg-card: #1a1a1a;
   
-  /* Primary - Gold/Yellow */
-  --color-primary: #d2a855;
-  --color-primary-hover: #e0b86a;
-  --color-primary-light: #f0d99a;
+  /* Primary - Dos Aguas Lime */
+  --color-primary: #c8e600;
+  --color-primary-hover: #d4f200;
+  --color-primary-light: #e0ff4d;
   
   /* Text Colors */
   --color-text: #ffffff;
@@ -15,7 +15,7 @@
   --color-text-muted: rgba(255, 255, 255, 0.5);
   
   /* Accent */
-  --color-accent: #d2a855;
+  --color-accent: #c8e600;
   
   /* Typography - Exact Intranet Fonts */
   --font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
@@ -664,8 +664,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .service-tag {
   padding: var(--space-1) var(--space-3);
-  background: rgba(210, 168, 85, 0.1);
-  border: 1px solid rgba(210, 168, 85, 0.2);
+  background: rgba(200, 230, 0, 0.1);
+  border: 1px solid rgba(200, 230, 0, 0.2);
   border-radius: var(--radius-sm);
   font-size: 0.6875rem;
   font-weight: 600;
@@ -741,7 +741,7 @@ h1, h2, h3, h4, h5, h6 {
 .form-group select {
   cursor: pointer;
   appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23d2a855' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23c8e600' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right var(--space-4) center;
   padding-right: var(--space-10);
