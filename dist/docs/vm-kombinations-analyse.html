@@ -1,0 +1,484 @@
+<!DOCTYPE html><html lang="de"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="/_next/static/css/717463fb5ac3cf8b.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-c81f7fd28659d64f.js"/><script src="/_next/static/chunks/fd9d1056-3eee857bde8f3b06.js" async=""></script><script src="/_next/static/chunks/117-98df152a535088f9.js" async=""></script><script src="/_next/static/chunks/main-app-4c487b5bc83eea7b.js" async=""></script><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/><title>Dos Aguas Consulting | Deutschland – Mexiko</title><meta name="description" content="Steuerberatung, IT-Recht, Odoo und digitale Transformation. Ihr Partner für grenzüberschreitendes Geschäft."/><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&amp;family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&amp;family=Qwitcher+Grypen:wght@400;700&amp;display=swap" rel="stylesheet"/><script src="/_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""></script></head><body><div style="width:100%;min-height:100vh;margin:0;padding:0"><!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VM-Kombinationsanalyse - Dos Aguas Consulting</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .header {
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+            color: white;
+            padding: 40px 30px;
+        }
+        .header h1 {
+            font-size: 26px;
+            font-weight: 300;
+            margin-bottom: 10px;
+        }
+        .header .subtitle {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        .meta {
+            background-color: #f8fafc;
+            padding: 20px 30px;
+            border-bottom: 2px solid #C4D600;
+            font-size: 13px;
+            color: #4a5568;
+        }
+        .meta strong {
+            color: #1a365d;
+        }
+        .content {
+            padding: 30px;
+        }
+        h2 {
+            color: #1a365d;
+            font-size: 20px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #C4D600;
+        }
+        h3 {
+            color: #2c5282;
+            font-size: 16px;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+        h4 {
+            color: #1a365d;
+            font-size: 14px;
+            margin-top: 20px;
+            margin-bottom: 8px;
+        }
+        p {
+            margin-bottom: 12px;
+            color: #4a5568;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 13px;
+        }
+        th {
+            background-color: #1a365d;
+            color: white;
+            padding: 10px;
+            text-align: left;
+            font-weight: 600;
+        }
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+        tr:hover {
+            background-color: #f0fff4;
+        }
+        .highlight {
+            background-color: #C4D600;
+            color: #1a365d;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-weight: 600;
+        }
+        .warning {
+            background-color: #fff5f5;
+            border-left: 4px solid #e53e3e;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .success {
+            background-color: #f0fff4;
+            border-left: 4px solid #38a169;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .info {
+            background-color: #ebf8ff;
+            border-left: 4px solid #3182ce;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        ul, ol {
+            margin: 10px 0 10px 20px;
+            color: #4a5568;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+        code {
+            background-color: #edf2f7;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+        }
+        pre {
+            background-color: #1a365d;
+            color: #C4D600;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            margin: 15px 0;
+        }
+        .footer {
+            background-color: #1a365d;
+            color: white;
+            padding: 25px 30px;
+            text-align: center;
+            font-size: 13px;
+        }
+        .footer-logo {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .rating {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .rating-yes {
+            background-color: #38a169;
+            color: white;
+        }
+        .rating-no {
+            background-color: #e53e3e;
+            color: white;
+        }
+        .rating-maybe {
+            background-color: #d69e2e;
+            color: white;
+        }
+        .toc {
+            background-color: #f8fafc;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+        .toc h3 {
+            margin-top: 0;
+            color: #1a365d;
+        }
+        .toc ul {
+            list-style: none;
+            margin-left: 0;
+        }
+        .toc li {
+            padding: 5px 0;
+            border-bottom: 1px dotted #e2e8f0;
+        }
+        .toc a {
+            color: #2c5282;
+            text-decoration: none;
+        }
+        .toc a:hover {
+            color: #C4D600;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>VM-Kombinationsanalyse</h1>
+            <div class="subtitle">Dos Aguas Consulting - IT-Infrastruktur Optimierung</div>
+        </div>
+
+        <!-- Meta Info -->
+        <div class="meta">
+            <strong>Analyst:</strong> Luis (IT-Administrator) <span style="margin: 0 15px;">|</span>
+            <strong>Auftraggeber:</strong> Christian Seebach (Director) <span style="margin: 0 15px;">|</span>
+            <strong>Datum:</strong> 26.02.2026
+        </div>
+
+        <!-- Content -->
+        <div class="content">
+            <div class="warning">
+                <strong>⚠️ Ausgangssituation:</strong> Host mit 64 GB RAM, 6 Cores → Überbuchung bei aktuellem 3-VM-Plan
+            </div>
+
+            <h2>Ausgangslage</h2>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Komponente</th>
+                        <th>RAM</th>
+                        <th>Cores</th>
+                        <th>Bemerkung</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>WordPress</td><td>6 GB</td><td>2</td><td>Produktiv-Website</td></tr>
+                    <tr><td>Ollama AI</td><td>16-24 GB</td><td>4</td><td>LLM-Inferenz</td></tr>
+                    <tr><td>OpenClaw</td><td>24 GB</td><td>4</td><td>Automation-Server</td></tr>
+                    <tr style="background-color: #fff5f5; font-weight: bold;">
+                        <td>Gesamt</td><td>46-52 GB</td><td>10</td><td style="color: #e53e3e;">Überbuchung!</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p><strong>Problem:</strong> Der Host hat nur 6 Cores und 64 GB RAM. Der aktuelle Plan ist nicht realisierbar.</p>
+
+            <h2>Option 1: OpenClaw + Ollama auf einer VM</h2>
+            
+            <h4>Ressourcenbedarf</h4>
+            <table>
+                <thead><tr><th>Ressource</th><th>Bedarf</th><th>Bemerkung</th></tr></thead>
+                <tbody>
+                    <tr><td>RAM</td><td>32-40 GB</td><td>OpenClaw (16) + Ollama (16-24)</td></tr>
+                    <tr><td>CPU</td><td>6-8 Cores</td><td>Beide sind rechenintensiv</td></tr>
+                    <tr><td>Disk</td><td>100+ GB</td><td>Modelle + Container</td></tr>
+                </tbody>
+            </table>
+
+            <h4>Vorteile</h4>
+            <ul>
+                <li>✅ <strong>Synergie:</strong> OpenClaw kann direkt auf Ollama-API zugreifen (lokal, latenzfrei)</li>
+                <li>✅ <strong>Weniger Overhead:</strong> Eine VM statt zwei (Kernel, OS-Overhead gespart)</li>
+                <li>✅ <strong>Einfache Verwaltung:</strong> Zentrale Log-Dateien, ein Backup-Ziel</li>
+                <li>✅ <strong>GPU-Sharing:</strong> Falls vorhanden, beide nutzen dieselbe GPU</li>
+            </ul>
+
+            <h4>Nachteile</h4>
+            <ul>
+                <li>❌ <strong>Ressourcenkonflikt:</strong> Beide Services konkurrieren um RAM/CPU</li>
+                <li>❌ <strong>Keine Isolation:</strong> Crash von Ollama beeinträchtigt OpenClaw</li>
+                <li>❌ <strong>Skalierung schwierig:</strong> Wenn einer wächst, leidet der andere</li>
+                <li>❌ <strong>Updates riskant:</strong> Ollama-Update könnte OpenClaw stören</li>
+            </ul>
+
+            <h4>Risiken</h4>
+            <table>
+                <thead><tr><th>Risiko</th><th>Gewichtung</th><th>Mitigation</th></tr></thead>
+                <tbody>
+                    <tr><td>Speicherleck Ollama → OpenClaw-Instabilität</td><td><span class="highlight">Hoch</span></td><td>Memory-Limits in Docker/cgroups setzen</td></tr>
+                    <tr><td>CPU-Starvation bei gleichzeitiger Nutzung</td><td>Mittel</td><td>CPU-Shares/Priorisierung konfigurieren</td></tr>
+                    <tr><td>Sicherheit: Ollama-Exploit → OpenClaw kompromittiert</td><td>Mittel</td><td>Netzwerk-Isolation, Firewall-Regeln</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info">
+                <strong>Empfehlung: MIT EINSCHRÄNKUNGEN ✅⚠️</strong><br>
+                Diese Kombination ist technisch sinnvoll, erfordert aber Docker/Podman mit strikten Resource-Limits, Monitoring auf RAM-Nutzung und Ollama mit quantisierten Modellen.
+            </div>
+
+            <h2>Option 2: OpenClaw + WordPress auf einer VM</h2>
+            
+            <h4>Ressourcenbedarf</h4>
+            <table>
+                <thead><tr><th>Ressource</th><th>Bedarf</th><th>Bemerkung</th></tr></thead>
+                <tbody>
+                    <tr><td>RAM</td><td>28-32 GB</td><td>OpenClaw (24) + WordPress (6-8 mit DB)</td></tr>
+                    <tr><td>CPU</td><td>5-6 Cores</td><td>OpenClaw (4) + WordPress (2)</td></tr>
+                    <tr><td>Disk</td><td>50+ GB</td><td>Container + DB + Uploads</td></tr>
+                </tbody>
+            </table>
+
+            <h4>Vorteile</h4>
+            <ul>
+                <li>✅ <strong>Gute Trennung:</strong> WordPress (Web) und OpenClaw (Automation) haben unterschiedliche Peak-Zeiten</li>
+                <li>✅ <strong>Einfache Integration:</strong> OpenClaw kann WordPress-API direkt nutzen</li>
+                <li>✅ <strong>Web-Stack geteilt:</strong> Nginx/Traefik für beide nutzbar</li>
+                <li>✅ <strong>Ressourcen passen</strong> in Host-Limits (64 GB, 6 Cores)</li>
+            </ul>
+
+            <div class="success">
+                <strong>Empfehlung: JA ✅ (mit Sicherheitsmaßnahmen)</strong><br>
+                Diese Kombination ist praktikabel, wenn WordPress in isoliertem Container läuft, separate Datenbank-Container mit RAM-Limit verwendet werden und ein Reverse-Proxy (Traefik) mit automatischem SSL konfiguriert ist.
+            </div>
+
+            <h2>Option 3: WordPress unter OpenClaw (als Container/Service)</h2>
+            
+            <h4>Ressourcenbedarf</h4>
+            <table>
+                <thead><tr><th>Ressource</th><th>Bedarf</th><th>Bemerkung</th></tr></thead>
+                <tbody>
+                    <tr><td>RAM</td><td>26-30 GB</td><td>OpenClaw-Base + WordPress-Container</td></tr>
+                    <tr><td>CPU</td><td>5-6 Cores</td><td>OpenClaw + Container-Overhead</td></tr>
+                    <tr><td>Disk</td><td>40+ GB</td><td>OpenClaw + WP-Dateien</td></tr>
+                </tbody>
+            </table>
+
+            <div class="info">
+                <strong>Empfehlung: MIT EINSCHRÄNKUNGEN ✅⚠️</strong><br>
+                Interessante Option für maximale Integration, aber nur mit rootless Podman/Docker und WordPress in separatem Netzwerk-Namespace. Nicht empfohlen, wenn WP öffentlich erreichbar und kritisch ist.
+            </div>
+
+            <h2>Option 4: Alle 3 auf einer VM</h2>
+            
+            <h4>Ressourcenbedarf</h4>
+            <table>
+                <thead><tr><th>Ressource</th><th>Bedarf</th><th>Verfügbar</th></tr></thead>
+                <tbody>
+                    <tr><td>RAM</td><td>46-52 GB</td><td>64 GB ✓</td></tr>
+                    <tr><td>CPU</td><td>10 Cores</td><td style="color: #e53e3e; font-weight: bold;">6 Cores ✗</td></tr>
+                    <tr><td>Disk</td><td>150+ GB</td><td>?</td></tr>
+                </tbody>
+            </table>
+
+            <div class="warning">
+                <strong>Empfehlung: NEIN ❌</strong><br>
+                Diese Option ist für Produktion nicht geeignet: CPU-Überbuchung führt zu unvorhersehbarer Performance, keine Trennung von kritischen und nicht-kritischen Services, Wartung wird zum Albtraum.
+            </div>
+
+            <h2>Option 5: Alternative Kombinationen</h2>
+            
+            <h4>5a: Ollama + WordPress (OpenClaw separat)</h4>
+            <p><span class="rating rating-no">Nicht empfohlen</span> - Ollama und WordPress haben wenig Synergie, OpenClaw allein auf VM verschwendet Ressourcen.</p>
+
+            <h4>5b: OpenClaw auf Host direkt (keine VM)</h4>
+            <p><span class="rating rating-maybe">Mit Einschränkungen</span> - Spart VM-Overhead (~2 GB RAM), aber Host-Kompromittierung bei OpenClaw-Exploit möglich.</p>
+
+            <h4>5c: Ollama auf dedizierter Hardware</h4>
+            <p><span class="rating rating-yes">Empfohlen</span> - LLM-Inferenz profitiert von dedizierter GPU, keine Ressourcenkonflikte.</p>
+
+            <h4>5d: WordPress als Managed Hosting extern</h4>
+            <p><span class="rating rating-yes">Empfohlen</span> - Entlastet komplett von Host, professionelles Backup/Security.</p>
+
+            <h4>5e: Ollama mit kleineren Modellen</h4>
+            <p><span class="rating rating-yes">Empfohlen</span> - Statt 24 GB → 8-12 GB mit quantisierten Modellen (Q4, Q5), Qualität oft ausreichend.</p>
+
+            <h2>Zusammenfassung & Empfehlung</h2>
+
+            <h4>Rangliste der Optionen</h4>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Rang</th>
+                        <th>Option</th>
+                        <th>Bewertung</th>
+                        <th>Ressourcen</th>
+                        <th>Risiko</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="background-color: #f0fff4;">
+                        <td>1</td>
+                        <td><strong>OpenClaw + WordPress</strong></td>
+                        <td><span class="rating rating-yes">Empfohlen</span></td>
+                        <td>30 GB / 6 C</td>
+                        <td>Mittel</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Ollama extern/dediziert</td>
+                        <td><span class="rating rating-yes">Ideal</span></td>
+                        <td>-</td>
+                        <td>Niedrig</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>OpenClaw + Ollama</td>
+                        <td><span class="rating rating-maybe">Möglich</span></td>
+                        <td>40 GB / 6 C</td>
+                        <td>Mittel-Hoch</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>WP unter OpenClaw</td>
+                        <td><span class="rating rating-maybe">Möglich</span></td>
+                        <td>30 GB / 6 C</td>
+                        <td>Mittel</td>
+                    </tr>
+                    <tr style="background-color: #fff5f5;">
+                        <td>5</td>
+                        <td>Alle 3 zusammen</td>
+                        <td><span class="rating rating-no">Nein</span></td>
+                        <td>Überbucht</td>
+                        <td>Hoch</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>Empfohlene Architektur</h2>
+
+            <pre>┌─────────────────────────────────────────┐
+│           Host (64 GB, 6 Cores)         │
+│  ┌─────────────────────────────────┐    │
+│  │   VM 1: OpenClaw + WordPress    │    │
+│  │   - OpenClaw (16 GB, 3 Cores)   │    │
+│  │   - WordPress (6 GB, 2 Cores)   │    │
+│  │   - Traefik (1 GB, 1 Core)      │    │
+│  │   Total: ~24 GB RAM, 6 Cores    │    │
+│  └─────────────────────────────────┘    │
+│                                         │
+│  ┌─────────────────────────────────┐    │
+│  │   VM 2: Ollama (optimiert)      │    │
+│  │   - Ollama mit Q4-Modellen      │    │
+│  │   - 12-16 GB RAM, 4 Cores       │    │
+│  │   - Optional: GPU Passthrough   │    │
+│  └─────────────────────────────────┘    │
+│                                         │
+│  Reserve: ~24 GB für Host-OS, Caching   │
+└─────────────────────────────────────────┘</pre>
+
+            <h2>Konkrete Maßnahmen</h2>
+
+            <ol>
+                <li><strong>OpenClaw RAM reduzieren</strong> von 24 GB auf 16 GB
+                    <ul><li>Container-Limits setzen</li><li>Nicht genutzte Services deaktivieren</li></ul>
+                </li>
+                <li><strong>Ollama optimieren</strong>
+                    <ul><li>Q4_K_M oder Q5_K_M Modelle statt FP16</li><li>`num_ctx` anpassen (4096 statt 8192)</li><li>Nur benötigte Modelle laden</li></ul>
+                </li>
+                <li><strong>WordPress effizient betreiben</strong>
+                    <ul><li>Redis-Object-Cache aktivieren</li><li>OPcache konfigurieren</li><li>CDN für Assets (Cloudflare)</li></ul>
+                </li>
+                <li><strong>Monitoring einrichten</strong>
+                    <ul><li>RAM-Nutzung pro Container</li><li>CPU-Load Alerts</li><li>OOM-Killer-Logs</li></ul>
+                </li>
+            </ol>
+
+            <h2>Nächste Schritte</h2>
+
+            <ol>
+                <li>[ ] Entscheidung: Welche Kombination?</li>
+                <li>[ ] Test-Setup mit Resource-Limits</li>
+                <li>[ ] Load-Testing unter realistischer Last</li>
+                <li>[ ] Monitoring/Alerting konfigurieren</li>
+                <li>[ ] Dokumentation der finalen Architektur</li>
+            </ol>
+
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="footer-logo">Dos Aguas Consulting</div>
+            <div>Analyse erstellt von Luis, IT-Administrator</div>
+            <div style="margin-top: 10px; opacity: 0.8;">© 2026 Dos Aguas Consulting</div>
+        </div>
+    </div>
+</body>
+</html></div><script src="/_next/static/chunks/webpack-c81f7fd28659d64f.js" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0]);self.__next_f.push([2,null])</script><script>self.__next_f.push([1,"1:HL[\"/_next/static/css/717463fb5ac3cf8b.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"2:I[2846,[],\"\"]\n5:I[4707,[],\"\"]\n6:I[6423,[],\"\"]\n8:I[1060,[],\"\"]\n4:T4c1e,"])</script><script>self.__next_f.push([1,"\u003c!DOCTYPE html\u003e\n\u003chtml lang=\"de\"\u003e\n\u003chead\u003e\n    \u003cmeta charset=\"UTF-8\"\u003e\n    \u003cmeta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"\u003e\n    \u003ctitle\u003eVM-Kombinationsanalyse - Dos Aguas Consulting\u003c/title\u003e\n    \u003cstyle\u003e\n        * {\n            margin: 0;\n            padding: 0;\n            box-sizing: border-box;\n        }\n        body {\n            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;\n            background-color: #f5f5f5;\n            color: #333;\n            line-height: 1.6;\n        }\n        .container {\n            max-width: 900px;\n            margin: 0 auto;\n            background-color: #ffffff;\n            box-shadow: 0 2px 10px rgba(0,0,0,0.1);\n        }\n        .header {\n            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);\n            color: white;\n            padding: 40px 30px;\n        }\n        .header h1 {\n            font-size: 26px;\n            font-weight: 300;\n            margin-bottom: 10px;\n        }\n        .header .subtitle {\n            font-size: 14px;\n            opacity: 0.9;\n        }\n        .meta {\n            background-color: #f8fafc;\n            padding: 20px 30px;\n            border-bottom: 2px solid #C4D600;\n            font-size: 13px;\n            color: #4a5568;\n        }\n        .meta strong {\n            color: #1a365d;\n        }\n        .content {\n            padding: 30px;\n        }\n        h2 {\n            color: #1a365d;\n            font-size: 20px;\n            margin-top: 30px;\n            margin-bottom: 15px;\n            padding-bottom: 8px;\n            border-bottom: 2px solid #C4D600;\n        }\n        h3 {\n            color: #2c5282;\n            font-size: 16px;\n            margin-top: 25px;\n            margin-bottom: 10px;\n        }\n        h4 {\n            color: #1a365d;\n            font-size: 14px;\n            margin-top: 20px;\n            margin-bottom: 8px;\n        }\n        p {\n            margin-bottom: 12px;\n            color: #4a5568;\n        }\n        table {\n            width: 100%;\n            border-collapse: collapse;\n            margin: 15px 0;\n            font-size: 13px;\n        }\n        th {\n            background-color: #1a365d;\n            color: white;\n            padding: 10px;\n            text-align: left;\n            font-weight: 600;\n        }\n        td {\n            padding: 10px;\n            border-bottom: 1px solid #e2e8f0;\n        }\n        tr:nth-child(even) {\n            background-color: #f8fafc;\n        }\n        tr:hover {\n            background-color: #f0fff4;\n        }\n        .highlight {\n            background-color: #C4D600;\n            color: #1a365d;\n            padding: 2px 6px;\n            border-radius: 3px;\n            font-weight: 600;\n        }\n        .warning {\n            background-color: #fff5f5;\n            border-left: 4px solid #e53e3e;\n            padding: 15px;\n            margin: 15px 0;\n            border-radius: 0 8px 8px 0;\n        }\n        .success {\n            background-color: #f0fff4;\n            border-left: 4px solid #38a169;\n            padding: 15px;\n            margin: 15px 0;\n            border-radius: 0 8px 8px 0;\n        }\n        .info {\n            background-color: #ebf8ff;\n            border-left: 4px solid #3182ce;\n            padding: 15px;\n            margin: 15px 0;\n            border-radius: 0 8px 8px 0;\n        }\n        ul, ol {\n            margin: 10px 0 10px 20px;\n            color: #4a5568;\n        }\n        li {\n            margin-bottom: 5px;\n        }\n        code {\n            background-color: #edf2f7;\n            padding: 2px 6px;\n            border-radius: 3px;\n            font-family: 'Courier New', monospace;\n            font-size: 12px;\n        }\n        pre {\n            background-color: #1a365d;\n            color: #C4D600;\n            padding: 20px;\n            border-radius: 8px;\n            overflow-x: auto;\n            font-family: 'Courier New', monospace;\n            font-size: 12px;\n            margin: 15px 0;\n        }\n        .footer {\n            background-color: #1a365d;\n            color: white;\n            padding: 25px 30px;\n            text-align: center;\n            font-size: 13px;\n        }\n        .footer-logo {\n            font-size: 16px;\n            font-weight: 600;\n            margin-bottom: 8px;\n        }\n        .rating {\n            display: inline-block;\n            padding: 4px 12px;\n            border-radius: 4px;\n            font-size: 11px;\n            font-weight: 600;\n            text-transform: uppercase;\n        }\n        .rating-yes {\n            background-color: #38a169;\n            color: white;\n        }\n        .rating-no {\n            background-color: #e53e3e;\n            color: white;\n        }\n        .rating-maybe {\n            background-color: #d69e2e;\n            color: white;\n        }\n        .toc {\n            background-color: #f8fafc;\n            padding: 20px;\n            border-radius: 8px;\n            margin-bottom: 25px;\n        }\n        .toc h3 {\n            margin-top: 0;\n            color: #1a365d;\n        }\n        .toc ul {\n            list-style: none;\n            margin-left: 0;\n        }\n        .toc li {\n            padding: 5px 0;\n            border-bottom: 1px dotted #e2e8f0;\n        }\n        .toc a {\n            color: #2c5282;\n            text-decoration: none;\n        }\n        .toc a:hover {\n            color: #C4D600;\n        }\n    \u003c/style\u003e\n\u003c/head\u003e\n\u003cbody\u003e\n    \u003cdiv class=\"container\"\u003e\n        \u003c!-- Header --\u003e\n        \u003cdiv class=\"header\"\u003e\n            \u003ch1\u003eVM-Kombinationsanalyse\u003c/h1\u003e\n            \u003cdiv class=\"subtitle\"\u003eDos Aguas Consulting - IT-Infrastruktur Optimierung\u003c/div\u003e\n        \u003c/div\u003e\n\n        \u003c!-- Meta Info --\u003e\n        \u003cdiv class=\"meta\"\u003e\n            \u003cstrong\u003eAnalyst:\u003c/strong\u003e Luis (IT-Administrator) \u003cspan style=\"margin: 0 15px;\"\u003e|\u003c/span\u003e\n            \u003cstrong\u003eAuftraggeber:\u003c/strong\u003e Christian Seebach (Director) \u003cspan style=\"margin: 0 15px;\"\u003e|\u003c/span\u003e\n            \u003cstrong\u003eDatum:\u003c/strong\u003e 26.02.2026\n        \u003c/div\u003e\n\n        \u003c!-- Content --\u003e\n        \u003cdiv class=\"content\"\u003e\n            \u003cdiv class=\"warning\"\u003e\n                \u003cstrong\u003e⚠️ Ausgangssituation:\u003c/strong\u003e Host mit 64 GB RAM, 6 Cores → Überbuchung bei aktuellem 3-VM-Plan\n            \u003c/div\u003e\n\n            \u003ch2\u003eAusgangslage\u003c/h2\u003e\n            \n            \u003ctable\u003e\n                \u003cthead\u003e\n                    \u003ctr\u003e\n                        \u003cth\u003eKomponente\u003c/th\u003e\n                        \u003cth\u003eRAM\u003c/th\u003e\n                        \u003cth\u003eCores\u003c/th\u003e\n                        \u003cth\u003eBemerkung\u003c/th\u003e\n                    \u003c/tr\u003e\n                \u003c/thead\u003e\n                \u003ctbody\u003e\n                    \u003ctr\u003e\u003ctd\u003eWordPress\u003c/td\u003e\u003ctd\u003e6 GB\u003c/td\u003e\u003ctd\u003e2\u003c/td\u003e\u003ctd\u003eProduktiv-Website\u003c/td\u003e\u003c/tr\u003e\n                    \u003ctr\u003e\u003ctd\u003eOllama AI\u003c/td\u003e\u003ctd\u003e16-24 GB\u003c/td\u003e\u003ctd\u003e4\u003c/td\u003e\u003ctd\u003eLLM-Inferenz\u003c/td\u003e\u003c/tr\u003e\n                    \u003ctr\u003e\u003ctd\u003eOpenClaw\u003c/td\u003e\u003ctd\u003e24 GB\u003c/td\u003e\u003ctd\u003e4\u003c/td\u003e\u003ctd\u003eAutomation-Server\u003c/td\u003e\u003c/tr\u003e\n                    \u003ctr style=\"background-color: #fff5f5; font-weight: bold;\"\u003e\n                        \u003ctd\u003eGesamt\u003c/td\u003e\u003ctd\u003e46-52 GB\u003c/td\u003e\u003ctd\u003e10\u003c/td\u003e\u003ctd style=\"color: #e53e3e;\"\u003eÜberbuchung!\u003c/td\u003e\n                    \u003c/tr\u003e\n                \u003c/tbody\u003e\n            \u003c/table\u003e\n\n            \u003cp\u003e\u003cstrong\u003eProblem:\u003c/strong\u003e Der Host hat nur 6 Cores und 64 GB RAM. Der aktuelle Plan ist nicht realisierbar.\u003c/p\u003e\n\n            \u003ch2\u003eOption 1: OpenClaw + Ollama auf einer VM\u003c/h2\u003e\n            \n            \u003ch4\u003eRessourcenbedarf\u003c/h4\u003e\n            \u003ctable\u003e\n                \u003cthead\u003e\u003ctr\u003e\u003cth\u003eRessource\u003c/th\u003e\u003cth\u003eBedarf\u003c/th\u003e\u003cth\u003eBemerkung\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\n                \u003ctbody\u003e\n                    \u003ctr\u003e\u003ctd\u003eRAM\u003c/td\u003e\u003ctd\u003e32-40 GB\u003c/td\u003e\u003ctd\u003eOpenClaw (16) + Ollama (16-24)\u003c/td\u003e\u003c/tr\u003e\n                    \u003ctr\u003e\u003ctd\u003eCPU\u003c/td\u003e\u003ctd\u003e6-8 Cores\u003c/td\u003e\u003ctd\u003eBeide sind rechenintensiv\u003c/td\u003e\u003c/tr\u003e\n                    \u003ctr\u003e\u003ctd\u003eDisk\u003c/td\u003e\u003ctd\u003e100+ GB\u003c/td\u003e\u003ctd\u003eModelle + Container\u003c/td\u003e\u003c/tr\u003e\n                \u003c/tbody\u003e\n            \u003c/table\u003e\n\n            \u003ch4\u003eVorteile\u003c/h4\u003e\n            \u003cul\u003e\n                \u003cli\u003e✅ \u003cstrong\u003eSynergie:\u003c/strong\u003e OpenClaw kann direkt auf Ollama-API zugreifen (lokal, latenzfrei)\u003c/li\u003e\n                \u003cli\u003e✅ \u003cstrong\u003eWeniger Overhead:\u003c/strong\u003e Eine VM statt zwei (Kernel, OS-Overhead gespart)\u003c/li\u003e\n                \u003cli\u003e✅ \u003cstrong\u003eEinfache Verwaltung:\u003c/strong\u003e Zentrale Log-Dateien, ein Backup-Ziel\u003c/li\u003e\n                \u003cli\u003e✅ \u003cstrong\u003eGPU-Sharing:\u003c/strong\u003e Falls vorhanden, beide nutzen dieselbe GPU\u003c/li\u003e\n            \u003c/ul\u003e\n\n            \u003ch4\u003eNachteile\u003c/h4\u003e\n            \u003cul\u003e\n                \u003cli\u003e❌ \u003cstrong\u003eRessourcenkonflikt:\u003c/strong\u003e Beide Services konkurrieren um RAM/CPU\u003c/li\u003e\n                \u003cli\u003e❌ \u003cstrong\u003eKeine Isolation:\u003c/strong\u003e Crash von Ollama beeinträchtigt OpenClaw\u003c/li\u003e\n                \u003cli\u003e❌ \u003cstrong\u003eSkalierung schwierig:\u003c/strong\u003e Wenn einer wächst, leidet der andere\u003c/li\u003e\n                \u003cli\u003e❌ \u003cstrong\u003eUpdates riskant:\u003c/strong\u003e Ollama-Update könnte OpenClaw stören\u003c/li\u003e\n            \u003c/ul\u003e\n\n            \u003ch4\u003eRisiken\u003c/h4\u003e\n            \u003ctable\u003e\n                \u003cthead\u003e\u003ctr\u003e\u003cth\u003eRisiko\u003c/th\u003e\u003cth\u003eGewichtung\u003c/th\u003e\u003cth\u003eMitigation\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\n                \u003ctbody\u003e\n                    \u003ctr\u003e\u003ctd\u003eSpeicherleck Ollama → OpenClaw-Instabilität\u003c/td\u003e\u003ctd\u003e\u003cspan class=\"highlight\"\u003eHoch\u003c/span\u003e\u003c/td\u003e\u003ctd\u003eMemory-Limits in Docker/cgroups setzen\u003c/td\u003e\u003c/tr\u003e\n                    \u003ctr\u003e\u003ctd\u003eCPU-Starvation bei gleichzeitiger Nutzung\u003c/td\u003e\u003ctd\u003eMittel\u003c/td\u003e\u003ctd\u003eCPU-Shares/Priorisierung konfigurieren\u003c/td\u003e\u003c/tr\u003e\n                    \u003ctr\u003e\u003ctd\u003eSicherheit: Ollama-Exploit → OpenClaw kompromittiert\u003c/td\u003e\u003ctd\u003eMittel\u003c/td\u003e\u003ctd\u003eNetzwerk-Isolation, Firewall-Regeln\u003c/td\u003e\u003c/tr\u003e\n                \u003c/tbody\u003e\n            \u003c/table\u003e\n\n            \u003cdiv class=\"info\"\u003e\n                \u003cstrong\u003eEmpfehlung: MIT EINSCHRÄNKUNGEN ✅⚠️\u003c/strong\u003e\u003cbr\u003e\n                Diese Kombination ist technisch sinnvoll, erfordert aber Docker/Podman mit strikten Resource-Limits, Monitoring auf RAM-Nutzung und Ollama mit quantisierten Modellen.\n            \u003c/div\u003e\n\n            \u003ch2\u003eOption 2: OpenClaw + WordPress auf einer VM\u003c/h2\u003e\n            \n            \u003ch4\u003eRessourcenbedarf\u003c/h4\u003e\n            \u003ctable\u003e\n                \u003cthead\u003e\u003ctr\u003e\u003cth\u003eRessource\u003c/th\u003e\u003cth\u003eBedarf\u003c/th\u003e\u003cth\u003eBemerkung\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\n                \u003ctbody\u003e\n                    \u003ctr\u003e\u003ctd\u003eRAM\u003c/td\u003e\u003ctd\u003e28-32 GB\u003c/td\u003e\u003ctd\u003eOpenClaw (24) + WordPress (6-8 mit DB)\u003c/td\u003e\u003c/tr\u003e\n                    \u003ctr\u003e\u003ctd\u003eCPU\u003c/td\u003e\u003ctd\u003e5-6 Cores\u003c/td\u003e\u003ctd\u003eOpenClaw (4) + WordPress (2)\u003c/td\u003e\u003c/tr\u003e\n                    \u003ctr\u003e\u003ctd\u003eDisk\u003c/td\u003e\u003ctd\u003e50+ GB\u003c/td\u003e\u003ctd\u003eContainer + DB + Uploads\u003c/td\u003e\u003c/tr\u003e\n                \u003c/tbody\u003e\n            \u003c/table\u003e\n\n            \u003ch4\u003eVorteile\u003c/h4\u003e\n            \u003cul\u003e\n                \u003cli\u003e✅ \u003cstrong\u003eGute Trennung:\u003c/strong\u003e WordPress (Web) und OpenClaw (Automation) haben unterschiedliche Peak-Zeiten\u003c/li\u003e\n                \u003cli\u003e✅ \u003cstrong\u003eEinfache Integration:\u003c/strong\u003e OpenClaw kann WordPress-API direkt nutzen\u003c/li\u003e\n                \u003cli\u003e✅ \u003cstrong\u003eWeb-Stack geteilt:\u003c/strong\u003e Nginx/Traefik für beide nutzbar\u003c/li\u003e\n                \u003cli\u003e✅ \u003cstrong\u003eRessourcen passen\u003c/strong\u003e in Host-Limits (64 GB, 6 Cores)\u003c/li\u003e\n            \u003c/ul\u003e\n\n            \u003cdiv class=\"success\"\u003e\n                \u003cstrong\u003eEmpfehlung: JA ✅ (mit Sicherheitsmaßnahmen)\u003c/strong\u003e\u003cbr\u003e\n                Diese Kombination ist praktikabel, wenn WordPress in isoliertem Container läuft, separate Datenbank-Container mit RAM-Limit verwendet werden und ein Reverse-Proxy (Traefik) mit automatischem SSL konfiguriert ist.\n            \u003c/div\u003e\n\n            \u003ch2\u003eOption 3: WordPress unter OpenClaw (als Container/Service)\u003c/h2\u003e\n            \n            \u003ch4\u003eRessourcenbedarf\u003c/h4\u003e\n            \u003ctable\u003e\n                \u003cthead\u003e\u003ctr\u003e\u003cth\u003eRessource\u003c/th\u003e\u003cth\u003eBedarf\u003c/th\u003e\u003cth\u003eBemerkung\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\n                \u003ctbody\u003e\n                    \u003ctr\u003e\u003ctd\u003eRAM\u003c/td\u003e\u003ctd\u003e26-30 GB\u003c/td\u003e\u003ctd\u003eOpenClaw-Base + WordPress-Container\u003c/td\u003e\u003c/tr\u003e\n                    \u003ctr\u003e\u003ctd\u003eCPU\u003c/td\u003e\u003ctd\u003e5-6 Cores\u003c/td\u003e\u003ctd\u003eOpenClaw + Container-Overhead\u003c/td\u003e\u003c/tr\u003e\n                    \u003ctr\u003e\u003ctd\u003eDisk\u003c/td\u003e\u003ctd\u003e40+ GB\u003c/td\u003e\u003ctd\u003eOpenClaw + WP-Dateien\u003c/td\u003e\u003c/tr\u003e\n                \u003c/tbody\u003e\n            \u003c/table\u003e\n\n            \u003cdiv class=\"info\"\u003e\n                \u003cstrong\u003eEmpfehlung: MIT EINSCHRÄNKUNGEN ✅⚠️\u003c/strong\u003e\u003cbr\u003e\n                Interessante Option für maximale Integration, aber nur mit rootless Podman/Docker und WordPress in separatem Netzwerk-Namespace. Nicht empfohlen, wenn WP öffentlich erreichbar und kritisch ist.\n            \u003c/div\u003e\n\n            \u003ch2\u003eOption 4: Alle 3 auf einer VM\u003c/h2\u003e\n            \n            \u003ch4\u003eRessourcenbedarf\u003c/h4\u003e\n            \u003ctable\u003e\n                \u003cthead\u003e\u003ctr\u003e\u003cth\u003eRessource\u003c/th\u003e\u003cth\u003eBedarf\u003c/th\u003e\u003cth\u003eVerfügbar\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\n                \u003ctbody\u003e\n                    \u003ctr\u003e\u003ctd\u003eRAM\u003c/td\u003e\u003ctd\u003e46-52 GB\u003c/td\u003e\u003ctd\u003e64 GB ✓\u003c/td\u003e\u003c/tr\u003e\n                    \u003ctr\u003e\u003ctd\u003eCPU\u003c/td\u003e\u003ctd\u003e10 Cores\u003c/td\u003e\u003ctd style=\"color: #e53e3e; font-weight: bold;\"\u003e6 Cores ✗\u003c/td\u003e\u003c/tr\u003e\n                    \u003ctr\u003e\u003ctd\u003eDisk\u003c/td\u003e\u003ctd\u003e150+ GB\u003c/td\u003e\u003ctd\u003e?\u003c/td\u003e\u003c/tr\u003e\n                \u003c/tbody\u003e\n            \u003c/table\u003e\n\n            \u003cdiv class=\"warning\"\u003e\n                \u003cstrong\u003eEmpfehlung: NEIN ❌\u003c/strong\u003e\u003cbr\u003e\n                Diese Option ist für Produktion nicht geeignet: CPU-Überbuchung führt zu unvorhersehbarer Performance, keine Trennung von kritischen und nicht-kritischen Services, Wartung wird zum Albtraum.\n            \u003c/div\u003e\n\n            \u003ch2\u003eOption 5: Alternative Kombinationen\u003c/h2\u003e\n            \n            \u003ch4\u003e5a: Ollama + WordPress (OpenClaw separat)\u003c/h4\u003e\n            \u003cp\u003e\u003cspan class=\"rating rating-no\"\u003eNicht empfohlen\u003c/span\u003e - Ollama und WordPress haben wenig Synergie, OpenClaw allein auf VM verschwendet Ressourcen.\u003c/p\u003e\n\n            \u003ch4\u003e5b: OpenClaw auf Host direkt (keine VM)\u003c/h4\u003e\n            \u003cp\u003e\u003cspan class=\"rating rating-maybe\"\u003eMit Einschränkungen\u003c/span\u003e - Spart VM-Overhead (~2 GB RAM), aber Host-Kompromittierung bei OpenClaw-Exploit möglich.\u003c/p\u003e\n\n            \u003ch4\u003e5c: Ollama auf dedizierter Hardware\u003c/h4\u003e\n            \u003cp\u003e\u003cspan class=\"rating rating-yes\"\u003eEmpfohlen\u003c/span\u003e - LLM-Inferenz profitiert von dedizierter GPU, keine Ressourcenkonflikte.\u003c/p\u003e\n\n            \u003ch4\u003e5d: WordPress als Managed Hosting extern\u003c/h4\u003e\n            \u003cp\u003e\u003cspan class=\"rating rating-yes\"\u003eEmpfohlen\u003c/span\u003e - Entlastet komplett von Host, professionelles Backup/Security.\u003c/p\u003e\n\n            \u003ch4\u003e5e: Ollama mit kleineren Modellen\u003c/h4\u003e\n            \u003cp\u003e\u003cspan class=\"rating rating-yes\"\u003eEmpfohlen\u003c/span\u003e - Statt 24 GB → 8-12 GB mit quantisierten Modellen (Q4, Q5), Qualität oft ausreichend.\u003c/p\u003e\n\n            \u003ch2\u003eZusammenfassung \u0026 Empfehlung\u003c/h2\u003e\n\n            \u003ch4\u003eRangliste der Optionen\u003c/h4\u003e\n            \u003ctable\u003e\n                \u003cthead\u003e\n                    \u003ctr\u003e\n                        \u003cth\u003eRang\u003c/th\u003e\n                        \u003cth\u003eOption\u003c/th\u003e\n                        \u003cth\u003eBewertung\u003c/th\u003e\n                        \u003cth\u003eRessourcen\u003c/th\u003e\n                        \u003cth\u003eRisiko\u003c/th\u003e\n                    \u003c/tr\u003e\n                \u003c/thead\u003e\n                \u003ctbody\u003e\n                    \u003ctr style=\"background-color: #f0fff4;\"\u003e\n                        \u003ctd\u003e1\u003c/td\u003e\n                        \u003ctd\u003e\u003cstrong\u003eOpenClaw + WordPress\u003c/strong\u003e\u003c/td\u003e\n                        \u003ctd\u003e\u003cspan class=\"rating rating-yes\"\u003eEmpfohlen\u003c/span\u003e\u003c/td\u003e\n                        \u003ctd\u003e30 GB / 6 C\u003c/td\u003e\n                        \u003ctd\u003eMittel\u003c/td\u003e\n                    \u003c/tr\u003e\n                    \u003ctr\u003e\n                        \u003ctd\u003e2\u003c/td\u003e\n                        \u003ctd\u003eOllama extern/dediziert\u003c/td\u003e\n                        \u003ctd\u003e\u003cspan class=\"rating rating-yes\"\u003eIdeal\u003c/span\u003e\u003c/td\u003e\n                        \u003ctd\u003e-\u003c/td\u003e\n                        \u003ctd\u003eNiedrig\u003c/td\u003e\n                    \u003c/tr\u003e\n                    \u003ctr\u003e\n                        \u003ctd\u003e3\u003c/td\u003e\n                        \u003ctd\u003eOpenClaw + Ollama\u003c/td\u003e\n                        \u003ctd\u003e\u003cspan class=\"rating rating-maybe\"\u003eMöglich\u003c/span\u003e\u003c/td\u003e\n                        \u003ctd\u003e40 GB / 6 C\u003c/td\u003e\n                        \u003ctd\u003eMittel-Hoch\u003c/td\u003e\n                    \u003c/tr\u003e\n                    \u003ctr\u003e\n                        \u003ctd\u003e4\u003c/td\u003e\n                        \u003ctd\u003eWP unter OpenClaw\u003c/td\u003e\n                        \u003ctd\u003e\u003cspan class=\"rating rating-maybe\"\u003eMöglich\u003c/span\u003e\u003c/td\u003e\n                        \u003ctd\u003e30 GB / 6 C\u003c/td\u003e\n                        \u003ctd\u003eMittel\u003c/td\u003e\n                    \u003c/tr\u003e\n                    \u003ctr style=\"background-color: #fff5f5;\"\u003e\n                        \u003ctd\u003e5\u003c/td\u003e\n                        \u003ctd\u003eAlle 3 zusammen\u003c/td\u003e\n                        \u003ctd\u003e\u003cspan class=\"rating rating-no\"\u003eNein\u003c/span\u003e\u003c/td\u003e\n                        \u003ctd\u003eÜberbucht\u003c/td\u003e\n                        \u003ctd\u003eHoch\u003c/td\u003e\n                    \u003c/tr\u003e\n                \u003c/tbody\u003e\n            \u003c/table\u003e\n\n            \u003ch2\u003eEmpfohlene Architektur\u003c/h2\u003e\n\n            \u003cpre\u003e┌─────────────────────────────────────────┐\n│           Host (64 GB, 6 Cores)         │\n│  ┌─────────────────────────────────┐    │\n│  │   VM 1: OpenClaw + WordPress    │    │\n│  │   - OpenClaw (16 GB, 3 Cores)   │    │\n│  │   - WordPress (6 GB, 2 Cores)   │    │\n│  │   - Traefik (1 GB, 1 Core)      │    │\n│  │   Total: ~24 GB RAM, 6 Cores    │    │\n│  └─────────────────────────────────┘    │\n│                                         │\n│  ┌─────────────────────────────────┐    │\n│  │   VM 2: Ollama (optimiert)      │    │\n│  │   - Ollama mit Q4-Modellen      │    │\n│  │   - 12-16 GB RAM, 4 Cores       │    │\n│  │   - Optional: GPU Passthrough   │    │\n│  └─────────────────────────────────┘    │\n│                                         │\n│  Reserve: ~24 GB für Host-OS, Caching   │\n└─────────────────────────────────────────┘\u003c/pre\u003e\n\n            \u003ch2\u003eKonkrete Maßnahmen\u003c/h2\u003e\n\n            \u003col\u003e\n                \u003cli\u003e\u003cstrong\u003eOpenClaw RAM reduzieren\u003c/strong\u003e von 24 GB auf 16 GB\n                    \u003cul\u003e\u003cli\u003eContainer-Limits setzen\u003c/li\u003e\u003cli\u003eNicht genutzte Services deaktivieren\u003c/li\u003e\u003c/ul\u003e\n                \u003c/li\u003e\n                \u003cli\u003e\u003cstrong\u003eOllama optimieren\u003c/strong\u003e\n                    \u003cul\u003e\u003cli\u003eQ4_K_M oder Q5_K_M Modelle statt FP16\u003c/li\u003e\u003cli\u003e`num_ctx` anpassen (4096 statt 8192)\u003c/li\u003e\u003cli\u003eNur benötigte Modelle laden\u003c/li\u003e\u003c/ul\u003e\n                \u003c/li\u003e\n                \u003cli\u003e\u003cstrong\u003eWordPress effizient betreiben\u003c/strong\u003e\n                    \u003cul\u003e\u003cli\u003eRedis-Object-Cache aktivieren\u003c/li\u003e\u003cli\u003eOPcache konfigurieren\u003c/li\u003e\u003cli\u003eCDN für Assets (Cloudflare)\u003c/li\u003e\u003c/ul\u003e\n                \u003c/li\u003e\n                \u003cli\u003e\u003cstrong\u003eMonitoring einrichten\u003c/strong\u003e\n                    \u003cul\u003e\u003cli\u003eRAM-Nutzung pro Container\u003c/li\u003e\u003cli\u003eCPU-Load Alerts\u003c/li\u003e\u003cli\u003eOOM-Killer-Logs\u003c/li\u003e\u003c/ul\u003e\n                \u003c/li\u003e\n            \u003c/ol\u003e\n\n            \u003ch2\u003eNächste Schritte\u003c/h2\u003e\n\n            \u003col\u003e\n                \u003cli\u003e[ ] Entscheidung: Welche Kombination?\u003c/li\u003e\n                \u003cli\u003e[ ] Test-Setup mit Resource-Limits\u003c/li\u003e\n                \u003cli\u003e[ ] Load-Testing unter realistischer Last\u003c/li\u003e\n                \u003cli\u003e[ ] Monitoring/Alerting konfigurieren\u003c/li\u003e\n                \u003cli\u003e[ ] Dokumentation der finalen Architektur\u003c/li\u003e\n            \u003c/ol\u003e\n\n        \u003c/div\u003e\n\n        \u003c!-- Footer --\u003e\n        \u003cdiv class=\"footer\"\u003e\n            \u003cdiv class=\"footer-logo\"\u003eDos Aguas Consulting\u003c/div\u003e\n            \u003cdiv\u003eAnalyse erstellt von Luis, IT-Administrator\u003c/div\u003e\n            \u003cdiv style=\"margin-top: 10px; opacity: 0.8;\"\u003e© 2026 Dos Aguas Consulting\u003c/div\u003e\n        \u003c/div\u003e\n    \u003c/div\u003e\n\u003c/body\u003e\n\u003c/html\u003e"])</script><script>self.__next_f.push([1,"9:[]\n"])</script><script>self.__next_f.push([1,"0:[\"$\",\"$L2\",null,{\"buildId\":\"-OuHW6zrxfGO4eylJyM4T\",\"assetPrefix\":\"\",\"urlParts\":[\"\",\"docs\",\"vm-kombinations-analyse\"],\"initialTree\":[\"\",{\"children\":[\"docs\",{\"children\":[\"vm-kombinations-analyse\",{\"children\":[\"__PAGE__\",{}]}]}]},\"$undefined\",\"$undefined\",true],\"initialSeedData\":[\"\",{\"children\":[\"docs\",{\"children\":[\"vm-kombinations-analyse\",{\"children\":[\"__PAGE__\",{},[[\"$L3\",[\"$\",\"div\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"$4\"},\"style\":{\"width\":\"100%\",\"minHeight\":\"100vh\",\"margin\":0,\"padding\":0}}],null],null],null]},[null,[\"$\",\"$L5\",null,{\"parallelRouterKey\":\"children\",\"segmentPath\":[\"children\",\"docs\",\"children\",\"vm-kombinations-analyse\",\"children\"],\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L6\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"notFoundStyles\":\"$undefined\"}]],null]},[null,[\"$\",\"$L5\",null,{\"parallelRouterKey\":\"children\",\"segmentPath\":[\"children\",\"docs\",\"children\"],\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L6\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"notFoundStyles\":\"$undefined\"}]],null]},[[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/717463fb5ac3cf8b.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"de\",\"children\":[[\"$\",\"head\",null,{\"children\":[[\"$\",\"link\",null,{\"rel\":\"preconnect\",\"href\":\"https://fonts.googleapis.com\"}],[\"$\",\"link\",null,{\"rel\":\"preconnect\",\"href\":\"https://fonts.gstatic.com\",\"crossOrigin\":\"anonymous\"}],[\"$\",\"link\",null,{\"href\":\"https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400\u0026family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400\u0026family=Qwitcher+Grypen:wght@400;700\u0026display=swap\",\"rel\":\"stylesheet\"}]]}],[\"$\",\"body\",null,{\"children\":[\"$\",\"$L5\",null,{\"parallelRouterKey\":\"children\",\"segmentPath\":[\"children\"],\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L6\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":\"404\"}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],\"notFoundStyles\":[]}]}]]}]],null],null],\"couldBeIntercepted\":false,\"initialHead\":[null,\"$L7\"],\"globalErrorComponent\":\"$8\",\"missingSlots\":\"$W9\"}]\n"])</script><script>self.__next_f.push([1,"7:[[\"$\",\"meta\",\"0\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}],[\"$\",\"meta\",\"1\",{\"charSet\":\"utf-8\"}],[\"$\",\"title\",\"2\",{\"children\":\"Dos Aguas Consulting | Deutschland – Mexiko\"}],[\"$\",\"meta\",\"3\",{\"name\":\"description\",\"content\":\"Steuerberatung, IT-Recht, Odoo und digitale Transformation. Ihr Partner für grenzüberschreitendes Geschäft.\"}]]\n3:null\n"])</script></body></html>

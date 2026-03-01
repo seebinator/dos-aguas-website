@@ -1,0 +1,1334 @@
+<!DOCTYPE html><html lang="de"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="/_next/static/css/717463fb5ac3cf8b.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-c81f7fd28659d64f.js"/><script src="/_next/static/chunks/fd9d1056-3eee857bde8f3b06.js" async=""></script><script src="/_next/static/chunks/117-98df152a535088f9.js" async=""></script><script src="/_next/static/chunks/main-app-4c487b5bc83eea7b.js" async=""></script><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/><title>Dos Aguas Consulting | Deutschland – Mexiko</title><meta name="description" content="Steuerberatung, IT-Recht, Odoo und digitale Transformation. Ihr Partner für grenzüberschreitendes Geschäft."/><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&amp;family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&amp;family=Qwitcher+Grypen:wght@400;700&amp;display=swap" rel="stylesheet"/><script src="/_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""></script></head><body><div style="width:100%;min-height:100vh;margin:0;padding:0"><!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intranet-Konzept | Dos Aguas Consulting</title>
+    <style>
+        :root {
+            --primary: #1B998B;
+            --primary-dark: #158a7d;
+            --primary-light: #e8f5f4;
+            --text: #2D3047;
+            --text-light: #5a5d75;
+            --background: #F7F7F7;
+            --white: #FFFFFF;
+            --border: #E5E5E5;
+            --success: #22c55e;
+            --warning: #f59e0b;
+            --info: #3b82f6;
+            --shadow: 0 2px 8px rgba(45, 48, 71, 0.08);
+            --shadow-lg: 0 8px 24px rgba(45, 48, 71, 0.12);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--background);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* Header */
+        .header {
+            background: var(--white);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 700;
+            font-size: 1.25rem;
+        }
+
+        .logo-text {
+            font-weight: 600;
+            font-size: 1.125rem;
+            color: var(--text);
+        }
+
+        .logo-text span {
+            color: var(--primary);
+        }
+
+        .doc-title {
+            font-size: 0.875rem;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        /* Navigation */
+        .nav {
+            background: var(--white);
+            border-bottom: 1px solid var(--border);
+            overflow-x: auto;
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .nav-item {
+            padding: 1rem 1.25rem;
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.875rem;
+            border-bottom: 2px solid transparent;
+            white-space: nowrap;
+            transition: all 0.2s;
+        }
+
+        .nav-item:hover {
+            color: var(--primary);
+        }
+
+        .nav-item.active {
+            color: var(--primary);
+            border-bottom-color: var(--primary);
+        }
+
+        /* Main Content */
+        .main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border-radius: 16px;
+            padding: 3rem;
+            color: var(--white);
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.125rem;
+            opacity: 0.9;
+            max-width: 700px;
+        }
+
+        .hero-meta {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .hero-meta-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .hero-meta-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            opacity: 0.7;
+        }
+
+        .hero-meta-value {
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        /* Cards */
+        .card {
+            background: var(--white);
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+        }
+
+        .card-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .card-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .card-icon.phase-1 { background: #fef3c7; }
+        .card-icon.phase-2 { background: #dbeafe; }
+        .card-icon.phase-3 { background: #d1fae5; }
+        .card-icon.phase-4 { background: #fce7f3; }
+        .card-icon.phase-5 { background: #e0e7ff; }
+
+        .card-title {
+            flex: 1;
+        }
+
+        .card-title h2 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 0.25rem;
+        }
+
+        .card-title p {
+            font-size: 0.875rem;
+            color: var(--text-light);
+        }
+
+        .card-badge {
+            padding: 0.375rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .badge-planning { background: #fef3c7; color: #92400e; }
+        .badge-setup { background: #dbeafe; color: #1e40af; }
+        .badge-dev { background: #d1fae5; color: #065f46; }
+        .badge-content { background: #fce7f3; color: #9d174d; }
+        .badge-launch { background: #e0e7ff; color: #3730a3; }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        /* Sections */
+        .section {
+            margin-bottom: 2rem;
+        }
+
+        .section:last-child {
+            margin-bottom: 0;
+        }
+
+        .section h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section h3::before {
+            content: '';
+            width: 4px;
+            height: 1rem;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+
+        /* Checklist */
+        .checklist {
+            list-style: none;
+        }
+
+        .checklist li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+
+        .checklist li:last-child {
+            border-bottom: none;
+        }
+
+        .checklist-checkbox {
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--border);
+            border-radius: 4px;
+            flex-shrink: 0;
+            margin-top: 2px;
+            cursor: pointer;
+        }
+
+        .checklist-content {
+            flex: 1;
+        }
+
+        .checklist-title {
+            font-weight: 500;
+            color: var(--text);
+        }
+
+        .checklist-desc {
+            font-size: 0.875rem;
+            color: var(--text-light);
+            margin-top: 0.25rem;
+        }
+
+        .checklist-tag {
+            font-size: 0.75rem;
+            padding: 0.125rem 0.5rem;
+            border-radius: 4px;
+            margin-left: 0.5rem;
+        }
+
+        .tag-technical { background: #dbeafe; color: #1e40af; }
+        .tag-content { background: #fce7f3; color: #9d174d; }
+        .tag-design { background: #f3e8ff; color: #7c3aed; }
+        .tag-agent { background: #d1fae5; color: #065f46; }
+
+        /* Info Boxes */
+        .info-box {
+            background: var(--primary-light);
+            border-left: 4px solid var(--primary);
+            padding: 1rem 1.25rem;
+            border-radius: 0 8px 8px 0;
+            margin: 1rem 0;
+        }
+
+        .info-box.warning {
+            background: #fef3c7;
+            border-left-color: var(--warning);
+        }
+
+        .info-box.info {
+            background: #dbeafe;
+            border-left-color: var(--info);
+        }
+
+        .info-box-title {
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .info-box p {
+            font-size: 0.875rem;
+            color: var(--text-light);
+        }
+
+        /* Tech Stack Table */
+        .tech-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+
+        .tech-table th,
+        .tech-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .tech-table th {
+            font-weight: 600;
+            color: var(--text);
+            background: var(--background);
+            font-size: 0.875rem;
+        }
+
+        .tech-table td {
+            font-size: 0.875rem;
+            color: var(--text-light);
+        }
+
+        .tech-table tr:hover td {
+            background: var(--background);
+        }
+
+        .tech-recommend {
+            color: var(--success);
+            font-weight: 600;
+        }
+
+        /* Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        /* Feature Cards */
+        .feature-card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+        }
+
+        .feature-card h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--text);
+        }
+
+        .feature-card p {
+            font-size: 0.875rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        .feature-list {
+            list-style: none;
+        }
+
+        .feature-list li {
+            font-size: 0.875rem;
+            color: var(--text-light);
+            padding: 0.375rem 0;
+            padding-left: 1.25rem;
+            position: relative;
+        }
+
+        .feature-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--border);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-bottom: 2rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2rem;
+            top: 0.25rem;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--primary);
+            border: 3px solid var(--white);
+            box-shadow: 0 0 0 2px var(--primary);
+        }
+
+        .timeline-item.completed::before {
+            background: var(--success);
+            box-shadow: 0 0 0 2px var(--success);
+        }
+
+        .timeline-date {
+            font-size: 0.75rem;
+            color: var(--text-light);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-title {
+            font-weight: 600;
+            color: var(--text);
+            margin: 0.25rem 0;
+        }
+
+        .timeline-desc {
+            font-size: 0.875rem;
+            color: var(--text-light);
+        }
+
+        /* Workflow */
+        .workflow {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            padding: 1.5rem;
+            background: var(--background);
+            border-radius: 12px;
+        }
+
+        .workflow-step {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1rem;
+            background: var(--white);
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+
+        .workflow-step-num {
+            width: 28px;
+            height: 28px;
+            background: var(--primary);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 0.875rem;
+        }
+
+        .workflow-step-text {
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .workflow-arrow {
+            color: var(--primary);
+            font-size: 1.25rem;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            color: var(--text-light);
+            font-size: 0.875rem;
+            border-top: 1px solid var(--border);
+            margin-top: 3rem;
+        }
+
+        .footer-logo {
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Print Styles */
+        @media print {
+            .header, .nav, .footer {
+                display: none;
+            }
+            
+            .main {
+                padding: 0;
+            }
+            
+            .hero {
+                background: var(--primary) !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            .card {
+                break-inside: avoid;
+                box-shadow: none;
+                border: 1px solid var(--border);
+            }
+            
+            .checklist-checkbox {
+                border: 2px solid #999;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                padding: 1rem;
+            }
+            
+            .nav-content {
+                padding: 0 1rem;
+            }
+            
+            .main {
+                padding: 1rem;
+            }
+            
+            .hero {
+                padding: 2rem;
+            }
+            
+            .hero h1 {
+                font-size: 1.75rem;
+            }
+            
+            .hero-meta {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .workflow {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .workflow-arrow {
+                transform: rotate(90deg);
+                text-align: center;
+            }
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Section Anchors */
+        .section-anchor {
+            scroll-margin-top: 120px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <div class="logo-icon">DA</div>
+                <div class="logo-text">Dos <span>Aguas</span></div>
+            </div>
+            <div class="doc-title">Intranet-Konzept & Implementierungsplan</div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-content">
+            <a href="#uebersicht" class="nav-item active">Übersicht</a>
+            <a href="#phase1" class="nav-item">Phase 1</a>
+            <a href="#phase2" class="nav-item">Phase 2</a>
+            <a href="#phase3" class="nav-item">Phase 3</a>
+            <a href="#phase4" class="nav-item">Phase 4</a>
+            <a href="#phase5" class="nav-item">Phase 5</a>
+            <a href="#workflow" class="nav-item">Agenten-Workflow</a>
+            <a href="#technik" class="nav-item">Technik</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Hero -->
+        <section id="uebersicht" class="section-anchor">
+            <div class="hero">
+                <h1>Agenten-gesteuertes Intranet</h1>
+                <p>Eine moderne Webapp für Dos Aguas Consulting – entwickelt mit Next.js, deployed auf Vercel, gepflegt von 8 spezialisierten Agenten. Strukturierte Content-Verwaltung für Blog, Newsletter, Dokumente und mehr.</p>
+                <div class="hero-meta">
+                    <div class="hero-meta-item">
+                        <span class="hero-meta-label">Zeitraum</span>
+                        <span class="hero-meta-value">4–6 Wochen</span>
+                    </div>
+                    <div class="hero-meta-item">
+                        <span class="hero-meta-label">Team</span>
+                        <span class="hero-meta-value">8 Agenten</span>
+                    </div>
+                    <div class="hero-meta-item">
+                        <span class="hero-meta-label">Platform</span>
+                        <span class="hero-meta-value">Vercel + Custom Domain</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vision -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">
+                    <h2>🎯 Projektvision</h2>
+                    <p>Was wir aufbauen und warum</p>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="grid">
+                    <div class="feature-card">
+                        <h4>Zentrale Content-Hub</h4>
+                        <p>Alle Agenten-Inhalte an einem Ort: Blogartikel, Newsletter, Kundenrezensionen, Umfrageergebnisse und interne Dokumente.</p>
+                        <ul class="feature-list">
+                            <li>Strukturierte Bereiche pro Agent</li>
+                            <li>Einheitliches Corporate Design</li>
+                            <li>Durchsuchbar und archivierbar</li>
+                        </ul>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Agenten-Autonomie</h4>
+                        <p>Jeder Agent kann eigenständig Inhalte erstellen, bearbeiten und veröffentlichen – ohne technische Kenntnisse.</p>
+                        <ul class="feature-list">
+                            <li>Git-basiertes CMS</li>
+                            <li>Automatisierte Workflows</li>
+                            <li>Review-Prozess optional</li>
+                        </ul>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Professionelle Präsenz</h4>
+                        <p>Modernes Design, schnelle Ladezeiten, SEO-optimiert – repräsentativ für Dos Aguas Consulting.</p>
+                        <ul class="feature-list">
+                            <li>Responsive Design</li>
+                            <li>CI-konforme Gestaltung</li>
+                            <li>Custom Domain</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Phase 1 -->
+        <section id="phase1" class="section-anchor">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon phase-1">📋</div>
+                    <div class="card-title">
+                        <h2>Phase 1: Planung & Setup</h2>
+                        <p>Grundlagen schaffen • Geschätzte Dauer: 3–5 Tage</p>
+                    </div>
+                    <span class="card-badge badge-planning">Planung</span>
+                </div>
+                <div class="card-body">
+                    <div class="section">
+                        <h3>Vorbereitende Checkliste</h3>
+                        <ul class="checklist">
+                            <li>
+                                <div class="checklist-checkbox"></div>
+                                <div class="checklist-content">
+                                    <span class="checklist-title">Domain festlegen<span class="checklist-tag tag-technical">Technisch</span></span>
+                                    <p class="checklist-desc">Entscheidung: Subdomain (intranet.dos-aguas.com) oder separat? DNS-Zugang bei Strato prüfen.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="checklist-checkbox"></div>
+                                <div class="checklist-content">
+                                    <span class="checklist-title">GitHub Repository anlegen<span class="checklist-tag tag-technical">Technisch</span></span>
+                                    <p class="checklist-desc">Neues Repo unter github.com/dos-aguas oder bestehendes nutzen. Branch-Protection einrichten.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="checklist-checkbox"></div>
+                                <div class="checklist-content">
+                                    <span class="checklist-title">Vercel Account & Projekt<span class="checklist-tag tag-technical">Technisch</span></span>
+                                    <p class="checklist-desc">Vercel Pro-Account für Team-Features. GitHub-Integration aktivieren, Preview-Deployments testen.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="checklist-checkbox"></div>
+                                <div class="checklist-content">
+                                    <span class="checklist-title">Content-Struktur definieren<span class="checklist-tag tag-content">Content</span></span>
+                                    <p class="checklist-desc">Welche Bereiche? Blog, Newsletter, Docs, Reviews, Umfragen. Taxonomie (Tags, Kategorien) festlegen.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="checklist-checkbox"></div>
+                                <div class="checklist-content">
+                                    <span class="checklist-title">Agenten-Berechtigungen klären<span class="checklist-tag tag-agent">Agenten</span></span>
+                                    <p class="checklist-desc">Wer darf was? Direkt publizieren oder Review nötig? Authentifizierung für Intranet-Bereich?</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="info-box">
+                        <div class="info-box-title">💡 Tipp von Luis</div>
+                        <p>Starte mit einer einfachen Content-Struktur. Du kannst später immer erweitern. Lieber 3 gut gepflegte Bereiche als 10 leere.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Phase 2 -->
+        <section id="phase2" class="section-anchor">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon phase-2">⚙️</div>
+                    <div class="card-title">
+                        <h2>Phase 2: Technische Basis</h2>
+                        <p>Next.js + CMS Setup • Geschätzte Dauer: 5–7 Tage</p>
+                    </div>
+                    <span class="card-badge badge-setup">Setup</span>
+                </div>
+                <div class="card-body">
+                    <div class="section">
+                        <h3>Technologie-Stack</h3>
+                        <table class="tech-table">
+                            <thead>
+                                <tr>
+                                    <th>Komponente</th>
+                                    <th>Empfohlene Lösung</th>
+                                    <th>Alternative</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Framework</strong></td>
+                                    <td class="tech-recommend">Next.js 14 (App Router)</td>
+                                    <td>Astro, Nuxt</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Styling</strong></td>
+                                    <td class="tech-recommend">Tailwind CSS</td>
+                                    <td>CSS Modules</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Content</strong></td>
+                                    <td class="tech-recommend">Contentlayer + MDX</td>
+                                    <td>Sanity, Strapi</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>CMS-UI</strong></td>
+                                    <td class="tech-recommend">Decap CMS (Git-basiert)</td>
+                                    <td>TinaCMS</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Auth</strong></td>
+                                    <td class="tech-recommend">NextAuth.js</td>
+                                    <td>Clerk, Auth0</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Hosting</strong></td>
+                                    <td class="tech-recommend">Vercel</td>
+                                    <td>Netlify</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="section">
+                        <h3>Setup-Checkliste</h3>
+                        <ul class="checklist">
+                            <li>
+                                <div class="checklist-checkbox"></div>
+                                <div class="checklist-content">
+                                    <span class="checklist-title">Next.js Projekt initialisieren<span class="checklist-tag tag-technical">Technisch</span></span>
+                                    <p class="checklist-desc">`npx create-next-app@latest` mit TypeScript, Tailwind, App Router. ESLint + Prettier konfigurieren.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="checklist-checkbox"></div>
+                                <div class="checklist-content">
+                                    <span class="checklist-title">Contentlayer installieren<span class="checklist-tag tag-technical">Technisch</span></span>
+                                    <p class="checklist-desc">Contentlayer für type-safe MDX-Content. Content-Schemas definieren (BlogPost, Newsletter, etc.).</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="checklist-checkbox"></div>
+                                <div class="checklist-content">
+                                    <span class="checklist-title">Decap CMS einrichten<span class="checklist-tag tag-technical">Technisch</span></span>
+                                    <p class="checklist-desc">CMS unter `/admin` erreichbar. GitHub-Backend konfigurieren. Editorial Workflow aktivieren.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="checklist-checkbox"></div>
+                                <div class="checklist-content">
+                                    <span class="checklist-title">Dos Aguas CI implementieren<span class="checklist-tag tag-design">Design</span></span>
+                                    <p class="checklist-desc">Tailwind-Config mit Corporate Colors. Typography-Plugin für Inter/Merriweather. Button- + Card-Komponenten.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="checklist-checkbox"></div>
+                                <div class="checklist-content">
+                                    <span class="checklist-title">Basis-Layout & Navigation<span class="checklist-tag tag-design">Design</span></span>
+                                    <p class="checklist-desc">Header, Footer, Sidebar für Agenten-Bereiche. Mobile Navigation. Breadcrumbs.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="info-box warning">
+                        <div class="info-box-title">⚠️ Wichtig</div>
+                        <p>Decap CMS benötigt GitHub-Authentifizierung. Entscheide früh: Soll das Intranet öffentlich sichtbar sein (nur CMS geschützt) oder komplett passwortgeschützt?</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Phase 3 -->
+        <section id="phase3" class="section-anchor">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon phase-3">💻</div>
+                    <div class="card-title">
+                        <h2>Phase 3: Entwicklung & Features</h2>
+                        <p>Content-Bereiche & Funktionen • Geschätzte Dauer: 10–14 Tage</p>
+                    </div>
+                    <span class="card-badge badge-dev">Entwicklung</span>
+                </div>
+                <div class="card-body">
+                    <div class="section">
+                        <h3>Content-Bereiche implementieren</h3>
+                        <ul class="checklist">
+                            <li>
+                                <div class="checklist-checkbox"></div>
+                                <div class="checklist-content">
+                                    <span class="checklist-title">Blog / Artikel<span class="checklist-tag tag-content">Content</span></span>
+                                    <p class="checklist-desc">Listenansicht, Einzelansicht, Autoren-Profile, Tags, Kategorien, Related Posts. Suchfunktion.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="checklist-checkbox"></div>
+                                <div class="checklist-content">
+                                    <span class="checklist-title">Newsletter-Archiv<span class="checklist-tag tag-content">Content</span></span>
+                                    <p class="checklist-desc">Archiv nach Monaten/Jahren. Vorschau-Funktion. Download als PDF (optional).</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="checklist-checkbox"></div>
+                                <div class="checklist-content">
+                                    <span class="checklist-title">Kundenrezensionen<span class="checklist-tag tag-content">Content</span></span>
+                                    <p class="checklist-desc">Zitate mit Kunden-Logos, Sterne-Bewertungen, Branchen-Filter. Carousel oder Grid.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="checklist-checkbox"></div>
+                                <div class="checklist-content">
+                                    <span class="checklist-title">Umfrage-Ergebnisse<span class="checklist-tag tag-content">Content</span></span>
+                                    <p class="checklist-desc">Datenvisualisierung (Charts), Download-Rohdaten, Methoden-Beschreibung.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="checklist-checkbox"></div>
+                                <div class="checklist-content">
+                                    <span class="checklist-title">Interne Dokumente<span class="checklist-tag tag-agent">Agenten</span></span>
+                                    <p class="checklist-desc">Passwortgeschützter Bereich. Dokumenten-Upload, Versionierung, Kategorien.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="section">
+                        <h3>Agenten-Profile & Dashboard</h3>
+                        <ul class="checklist">
+                            <li>
+                                <div class="checklist-checkbox"></div>
+                                <div class="checklist-content">
+                                    <span class="checklist-title">Agenten-Übersichtsseite<span class="checklist-tag tag-agent">Agenten</span></span>
+                                    <p class="checklist-desc">Alle 8 Agenten mit Foto, Bio, Expertise, veröffentlichten Inhalten. Filter nach Bereich.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="checklist-checkbox"></div>
+                                <div class="checklist-content">
+                                    <span class="checklist-title">Persönliche Agenten-Seiten<span class="checklist-tag tag-agent">Agenten</span></span>
+                                    <p class="checklist-desc">Jeder Agent hat eigene URL (/agent/juan, /agent/luis) mit allen seinen Beiträgen.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="checklist-checkbox"></div>
+                                <div class="checklist-content">
+                                    <span class="checklist-title">Quick-Stats Dashboard<span class="checklist-tag tag-agent">Agenten</span></span>
+                                    <p class="checklist-desc">Anzahl Artikel, letzte Aktivität, beliebteste Inhalte. Optional: View-Counts.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Phase 4 -->
+        <section id="phase4" class="section-anchor">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon phase-4">✏️</div>
+                    <div class="card-title">
+                        <h2>Phase 4: Content & Agenten-Onboarding</h2>
+                        <p>Erste Inhalte & Schulung • Geschätzte Dauer: 5–7 Tage</p>
+                    </div>
+                    <span class="card-badge badge-content">Content</span>
+                </div>
+                <div class="card-body">
+                    <div class="section">
+                        <h3>Content-Migration & Erstellung</h3>
+                        <ul class="checklist">
+                            <li>
+                                <div class="checklist-checkbox"></div>
+                                <div class="checklist-content">
+                                    <span class="checklist-title">Bestehende Inhalte migrieren<span class="checklist-tag tag-content">Content</span></span>
+                                    <p class="checklist-desc">Vorhandene Blogposts, Dokumente aus Dropbox, alte Newsletter ins neue Format übertragen.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="checklist-checkbox"></div>
+                                <div class="checklist-content">
+                                    <span class="checklist-title">Seed-Content pro Agent<span class="checklist-tag tag-agent">Agenten</span></span>
+                                    <p class="checklist-desc">Jeder Agent erstellt 2–3 Beispiel-Inhalte in seinem Bereich. Qualitäts-Check.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="checklist-checkbox"></div>
+                                <div class="checklist-content">
+                                    <span class="checklist-title">Bilder & Assets organisieren<span class="checklist-tag tag-design">Design</span></span>
+                                    <p class="checklist-desc">Agenten-Avatare erstellen, Platzhalter-Bilder definieren, Bildoptimierung-Workflow.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="section">
+                        <h3>Agenten-Schulung</h3>
+                        <ul class="checklist">
+                            <li>
+                                <div class="checklist-checkbox"></div>
+                                <div class="checklist-content">
+                                    <span class="checklist-title">CMS-Workshop<span class="checklist-tag tag-agent">Agenten</span></span>
+                                    <p class="checklist-desc">30-minütige Session pro Agent: Login, neuer Post, Bilder, Preview, Publish.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="checklist-checkbox"></div>
+                                <div class="checklist-content">
+                                    <span class="checklist-title">Styleguide & Templates<span class="checklist-tag tag-content">Content</span></span>
+                                    <p class="checklist-desc">Markdown-Templates für verschiedene Content-Typen. Schreibstil-Richtlinien.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="checklist-checkbox"></div>
+                                <div class="checklist-content">
+                                    <span class="checklist-title">Support-Kanal einrichten<span class="checklist-tag tag-agent">Agenten</span></span>
+                                    <p class="checklist-desc">Wo fragen Agenten nach? Telegram-Gruppe oder dedizierter Channel für CMS-Hilfe.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="info-box info">
+                        <div class="info-box-title">📚 Content-Styleguide</div>
+                        <p>Erstelle ein kurzes Dokument mit: Dos Aguas Tone of Voice (professionell aber zugänglich), Formatierungsregeln (Überschriften, Listen, Links), Bild-Richtlinien (Quellen, Alt-Texte).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Phase 5 -->
+        <section id="phase5" class="section-anchor">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon phase-5">🚀</div>
+                    <div class="card-title">
+                        <h2>Phase 5: Launch & Optimierung</h2>
+                        <p>Go-Live & Continuous Improvement • Geschätzte Dauer: 3–5 Tage</p>
+                    </div>
+                    <span class="card-badge badge-launch">Launch</span>
+                </div>
+                <div class="card-body">
+                    <div class="section">
+                        <h3>Pre-Launch Checkliste</h3>
+                        <ul class="checklist">
+                            <li>
+                                <div class="checklist-checkbox"></div>
+                                <div class="checklist-content">
+                                    <span class="checklist-title">Custom Domain verbinden<span class="checklist-tag tag-technical">Technisch</span></span>
+                                    <p class="checklist-desc">DNS-Einträge bei Strato setzen. SSL-Zertifikat aktivieren. www-Redirect konfigurieren.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="checklist-checkbox"></div>
+                                <div class="checklist-content">
+                                    <span class="checklist-title">SEO & Metadaten<span class="checklist-tag tag-technical">Technisch</span></span>
+                                    <p class="checklist-desc">Meta-Titles, Descriptions, Open Graph, Favicon, robots.txt, Sitemap.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="checklist-checkbox"></div>
+                                <div class="checklist-content">
+                                    <span class="checklist-title">Performance-Check<span class="checklist-tag tag-technical">Technisch</span></span>
+                                    <p class="checklist-desc">Lighthouse-Score >90. Core Web Vitals prüfen. Bilder optimiert. Lazy Loading aktiv.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="checklist-checkbox"></div>
+                                <div class="checklist-content">
+                                    <span class="checklist-title">Analytics einrichten<span class="checklist-tag tag-technical">Technisch</span></span>
+                                    <p class="checklist-desc">Plausible oder Google Analytics 4 (DSGVO-konform). Privacy-Policy aktualisieren.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="section">
+                        <h3>Post-Launch</h3>
+                        <ul class="checklist">
+                            <li>
+                                <div class="checklist-checkbox"></div>
+                                <div class="checklist-content">
+                                    <span class="checklist-title">Monitoring aktivieren<span class="checklist-tag tag-technical">Technisch</span></span>
+                                    <p class="checklist-desc">Vercel Analytics, Uptime-Monitoring. Fehler-Tracking (Sentry optional).</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="checklist-checkbox"></div>
+                                <div class="checklist-content">
+                                    <span class="checklist-title">Feedback-Runde mit Agenten<span class="checklist-tag tag-agent">Agenten</span></span>
+                                    <p class="checklist-desc">Nach 1 Woche: Was klappt? Was ist umständlich? Schnelle Iterationen.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="checklist-checkbox"></div>
+                                <div class="checklist-content">
+                                    <span class="checklist-title">Content-Kalender etablieren<span class="checklist-tag tag-content">Content</span></span>
+                                    <p class="checklist-desc">Wer postet wann? Regelmäßige Reviews. Quartalsweise Content-Planung.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Agent Workflow -->
+        <section id="workflow" class="section-anchor">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">
+                        <h2>🤖 Agenten-Content-Workflow</h2>
+                        <p>Wie Agenten Inhalte erstellen und veröffentlichen</p>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="section">
+                        <h3>Workflow-Optionen</h3>
+                        
+                        <div style="margin-bottom: 2rem;">
+                            <h4 style="font-size: 0.875rem; color: var(--text-light); margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.05em;">Option A: Direkt via Git (empfohlen für Agents)</h4>
+                            <div class="workflow">
+                                <div class="workflow-step">
+                                    <div class="workflow-step-num">1</div>
+                                    <span class="workflow-step-text">Agent erstellt Content</span>
+                                </div>
+                                <span class="workflow-arrow">→</span>
+                                <div class="workflow-step">
+                                    <div class="workflow-step-num">2</div>
+                                    <span class="workflow-step-text">Markdown-Datei im Repo</span>
+                                </div>
+                                <span class="workflow-arrow">→</span>
+                                <div class="workflow-step">
+                                    <div class="workflow-step-num">3</div>
+                                    <span class="workflow-step-text">Auto-Deploy auf Vercel</span>
+                                </div>
+                                <span class="workflow-arrow">→</span>
+                                <div class="workflow-step">
+                                    <div class="workflow-step-num">4</div>
+                                    <span class="workflow-step-text">Live in &lt;2 Min</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h4 style="font-size: 0.875rem; color: var(--text-light); margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.05em;">Option B: Via Decap CMS (empfohlen für Menschen)</h4>
+                            <div class="workflow">
+                                <div class="workflow-step">
+                                    <div class="workflow-step-num">1</div>
+                                    <span class="workflow-step-text">Login im CMS (/admin)</span>
+                                </div>
+                                <span class="workflow-arrow">→</span>
+                                <div class="workflow-step">
+                                    <div class="workflow-step-num">2</div>
+                                    <span class="workflow-step-text">Visueller Editor</span>
+                                </div>
+                                <span class="workflow-arrow">→</span>
+                                <div class="workflow-step">
+                                    <div class="workflow-step-num">3</div>
+                                    <span class="workflow-step-text">Review & Publish</span>
+                                </div>
+                                <span class="workflow-arrow">→</span>
+                                <div class="workflow-step">
+                                    <div class="workflow-step-num">4</div>
+                                    <span class="workflow-step-text">Git Commit + Deploy</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <h3>Empfohlene Hybrid-Lösung</h3>
+                        <div class="grid">
+                            <div class="feature-card">
+                                <h4>🤖 Für Agents (Juan, Luis, etc.)</h4>
+                                <p>Direkte Datei-Erstellung im Git-Repo via OpenClaw. Schnell, automatisiert, kein GUI nötig.</p>
+                                <ul class="feature-list">
+                                    <li>Markdown-Dateien generieren</li>
+                                    <li>Frontmatter automatisch füllen</li>
+                                    <li>Bilder in /public kopieren</li>
+                                    <li>Commit + Push via API</li>
+                                </ul>
+                            </div>
+                            <div class="feature-card">
+                                <h4>👤 Für Menschen (Christian)</h4>
+                                <p>Decap CMS Interface für manuelle Bearbeitungen, Review, schnelle Korrekturen.</p>
+                                <ul class="feature-list">
+                                    <li>WYSIWYG-Editor</li>
+                                    <li>Bild-Upload per Drag & Drop</li>
+                                    <li>Preview vor Publish</li>
+                                    <li>Editorial Workflow</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-box">
+                        <div class="info-box-title">🔧 Technische Umsetzung für Agents</div>
+                        <p>OpenClaw kann direkt auf das GitHub-Repository zugreifen: Neue Markdown-Dateien erstellen, Bilder hochladen, Commits pushen. Vercel deployed automatisch. Kein manueller Schritt nötig.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technische Details -->
+        <section id="technik" class="section-anchor">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">
+                        <h2>🔧 Technische Details</h2>
+                        <p>Architektur, Kosten & Sicherheit</p>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="grid">
+                        <div class="feature-card">
+                            <h4>Architektur-Übersicht</h4>
+                            <p>Moderne JAMstack-Architektur für maximale Performance und minimale Wartung.</p>
+                            <ul class="feature-list">
+                                <li>Static Site Generation (SSG)</li>
+                                <li>CDN-gestützte Auslieferung</li>
+                                <li>Kein Server-Management</li>
+                                <li>Automatische Backups via Git</li>
+                            </ul>
+                        </div>
+                        <div class="feature-card">
+                            <h4>Kostenübersicht (geschätzt)</h4>
+                            <p>Monatliche Kosten für den Betrieb des Intranets.</p>
+                            <ul class="feature-list">
+                                <li>Vercel Pro: $20/Monat</li>
+                                <li>GitHub: Kostenlos (Public) oder $4 (Private)</li>
+                                <li>Domain: ~€10/Jahr</li>
+                                <li>Analytics: Plausible $9/Monat (optional)</li>
+                            </ul>
+                        </div>
+                        <div class="feature-card">
+                            <h4>Sicherheit & DSGVO</h4>
+                            <p>Intranet-spezifische Sicherheitsmaßnahmen.</p>
+                            <ul class="feature-list">
+                                <li>Auth für interne Bereiche</li>
+                                <li>Keine externen Tracker (optional)</li>
+                                <li>SSL/TLS enforced</li>
+                                <li>Keine sensiblen Daten im Repo</li>
+                            </ul>
+                        </div>
+                        <div class="feature-card">
+                            <h4>Backup & Wiederherstellung</h4>
+                            <p>Robuste Strategie gegen Datenverlust.</p>
+                            <ul class="feature-list">
+                                <li>Git = automatisches Backup</li>
+                                <li>Branch-basierte Versionierung</li>
+                                <li>Rollbacks in Sekunden</li>
+                                <li>Content-Export als JSON/Markdown</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Zusammenfassung -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">
+                    <h2>📊 Projekt-Zusammenfassung</h2>
+                    <p>Nächste Schritte & Timeline</p>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="timeline">
+                    <div class="timeline-item completed">
+                        <div class="timeline-date">Jetzt</div>
+                        <div class="timeline-title">Entscheidungen treffen</div>
+                        <div class="timeline-desc">Domain, Auth-Strategie, Content-Struktur festlegen. Budget freigeben.</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">Woche 1–2</div>
+                        <div class="timeline-title">Setup & Entwicklung</div>
+                        <div class="timeline-desc">Repository, Vercel, CMS-Setup. Basis-Layout und erste Komponenten.</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">Woche 3–4</div>
+                        <div class="timeline-title">Content-Bereiche</div>
+                        <div class="timeline-desc">Blog, Newsletter, Agenten-Profile. Design-Feinschliff.</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">Woche 5</div>
+                        <div class="timeline-title">Content & Onboarding</div>
+                        <div class="timeline-desc">Migration bestehender Inhalte. Agenten-Schulung. Testphase.</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">Woche 6</div>
+                        <div class="timeline-title">Launch</div>
+                        <div class="timeline-desc">Domain-Connect, SEO, Analytics. Go-Live und Feedback-Runde.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-logo">Dos Aguas Consulting</div>
+        <p>Intranet-Konzept • Erstellt von Juan & Luis • Februar 2026</p>
+    </footer>
+</body>
+</html>
+</div><script src="/_next/static/chunks/webpack-c81f7fd28659d64f.js" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0]);self.__next_f.push([2,null])</script><script>self.__next_f.push([1,"1:HL[\"/_next/static/css/717463fb5ac3cf8b.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"2:I[2846,[],\"\"]\n5:I[4707,[],\"\"]\n6:I[6423,[],\"\"]\n8:I[1060,[],\"\"]\n4:Tdaf5,"])</script><script>self.__next_f.push([1,"\u003c!DOCTYPE html\u003e\n\u003chtml lang=\"de\"\u003e\n\u003chead\u003e\n    \u003cmeta charset=\"UTF-8\"\u003e\n    \u003cmeta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"\u003e\n    \u003ctitle\u003eIntranet-Konzept | Dos Aguas Consulting\u003c/title\u003e\n    \u003cstyle\u003e\n        :root {\n            --primary: #1B998B;\n            --primary-dark: #158a7d;\n            --primary-light: #e8f5f4;\n            --text: #2D3047;\n            --text-light: #5a5d75;\n            --background: #F7F7F7;\n            --white: #FFFFFF;\n            --border: #E5E5E5;\n            --success: #22c55e;\n            --warning: #f59e0b;\n            --info: #3b82f6;\n            --shadow: 0 2px 8px rgba(45, 48, 71, 0.08);\n            --shadow-lg: 0 8px 24px rgba(45, 48, 71, 0.12);\n        }\n\n        * {\n            margin: 0;\n            padding: 0;\n            box-sizing: border-box;\n        }\n\n        body {\n            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;\n            background: var(--background);\n            color: var(--text);\n            line-height: 1.6;\n        }\n\n        /* Header */\n        .header {\n            background: var(--white);\n            border-bottom: 1px solid var(--border);\n            position: sticky;\n            top: 0;\n            z-index: 100;\n        }\n\n        .header-content {\n            max-width: 1200px;\n            margin: 0 auto;\n            padding: 1rem 2rem;\n            display: flex;\n            align-items: center;\n            justify-content: space-between;\n        }\n\n        .logo {\n            display: flex;\n            align-items: center;\n            gap: 0.75rem;\n        }\n\n        .logo-icon {\n            width: 40px;\n            height: 40px;\n            background: var(--primary);\n            border-radius: 8px;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            color: var(--white);\n            font-weight: 700;\n            font-size: 1.25rem;\n        }\n\n        .logo-text {\n            font-weight: 600;\n            font-size: 1.125rem;\n            color: var(--text);\n        }\n\n        .logo-text span {\n            color: var(--primary);\n        }\n\n        .doc-title {\n            font-size: 0.875rem;\n            color: var(--text-light);\n            font-weight: 500;\n        }\n\n        /* Navigation */\n        .nav {\n            background: var(--white);\n            border-bottom: 1px solid var(--border);\n            overflow-x: auto;\n        }\n\n        .nav-content {\n            max-width: 1200px;\n            margin: 0 auto;\n            padding: 0 2rem;\n            display: flex;\n            gap: 0.5rem;\n        }\n\n        .nav-item {\n            padding: 1rem 1.25rem;\n            color: var(--text-light);\n            text-decoration: none;\n            font-weight: 500;\n            font-size: 0.875rem;\n            border-bottom: 2px solid transparent;\n            white-space: nowrap;\n            transition: all 0.2s;\n        }\n\n        .nav-item:hover {\n            color: var(--primary);\n        }\n\n        .nav-item.active {\n            color: var(--primary);\n            border-bottom-color: var(--primary);\n        }\n\n        /* Main Content */\n        .main {\n            max-width: 1200px;\n            margin: 0 auto;\n            padding: 2rem;\n        }\n\n        /* Hero Section */\n        .hero {\n            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);\n            border-radius: 16px;\n            padding: 3rem;\n            color: var(--white);\n            margin-bottom: 2rem;\n        }\n\n        .hero h1 {\n            font-size: 2.5rem;\n            font-weight: 700;\n            margin-bottom: 1rem;\n            line-height: 1.2;\n        }\n\n        .hero p {\n            font-size: 1.125rem;\n            opacity: 0.9;\n            max-width: 700px;\n        }\n\n        .hero-meta {\n            display: flex;\n            gap: 2rem;\n            margin-top: 2rem;\n            padding-top: 1.5rem;\n            border-top: 1px solid rgba(255,255,255,0.2);\n        }\n\n        .hero-meta-item {\n            display: flex;\n            flex-direction: column;\n            gap: 0.25rem;\n        }\n\n        .hero-meta-label {\n            font-size: 0.75rem;\n            text-transform: uppercase;\n            letter-spacing: 0.05em;\n            opacity: 0.7;\n        }\n\n        .hero-meta-value {\n            font-weight: 600;\n            font-size: 1rem;\n        }\n\n        /* Cards */\n        .card {\n            background: var(--white);\n            border-radius: 12px;\n            box-shadow: var(--shadow);\n            margin-bottom: 1.5rem;\n            overflow: hidden;\n        }\n\n        .card-header {\n            padding: 1.5rem;\n            border-bottom: 1px solid var(--border);\n            display: flex;\n            align-items: center;\n            gap: 1rem;\n        }\n\n        .card-icon {\n            width: 48px;\n            height: 48px;\n            border-radius: 10px;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            font-size: 1.5rem;\n        }\n\n        .card-icon.phase-1 { background: #fef3c7; }\n        .card-icon.phase-2 { background: #dbeafe; }\n        .card-icon.phase-3 { background: #d1fae5; }\n        .card-icon.phase-4 { background: #fce7f3; }\n        .card-icon.phase-5 { background: #e0e7ff; }\n\n        .card-title {\n            flex: 1;\n        }\n\n        .card-title h2 {\n            font-size: 1.25rem;\n            font-weight: 600;\n            color: var(--text);\n            margin-bottom: 0.25rem;\n        }\n\n        .card-title p {\n            font-size: 0.875rem;\n            color: var(--text-light);\n        }\n\n        .card-badge {\n            padding: 0.375rem 0.75rem;\n            border-radius: 20px;\n            font-size: 0.75rem;\n            font-weight: 600;\n            text-transform: uppercase;\n        }\n\n        .badge-planning { background: #fef3c7; color: #92400e; }\n        .badge-setup { background: #dbeafe; color: #1e40af; }\n        .badge-dev { background: #d1fae5; color: #065f46; }\n        .badge-content { background: #fce7f3; color: #9d174d; }\n        .badge-launch { background: #e0e7ff; color: #3730a3; }\n\n        .card-body {\n            padding: 1.5rem;\n        }\n\n        /* Sections */\n        .section {\n            margin-bottom: 2rem;\n        }\n\n        .section:last-child {\n            margin-bottom: 0;\n        }\n\n        .section h3 {\n            font-size: 1rem;\n            font-weight: 600;\n            color: var(--text);\n            margin-bottom: 1rem;\n            display: flex;\n            align-items: center;\n            gap: 0.5rem;\n        }\n\n        .section h3::before {\n            content: '';\n            width: 4px;\n            height: 1rem;\n            background: var(--primary);\n            border-radius: 2px;\n        }\n\n        /* Checklist */\n        .checklist {\n            list-style: none;\n        }\n\n        .checklist li {\n            padding: 0.75rem 0;\n            border-bottom: 1px solid var(--border);\n            display: flex;\n            align-items: flex-start;\n            gap: 0.75rem;\n        }\n\n        .checklist li:last-child {\n            border-bottom: none;\n        }\n\n        .checklist-checkbox {\n            width: 20px;\n            height: 20px;\n            border: 2px solid var(--border);\n            border-radius: 4px;\n            flex-shrink: 0;\n            margin-top: 2px;\n            cursor: pointer;\n        }\n\n        .checklist-content {\n            flex: 1;\n        }\n\n        .checklist-title {\n            font-weight: 500;\n            color: var(--text);\n        }\n\n        .checklist-desc {\n            font-size: 0.875rem;\n            color: var(--text-light);\n            margin-top: 0.25rem;\n        }\n\n        .checklist-tag {\n            font-size: 0.75rem;\n            padding: 0.125rem 0.5rem;\n            border-radius: 4px;\n            margin-left: 0.5rem;\n        }\n\n        .tag-technical { background: #dbeafe; color: #1e40af; }\n        .tag-content { background: #fce7f3; color: #9d174d; }\n        .tag-design { background: #f3e8ff; color: #7c3aed; }\n        .tag-agent { background: #d1fae5; color: #065f46; }\n\n        /* Info Boxes */\n        .info-box {\n            background: var(--primary-light);\n            border-left: 4px solid var(--primary);\n            padding: 1rem 1.25rem;\n            border-radius: 0 8px 8px 0;\n            margin: 1rem 0;\n        }\n\n        .info-box.warning {\n            background: #fef3c7;\n            border-left-color: var(--warning);\n        }\n\n        .info-box.info {\n            background: #dbeafe;\n            border-left-color: var(--info);\n        }\n\n        .info-box-title {\n            font-weight: 600;\n            color: var(--text);\n            margin-bottom: 0.5rem;\n            display: flex;\n            align-items: center;\n            gap: 0.5rem;\n        }\n\n        .info-box p {\n            font-size: 0.875rem;\n            color: var(--text-light);\n        }\n\n        /* Tech Stack Table */\n        .tech-table {\n            width: 100%;\n            border-collapse: collapse;\n            margin: 1rem 0;\n        }\n\n        .tech-table th,\n        .tech-table td {\n            padding: 1rem;\n            text-align: left;\n            border-bottom: 1px solid var(--border);\n        }\n\n        .tech-table th {\n            font-weight: 600;\n            color: var(--text);\n            background: var(--background);\n            font-size: 0.875rem;\n        }\n\n        .tech-table td {\n            font-size: 0.875rem;\n            color: var(--text-light);\n        }\n\n        .tech-table tr:hover td {\n            background: var(--background);\n        }\n\n        .tech-recommend {\n            color: var(--success);\n            font-weight: 600;\n        }\n\n        /* Grid */\n        .grid {\n            display: grid;\n            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));\n            gap: 1.5rem;\n        }\n\n        /* Feature Cards */\n        .feature-card {\n            background: var(--white);\n            border-radius: 12px;\n            padding: 1.5rem;\n            box-shadow: var(--shadow);\n        }\n\n        .feature-card h4 {\n            font-size: 1rem;\n            font-weight: 600;\n            margin-bottom: 0.75rem;\n            color: var(--text);\n        }\n\n        .feature-card p {\n            font-size: 0.875rem;\n            color: var(--text-light);\n            margin-bottom: 1rem;\n        }\n\n        .feature-list {\n            list-style: none;\n        }\n\n        .feature-list li {\n            font-size: 0.875rem;\n            color: var(--text-light);\n            padding: 0.375rem 0;\n            padding-left: 1.25rem;\n            position: relative;\n        }\n\n        .feature-list li::before {\n            content: '✓';\n            position: absolute;\n            left: 0;\n            color: var(--primary);\n            font-weight: 600;\n        }\n\n        /* Timeline */\n        .timeline {\n            position: relative;\n            padding-left: 2rem;\n        }\n\n        .timeline::before {\n            content: '';\n            position: absolute;\n            left: 0;\n            top: 0;\n            bottom: 0;\n            width: 2px;\n            background: var(--border);\n        }\n\n        .timeline-item {\n            position: relative;\n            padding-bottom: 2rem;\n        }\n\n        .timeline-item::before {\n            content: '';\n            position: absolute;\n            left: -2rem;\n            top: 0.25rem;\n            width: 12px;\n            height: 12px;\n            border-radius: 50%;\n            background: var(--primary);\n            border: 3px solid var(--white);\n            box-shadow: 0 0 0 2px var(--primary);\n        }\n\n        .timeline-item.completed::before {\n            background: var(--success);\n            box-shadow: 0 0 0 2px var(--success);\n        }\n\n        .timeline-date {\n            font-size: 0.75rem;\n            color: var(--text-light);\n            font-weight: 500;\n            text-transform: uppercase;\n            letter-spacing: 0.05em;\n        }\n\n        .timeline-title {\n            font-weight: 600;\n            color: var(--text);\n            margin: 0.25rem 0;\n        }\n\n        .timeline-desc {\n            font-size: 0.875rem;\n            color: var(--text-light);\n        }\n\n        /* Workflow */\n        .workflow {\n            display: flex;\n            align-items: center;\n            gap: 1rem;\n            flex-wrap: wrap;\n            padding: 1.5rem;\n            background: var(--background);\n            border-radius: 12px;\n        }\n\n        .workflow-step {\n            display: flex;\n            align-items: center;\n            gap: 0.75rem;\n            padding: 0.75rem 1rem;\n            background: var(--white);\n            border-radius: 8px;\n            box-shadow: var(--shadow);\n        }\n\n        .workflow-step-num {\n            width: 28px;\n            height: 28px;\n            background: var(--primary);\n            color: var(--white);\n            border-radius: 50%;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            font-weight: 600;\n            font-size: 0.875rem;\n        }\n\n        .workflow-step-text {\n            font-size: 0.875rem;\n            font-weight: 500;\n        }\n\n        .workflow-arrow {\n            color: var(--primary);\n            font-size: 1.25rem;\n        }\n\n        /* Footer */\n        .footer {\n            text-align: center;\n            padding: 3rem 2rem;\n            color: var(--text-light);\n            font-size: 0.875rem;\n            border-top: 1px solid var(--border);\n            margin-top: 3rem;\n        }\n\n        .footer-logo {\n            font-weight: 600;\n            color: var(--text);\n            margin-bottom: 0.5rem;\n        }\n\n        /* Print Styles */\n        @media print {\n            .header, .nav, .footer {\n                display: none;\n            }\n            \n            .main {\n                padding: 0;\n            }\n            \n            .hero {\n                background: var(--primary) !important;\n                -webkit-print-color-adjust: exact;\n                print-color-adjust: exact;\n            }\n            \n            .card {\n                break-inside: avoid;\n                box-shadow: none;\n                border: 1px solid var(--border);\n            }\n            \n            .checklist-checkbox {\n                border: 2px solid #999;\n            }\n        }\n\n        /* Responsive */\n        @media (max-width: 768px) {\n            .header-content {\n                padding: 1rem;\n            }\n            \n            .nav-content {\n                padding: 0 1rem;\n            }\n            \n            .main {\n                padding: 1rem;\n            }\n            \n            .hero {\n                padding: 2rem;\n            }\n            \n            .hero h1 {\n                font-size: 1.75rem;\n            }\n            \n            .hero-meta {\n                flex-direction: column;\n                gap: 1rem;\n            }\n            \n            .grid {\n                grid-template-columns: 1fr;\n            }\n            \n            .workflow {\n                flex-direction: column;\n                align-items: stretch;\n            }\n            \n            .workflow-arrow {\n                transform: rotate(90deg);\n                text-align: center;\n            }\n        }\n\n        /* Smooth Scroll */\n        html {\n            scroll-behavior: smooth;\n        }\n\n        /* Section Anchors */\n        .section-anchor {\n            scroll-margin-top: 120px;\n        }\n    \u003c/style\u003e\n\u003c/head\u003e\n\u003cbody\u003e\n    \u003c!-- Header --\u003e\n    \u003cheader class=\"header\"\u003e\n        \u003cdiv class=\"header-content\"\u003e\n            \u003cdiv class=\"logo\"\u003e\n                \u003cdiv class=\"logo-icon\"\u003eDA\u003c/div\u003e\n                \u003cdiv class=\"logo-text\"\u003eDos \u003cspan\u003eAguas\u003c/span\u003e\u003c/div\u003e\n            \u003c/div\u003e\n            \u003cdiv class=\"doc-title\"\u003eIntranet-Konzept \u0026 Implementierungsplan\u003c/div\u003e\n        \u003c/div\u003e\n    \u003c/header\u003e\n\n    \u003c!-- Navigation --\u003e\n    \u003cnav class=\"nav\"\u003e\n        \u003cdiv class=\"nav-content\"\u003e\n            \u003ca href=\"#uebersicht\" class=\"nav-item active\"\u003eÜbersicht\u003c/a\u003e\n            \u003ca href=\"#phase1\" class=\"nav-item\"\u003ePhase 1\u003c/a\u003e\n            \u003ca href=\"#phase2\" class=\"nav-item\"\u003ePhase 2\u003c/a\u003e\n            \u003ca href=\"#phase3\" class=\"nav-item\"\u003ePhase 3\u003c/a\u003e\n            \u003ca href=\"#phase4\" class=\"nav-item\"\u003ePhase 4\u003c/a\u003e\n            \u003ca href=\"#phase5\" class=\"nav-item\"\u003ePhase 5\u003c/a\u003e\n            \u003ca href=\"#workflow\" class=\"nav-item\"\u003eAgenten-Workflow\u003c/a\u003e\n            \u003ca href=\"#technik\" class=\"nav-item\"\u003eTechnik\u003c/a\u003e\n        \u003c/div\u003e\n    \u003c/nav\u003e\n\n    \u003c!-- Main Content --\u003e\n    \u003cmain class=\"main\"\u003e\n        \u003c!-- Hero --\u003e\n        \u003csection id=\"uebersicht\" class=\"section-anchor\"\u003e\n            \u003cdiv class=\"hero\"\u003e\n                \u003ch1\u003eAgenten-gesteuertes Intranet\u003c/h1\u003e\n                \u003cp\u003eEine moderne Webapp für Dos Aguas Consulting – entwickelt mit Next.js, deployed auf Vercel, gepflegt von 8 spezialisierten Agenten. Strukturierte Content-Verwaltung für Blog, Newsletter, Dokumente und mehr.\u003c/p\u003e\n                \u003cdiv class=\"hero-meta\"\u003e\n                    \u003cdiv class=\"hero-meta-item\"\u003e\n                        \u003cspan class=\"hero-meta-label\"\u003eZeitraum\u003c/span\u003e\n                        \u003cspan class=\"hero-meta-value\"\u003e4–6 Wochen\u003c/span\u003e\n                    \u003c/div\u003e\n                    \u003cdiv class=\"hero-meta-item\"\u003e\n                        \u003cspan class=\"hero-meta-label\"\u003eTeam\u003c/span\u003e\n                        \u003cspan class=\"hero-meta-value\"\u003e8 Agenten\u003c/span\u003e\n                    \u003c/div\u003e\n                    \u003cdiv class=\"hero-meta-item\"\u003e\n                        \u003cspan class=\"hero-meta-label\"\u003ePlatform\u003c/span\u003e\n                        \u003cspan class=\"hero-meta-value\"\u003eVercel + Custom Domain\u003c/span\u003e\n                    \u003c/div\u003e\n                \u003c/div\u003e\n            \u003c/div\u003e\n        \u003c/section\u003e\n\n        \u003c!-- Vision --\u003e\n        \u003cdiv class=\"card\"\u003e\n            \u003cdiv class=\"card-header\"\u003e\n                \u003cdiv class=\"card-title\"\u003e\n                    \u003ch2\u003e🎯 Projektvision\u003c/h2\u003e\n                    \u003cp\u003eWas wir aufbauen und warum\u003c/p\u003e\n                \u003c/div\u003e\n            \u003c/div\u003e\n            \u003cdiv class=\"card-body\"\u003e\n                \u003cdiv class=\"grid\"\u003e\n                    \u003cdiv class=\"feature-card\"\u003e\n                        \u003ch4\u003eZentrale Content-Hub\u003c/h4\u003e\n                        \u003cp\u003eAlle Agenten-Inhalte an einem Ort: Blogartikel, Newsletter, Kundenrezensionen, Umfrageergebnisse und interne Dokumente.\u003c/p\u003e\n                        \u003cul class=\"feature-list\"\u003e\n                            \u003cli\u003eStrukturierte Bereiche pro Agent\u003c/li\u003e\n                            \u003cli\u003eEinheitliches Corporate Design\u003c/li\u003e\n                            \u003cli\u003eDurchsuchbar und archivierbar\u003c/li\u003e\n                        \u003c/ul\u003e\n                    \u003c/div\u003e\n                    \u003cdiv class=\"feature-card\"\u003e\n                        \u003ch4\u003eAgenten-Autonomie\u003c/h4\u003e\n                        \u003cp\u003eJeder Agent kann eigenständig Inhalte erstellen, bearbeiten und veröffentlichen – ohne technische Kenntnisse.\u003c/p\u003e\n                        \u003cul class=\"feature-list\"\u003e\n                            \u003cli\u003eGit-basiertes CMS\u003c/li\u003e\n                            \u003cli\u003eAutomatisierte Workflows\u003c/li\u003e\n                            \u003cli\u003eReview-Prozess optional\u003c/li\u003e\n                        \u003c/ul\u003e\n                    \u003c/div\u003e\n                    \u003cdiv class=\"feature-card\"\u003e\n                        \u003ch4\u003eProfessionelle Präsenz\u003c/h4\u003e\n                        \u003cp\u003eModernes Design, schnelle Ladezeiten, SEO-optimiert – repräsentativ für Dos Aguas Consulting.\u003c/p\u003e\n                        \u003cul class=\"feature-list\"\u003e\n                            \u003cli\u003eResponsive Design\u003c/li\u003e\n                            \u003cli\u003eCI-konforme Gestaltung\u003c/li\u003e\n                            \u003cli\u003eCustom Domain\u003c/li\u003e\n                        \u003c/ul\u003e\n                    \u003c/div\u003e\n                \u003c/div\u003e\n            \u003c/div\u003e\n        \u003c/div\u003e\n\n        \u003c!-- Phase 1 --\u003e\n        \u003csection id=\"phase1\" class=\"section-anchor\"\u003e\n            \u003cdiv class=\"card\"\u003e\n                \u003cdiv class=\"card-header\"\u003e\n                    \u003cdiv class=\"card-icon phase-1\"\u003e📋\u003c/div\u003e\n                    \u003cdiv class=\"card-title\"\u003e\n                        \u003ch2\u003ePhase 1: Planung \u0026 Setup\u003c/h2\u003e\n                        \u003cp\u003eGrundlagen schaffen • Geschätzte Dauer: 3–5 Tage\u003c/p\u003e\n                    \u003c/div\u003e\n                    \u003cspan class=\"card-badge badge-planning\"\u003ePlanung\u003c/span\u003e\n                \u003c/div\u003e\n                \u003cdiv class=\"card-body\"\u003e\n                    \u003cdiv class=\"section\"\u003e\n                        \u003ch3\u003eVorbereitende Checkliste\u003c/h3\u003e\n                        \u003cul class=\"checklist\"\u003e\n                            \u003cli\u003e\n                                \u003cdiv class=\"checklist-checkbox\"\u003e\u003c/div\u003e\n                                \u003cdiv class=\"checklist-content\"\u003e\n                                    \u003cspan class=\"checklist-title\"\u003eDomain festlegen\u003cspan class=\"checklist-tag tag-technical\"\u003eTechnisch\u003c/span\u003e\u003c/span\u003e\n                                    \u003cp class=\"checklist-desc\"\u003eEntscheidung: Subdomain (intranet.dos-aguas.com) oder separat? DNS-Zugang bei Strato prüfen.\u003c/p\u003e\n                                \u003c/div\u003e\n                            \u003c/li\u003e\n                            \u003cli\u003e\n                                \u003cdiv class=\"checklist-checkbox\"\u003e\u003c/div\u003e\n                                \u003cdiv class=\"checklist-content\"\u003e\n                                    \u003cspan class=\"checklist-title\"\u003eGitHub Repository anlegen\u003cspan class=\"checklist-tag tag-technical\"\u003eTechnisch\u003c/span\u003e\u003c/span\u003e\n                                    \u003cp class=\"checklist-desc\"\u003eNeues Repo unter github.com/dos-aguas oder bestehendes nutzen. Branch-Protection einrichten.\u003c/p\u003e\n                                \u003c/div\u003e\n                            \u003c/li\u003e\n                            \u003cli\u003e\n                                \u003cdiv class=\"checklist-checkbox\"\u003e\u003c/div\u003e\n                                \u003cdiv class=\"checklist-content\"\u003e\n                                    \u003cspan class=\"checklist-title\"\u003eVercel Account \u0026 Projekt\u003cspan class=\"checklist-tag tag-technical\"\u003eTechnisch\u003c/span\u003e\u003c/span\u003e\n                                    \u003cp class=\"checklist-desc\"\u003eVercel Pro-Account für Team-Features. GitHub-Integration aktivieren, Preview-Deployments testen.\u003c/p\u003e\n                                \u003c/div\u003e\n                            \u003c/li\u003e\n                            \u003cli\u003e\n                                \u003cdiv class=\"checklist-checkbox\"\u003e\u003c/div\u003e\n                                \u003cdiv class=\"checklist-content\"\u003e\n                                    \u003cspan class=\"checklist-title\"\u003eContent-Struktur definieren\u003cspan class=\"checklist-tag tag-content\"\u003eContent\u003c/span\u003e\u003c/span\u003e\n                                    \u003cp class=\"checklist-desc\"\u003eWelche Bereiche? Blog, Newsletter, Docs, Reviews, Umfragen. Taxonomie (Tags, Kategorien) festlegen.\u003c/p\u003e\n                                \u003c/div\u003e\n                            \u003c/li\u003e\n                            \u003cli\u003e\n                                \u003cdiv class=\"checklist-checkbox\"\u003e\u003c/div\u003e\n                                \u003cdiv class=\"checklist-content\"\u003e\n                                    \u003cspan class=\"checklist-title\"\u003eAgenten-Berechtigungen klären\u003cspan class=\"checklist-tag tag-agent\"\u003eAgenten\u003c/span\u003e\u003c/span\u003e\n                                    \u003cp class=\"checklist-desc\"\u003eWer darf was? Direkt publizieren oder Review nötig? Authentifizierung für Intranet-Bereich?\u003c/p\u003e\n                                \u003c/div\u003e\n                            \u003c/li\u003e\n                        \u003c/ul\u003e\n                    \u003c/div\u003e\n\n                    \u003cdiv class=\"info-box\"\u003e\n                        \u003cdiv class=\"info-box-title\"\u003e💡 Tipp von Luis\u003c/div\u003e\n                        \u003cp\u003eStarte mit einer einfachen Content-Struktur. Du kannst später immer erweitern. Lieber 3 gut gepflegte Bereiche als 10 leere.\u003c/p\u003e\n                    \u003c/div\u003e\n                \u003c/div\u003e\n            \u003c/div\u003e\n        \u003c/section\u003e\n\n        \u003c!-- Phase 2 --\u003e\n        \u003csection id=\"phase2\" class=\"section-anchor\"\u003e\n            \u003cdiv class=\"card\"\u003e\n                \u003cdiv class=\"card-header\"\u003e\n                    \u003cdiv class=\"card-icon phase-2\"\u003e⚙️\u003c/div\u003e\n                    \u003cdiv class=\"card-title\"\u003e\n                        \u003ch2\u003ePhase 2: Technische Basis\u003c/h2\u003e\n                        \u003cp\u003eNext.js + CMS Setup • Geschätzte Dauer: 5–7 Tage\u003c/p\u003e\n                    \u003c/div\u003e\n                    \u003cspan class=\"card-badge badge-setup\"\u003eSetup\u003c/span\u003e\n                \u003c/div\u003e\n                \u003cdiv class=\"card-body\"\u003e\n                    \u003cdiv class=\"section\"\u003e\n                        \u003ch3\u003eTechnologie-Stack\u003c/h3\u003e\n                        \u003ctable class=\"tech-table\"\u003e\n                            \u003cthead\u003e\n                                \u003ctr\u003e\n                                    \u003cth\u003eKomponente\u003c/th\u003e\n                                    \u003cth\u003eEmpfohlene Lösung\u003c/th\u003e\n                                    \u003cth\u003eAlternative\u003c/th\u003e\n                                \u003c/tr\u003e\n                            \u003c/thead\u003e\n                            \u003ctbody\u003e\n                                \u003ctr\u003e\n                                    \u003ctd\u003e\u003cstrong\u003eFramework\u003c/strong\u003e\u003c/td\u003e\n                                    \u003ctd class=\"tech-recommend\"\u003eNext.js 14 (App Router)\u003c/td\u003e\n                                    \u003ctd\u003eAstro, Nuxt\u003c/td\u003e\n                                \u003c/tr\u003e\n                                \u003ctr\u003e\n                                    \u003ctd\u003e\u003cstrong\u003eStyling\u003c/strong\u003e\u003c/td\u003e\n                                    \u003ctd class=\"tech-recommend\"\u003eTailwind CSS\u003c/td\u003e\n                                    \u003ctd\u003eCSS Modules\u003c/td\u003e\n                                \u003c/tr\u003e\n                                \u003ctr\u003e\n                                    \u003ctd\u003e\u003cstrong\u003eContent\u003c/strong\u003e\u003c/td\u003e\n                                    \u003ctd class=\"tech-recommend\"\u003eContentlayer + MDX\u003c/td\u003e\n                                    \u003ctd\u003eSanity, Strapi\u003c/td\u003e\n                                \u003c/tr\u003e\n                                \u003ctr\u003e\n                                    \u003ctd\u003e\u003cstrong\u003eCMS-UI\u003c/strong\u003e\u003c/td\u003e\n                                    \u003ctd class=\"tech-recommend\"\u003eDecap CMS (Git-basiert)\u003c/td\u003e\n                                    \u003ctd\u003eTinaCMS\u003c/td\u003e\n                                \u003c/tr\u003e\n                                \u003ctr\u003e\n                                    \u003ctd\u003e\u003cstrong\u003eAuth\u003c/strong\u003e\u003c/td\u003e\n                                    \u003ctd class=\"tech-recommend\"\u003eNextAuth.js\u003c/td\u003e\n                                    \u003ctd\u003eClerk, Auth0\u003c/td\u003e\n                                \u003c/tr\u003e\n                                \u003ctr\u003e\n                                    \u003ctd\u003e\u003cstrong\u003eHosting\u003c/strong\u003e\u003c/td\u003e\n                                    \u003ctd class=\"tech-recommend\"\u003eVercel\u003c/td\u003e\n                                    \u003ctd\u003eNetlify\u003c/td\u003e\n                                \u003c/tr\u003e\n                            \u003c/tbody\u003e\n                        \u003c/table\u003e\n                    \u003c/div\u003e\n\n                    \u003cdiv class=\"section\"\u003e\n                        \u003ch3\u003eSetup-Checkliste\u003c/h3\u003e\n                        \u003cul class=\"checklist\"\u003e\n                            \u003cli\u003e\n                                \u003cdiv class=\"checklist-checkbox\"\u003e\u003c/div\u003e\n                                \u003cdiv class=\"checklist-content\"\u003e\n                                    \u003cspan class=\"checklist-title\"\u003eNext.js Projekt initialisieren\u003cspan class=\"checklist-tag tag-technical\"\u003eTechnisch\u003c/span\u003e\u003c/span\u003e\n                                    \u003cp class=\"checklist-desc\"\u003e`npx create-next-app@latest` mit TypeScript, Tailwind, App Router. ESLint + Prettier konfigurieren.\u003c/p\u003e\n                                \u003c/div\u003e\n                            \u003c/li\u003e\n                            \u003cli\u003e\n                                \u003cdiv class=\"checklist-checkbox\"\u003e\u003c/div\u003e\n                                \u003cdiv class=\"checklist-content\"\u003e\n                                    \u003cspan class=\"checklist-title\"\u003eContentlayer installieren\u003cspan class=\"checklist-tag tag-technical\"\u003eTechnisch\u003c/span\u003e\u003c/span\u003e\n                                    \u003cp class=\"checklist-desc\"\u003eContentlayer für type-safe MDX-Content. Content-Schemas definieren (BlogPost, Newsletter, etc.).\u003c/p\u003e\n                                \u003c/div\u003e\n                            \u003c/li\u003e\n                            \u003cli\u003e\n                                \u003cdiv class=\"checklist-checkbox\"\u003e\u003c/div\u003e\n                                \u003cdiv class=\"checklist-content\"\u003e\n                                    \u003cspan class=\"checklist-title\"\u003eDecap CMS einrichten\u003cspan class=\"checklist-tag tag-technical\"\u003eTechnisch\u003c/span\u003e\u003c/span\u003e\n                                    \u003cp class=\"checklist-desc\"\u003eCMS unter `/admin` erreichbar. GitHub-Backend konfigurieren. Editorial Workflow aktivieren.\u003c/p\u003e\n                                \u003c/div\u003e\n                            \u003c/li\u003e\n                            \u003cli\u003e\n                                \u003cdiv class=\"checklist-checkbox\"\u003e\u003c/div\u003e\n                                \u003cdiv class=\"checklist-content\"\u003e\n                                    \u003cspan class=\"checklist-title\"\u003eDos Aguas CI implementieren\u003cspan class=\"checklist-tag tag-design\"\u003eDesign\u003c/span\u003e\u003c/span\u003e\n                                    \u003cp class=\"checklist-desc\"\u003eTailwind-Config mit Corporate Colors. Typography-Plugin für Inter/Merriweather. Button- + Card-Komponenten.\u003c/p\u003e\n                                \u003c/div\u003e\n                            \u003c/li\u003e\n                            \u003cli\u003e\n                                \u003cdiv class=\"checklist-checkbox\"\u003e\u003c/div\u003e\n                                \u003cdiv class=\"checklist-content\"\u003e\n                                    \u003cspan class=\"checklist-title\"\u003eBasis-Layout \u0026 Navigation\u003cspan class=\"checklist-tag tag-design\"\u003eDesign\u003c/span\u003e\u003c/span\u003e\n                                    \u003cp class=\"checklist-desc\"\u003eHeader, Footer, Sidebar für Agenten-Bereiche. Mobile Navigation. Breadcrumbs.\u003c/p\u003e\n                                \u003c/div\u003e\n                            \u003c/li\u003e\n                        \u003c/ul\u003e\n                    \u003c/div\u003e\n\n                    \u003cdiv class=\"info-box warning\"\u003e\n                        \u003cdiv class=\"info-box-title\"\u003e⚠️ Wichtig\u003c/div\u003e\n                        \u003cp\u003eDecap CMS benötigt GitHub-Authentifizierung. Entscheide früh: Soll das Intranet öffentlich sichtbar sein (nur CMS geschützt) oder komplett passwortgeschützt?\u003c/p\u003e\n                    \u003c/div\u003e\n                \u003c/div\u003e\n            \u003c/div\u003e\n        \u003c/section\u003e\n\n        \u003c!-- Phase 3 --\u003e\n        \u003csection id=\"phase3\" class=\"section-anchor\"\u003e\n            \u003cdiv class=\"card\"\u003e\n                \u003cdiv class=\"card-header\"\u003e\n                    \u003cdiv class=\"card-icon phase-3\"\u003e💻\u003c/div\u003e\n                    \u003cdiv class=\"card-title\"\u003e\n                        \u003ch2\u003ePhase 3: Entwicklung \u0026 Features\u003c/h2\u003e\n                        \u003cp\u003eContent-Bereiche \u0026 Funktionen • Geschätzte Dauer: 10–14 Tage\u003c/p\u003e\n                    \u003c/div\u003e\n                    \u003cspan class=\"card-badge badge-dev\"\u003eEntwicklung\u003c/span\u003e\n                \u003c/div\u003e\n                \u003cdiv class=\"card-body\"\u003e\n                    \u003cdiv class=\"section\"\u003e\n                        \u003ch3\u003eContent-Bereiche implementieren\u003c/h3\u003e\n                        \u003cul class=\"checklist\"\u003e\n                            \u003cli\u003e\n                                \u003cdiv class=\"checklist-checkbox\"\u003e\u003c/div\u003e\n                                \u003cdiv class=\"checklist-content\"\u003e\n                                    \u003cspan class=\"checklist-title\"\u003eBlog / Artikel\u003cspan class=\"checklist-tag tag-content\"\u003eContent\u003c/span\u003e\u003c/span\u003e\n                                    \u003cp class=\"checklist-desc\"\u003eListenansicht, Einzelansicht, Autoren-Profile, Tags, Kategorien, Related Posts. Suchfunktion.\u003c/p\u003e\n                                \u003c/div\u003e\n                            \u003c/li\u003e\n                            \u003cli\u003e\n                                \u003cdiv class=\"checklist-checkbox\"\u003e\u003c/div\u003e\n                                \u003cdiv class=\"checklist-content\"\u003e\n                                    \u003cspan class=\"checklist-title\"\u003eNewsletter-Archiv\u003cspan class=\"checklist-tag tag-content\"\u003eContent\u003c/span\u003e\u003c/span\u003e\n                                    \u003cp class=\"checklist-desc\"\u003eArchiv nach Monaten/Jahren. Vorschau-Funktion. Download als PDF (optional).\u003c/p\u003e\n                                \u003c/div\u003e\n                            \u003c/li\u003e\n                            \u003cli\u003e\n                                \u003cdiv class=\"checklist-checkbox\"\u003e\u003c/div\u003e\n                                \u003cdiv class=\"checklist-content\"\u003e\n                                    \u003cspan class=\"checklist-title\"\u003eKundenrezensionen\u003cspan class=\"checklist-tag tag-content\"\u003eContent\u003c/span\u003e\u003c/span\u003e\n                                    \u003cp class=\"checklist-desc\"\u003eZitate mit Kunden-Logos, Sterne-Bewertungen, Branchen-Filter. Carousel oder Grid.\u003c/p\u003e\n                                \u003c/div\u003e\n                            \u003c/li\u003e\n                            \u003cli\u003e\n                                \u003cdiv class=\"checklist-checkbox\"\u003e\u003c/div\u003e\n                                \u003cdiv class=\"checklist-content\"\u003e\n                                    \u003cspan class=\"checklist-title\"\u003eUmfrage-Ergebnisse\u003cspan class=\"checklist-tag tag-content\"\u003eContent\u003c/span\u003e\u003c/span\u003e\n                                    \u003cp class=\"checklist-desc\"\u003eDatenvisualisierung (Charts), Download-Rohdaten, Methoden-Beschreibung.\u003c/p\u003e\n                                \u003c/div\u003e\n                            \u003c/li\u003e\n                            \u003cli\u003e\n                                \u003cdiv class=\"checklist-checkbox\"\u003e\u003c/div\u003e\n                                \u003cdiv class=\"checklist-content\"\u003e\n                                    \u003cspan class=\"checklist-title\"\u003eInterne Dokumente\u003cspan class=\"checklist-tag tag-agent\"\u003eAgenten\u003c/span\u003e\u003c/span\u003e\n                                    \u003cp class=\"checklist-desc\"\u003ePasswortgeschützter Bereich. Dokumenten-Upload, Versionierung, Kategorien.\u003c/p\u003e\n                                \u003c/div\u003e\n                            \u003c/li\u003e\n                        \u003c/ul\u003e\n                    \u003c/div\u003e\n\n                    \u003cdiv class=\"section\"\u003e\n                        \u003ch3\u003eAgenten-Profile \u0026 Dashboard\u003c/h3\u003e\n                        \u003cul class=\"checklist\"\u003e\n                            \u003cli\u003e\n                                \u003cdiv class=\"checklist-checkbox\"\u003e\u003c/div\u003e\n                                \u003cdiv class=\"checklist-content\"\u003e\n                                    \u003cspan class=\"checklist-title\"\u003eAgenten-Übersichtsseite\u003cspan class=\"checklist-tag tag-agent\"\u003eAgenten\u003c/span\u003e\u003c/span\u003e\n                                    \u003cp class=\"checklist-desc\"\u003eAlle 8 Agenten mit Foto, Bio, Expertise, veröffentlichten Inhalten. Filter nach Bereich.\u003c/p\u003e\n                                \u003c/div\u003e\n                            \u003c/li\u003e\n                            \u003cli\u003e\n                                \u003cdiv class=\"checklist-checkbox\"\u003e\u003c/div\u003e\n                                \u003cdiv class=\"checklist-content\"\u003e\n                                    \u003cspan class=\"checklist-title\"\u003ePersönliche Agenten-Seiten\u003cspan class=\"checklist-tag tag-agent\"\u003eAgenten\u003c/span\u003e\u003c/span\u003e\n                                    \u003cp class=\"checklist-desc\"\u003eJeder Agent hat eigene URL (/agent/juan, /agent/luis) mit allen seinen Beiträgen.\u003c/p\u003e\n                                \u003c/div\u003e\n                            \u003c/li\u003e\n                            \u003cli\u003e\n                                \u003cdiv class=\"checklist-checkbox\"\u003e\u003c/div\u003e\n                                \u003cdiv class=\"checklist-content\"\u003e\n                                    \u003cspan class=\"checklist-title\"\u003eQuick-Stats Dashboard\u003cspan class=\"checklist-tag tag-agent\"\u003eAgenten\u003c/span\u003e\u003c/span\u003e\n                                    \u003cp class=\"checklist-desc\"\u003eAnzahl Artikel, letzte Aktivität, beliebteste Inhalte. Optional: View-Counts.\u003c/p\u003e\n                                \u003c/div\u003e\n                            \u003c/li\u003e\n                        \u003c/ul\u003e\n                    \u003c/div\u003e\n                \u003c/div\u003e\n            \u003c/div\u003e\n        \u003c/section\u003e\n\n        \u003c!-- Phase 4 --\u003e\n        \u003csection id=\"phase4\" class=\"section-anchor\"\u003e\n            \u003cdiv class=\"card\"\u003e\n                \u003cdiv class=\"card-header\"\u003e\n                    \u003cdiv class=\"card-icon phase-4\"\u003e✏️\u003c/div\u003e\n                    \u003cdiv class=\"card-title\"\u003e\n                        \u003ch2\u003ePhase 4: Content \u0026 Agenten-Onboarding\u003c/h2\u003e\n                        \u003cp\u003eErste Inhalte \u0026 Schulung • Geschätzte Dauer: 5–7 Tage\u003c/p\u003e\n                    \u003c/div\u003e\n                    \u003cspan class=\"card-badge badge-content\"\u003eContent\u003c/span\u003e\n                \u003c/div\u003e\n                \u003cdiv class=\"card-body\"\u003e\n                    \u003cdiv class=\"section\"\u003e\n                        \u003ch3\u003eContent-Migration \u0026 Erstellung\u003c/h3\u003e\n                        \u003cul class=\"checklist\"\u003e\n                            \u003cli\u003e\n                                \u003cdiv class=\"checklist-checkbox\"\u003e\u003c/div\u003e\n                                \u003cdiv class=\"checklist-content\"\u003e\n                                    \u003cspan class=\"checklist-title\"\u003eBestehende Inhalte migrieren\u003cspan class=\"checklist-tag tag-content\"\u003eContent\u003c/span\u003e\u003c/span\u003e\n                                    \u003cp class=\"checklist-desc\"\u003eVorhandene Blogposts, Dokumente aus Dropbox, alte Newsletter ins neue Format übertragen.\u003c/p\u003e\n                                \u003c/div\u003e\n                            \u003c/li\u003e\n                            \u003cli\u003e\n                                \u003cdiv class=\"checklist-checkbox\"\u003e\u003c/div\u003e\n                                \u003cdiv class=\"checklist-content\"\u003e\n                                    \u003cspan class=\"checklist-title\"\u003eSeed-Content pro Agent\u003cspan class=\"checklist-tag tag-agent\"\u003eAgenten\u003c/span\u003e\u003c/span\u003e\n                                    \u003cp class=\"checklist-desc\"\u003eJeder Agent erstellt 2–3 Beispiel-Inhalte in seinem Bereich. Qualitäts-Check.\u003c/p\u003e\n                                \u003c/div\u003e\n                            \u003c/li\u003e\n                            \u003cli\u003e\n                                \u003cdiv class=\"checklist-checkbox\"\u003e\u003c/div\u003e\n                                \u003cdiv class=\"checklist-content\"\u003e\n                                    \u003cspan class=\"checklist-title\"\u003eBilder \u0026 Assets organisieren\u003cspan class=\"checklist-tag tag-design\"\u003eDesign\u003c/span\u003e\u003c/span\u003e\n                                    \u003cp class=\"checklist-desc\"\u003eAgenten-Avatare erstellen, Platzhalter-Bilder definieren, Bildoptimierung-Workflow.\u003c/p\u003e\n                                \u003c/div\u003e\n                            \u003c/li\u003e\n                        \u003c/ul\u003e\n                    \u003c/div\u003e\n\n                    \u003cdiv class=\"section\"\u003e\n                        \u003ch3\u003eAgenten-Schulung\u003c/h3\u003e\n                        \u003cul class=\"checklist\"\u003e\n                            \u003cli\u003e\n                                \u003cdiv class=\"checklist-checkbox\"\u003e\u003c/div\u003e\n                                \u003cdiv class=\"checklist-content\"\u003e\n                                    \u003cspan class=\"checklist-title\"\u003eCMS-Workshop\u003cspan class=\"checklist-tag tag-agent\"\u003eAgenten\u003c/span\u003e\u003c/span\u003e\n                                    \u003cp class=\"checklist-desc\"\u003e30-minütige Session pro Agent: Login, neuer Post, Bilder, Preview, Publish.\u003c/p\u003e\n                                \u003c/div\u003e\n                            \u003c/li\u003e\n                            \u003cli\u003e\n                                \u003cdiv class=\"checklist-checkbox\"\u003e\u003c/div\u003e\n                                \u003cdiv class=\"checklist-content\"\u003e\n                                    \u003cspan class=\"checklist-title\"\u003eStyleguide \u0026 Templates\u003cspan class=\"checklist-tag tag-content\"\u003eContent\u003c/span\u003e\u003c/span\u003e\n                                    \u003cp class=\"checklist-desc\"\u003eMarkdown-Templates für verschiedene Content-Typen. Schreibstil-Richtlinien.\u003c/p\u003e\n                                \u003c/div\u003e\n                            \u003c/li\u003e\n                            \u003cli\u003e\n                                \u003cdiv class=\"checklist-checkbox\"\u003e\u003c/div\u003e\n                                \u003cdiv class=\"checklist-content\"\u003e\n                                    \u003cspan class=\"checklist-title\"\u003eSupport-Kanal einrichten\u003cspan class=\"checklist-tag tag-agent\"\u003eAgenten\u003c/span\u003e\u003c/span\u003e\n                                    \u003cp class=\"checklist-desc\"\u003eWo fragen Agenten nach? Telegram-Gruppe oder dedizierter Channel für CMS-Hilfe.\u003c/p\u003e\n                                \u003c/div\u003e\n                            \u003c/li\u003e\n                        \u003c/ul\u003e\n                    \u003c/div\u003e\n\n                    \u003cdiv class=\"info-box info\"\u003e\n                        \u003cdiv class=\"info-box-title\"\u003e📚 Content-Styleguide\u003c/div\u003e\n                        \u003cp\u003eErstelle ein kurzes Dokument mit: Dos Aguas Tone of Voice (professionell aber zugänglich), Formatierungsregeln (Überschriften, Listen, Links), Bild-Richtlinien (Quellen, Alt-Texte).\u003c/p\u003e\n                    \u003c/div\u003e\n                \u003c/div\u003e\n            \u003c/div\u003e\n        \u003c/section\u003e\n\n        \u003c!-- Phase 5 --\u003e\n        \u003csection id=\"phase5\" class=\"section-anchor\"\u003e\n            \u003cdiv class=\"card\"\u003e\n                \u003cdiv class=\"card-header\"\u003e\n                    \u003cdiv class=\"card-icon phase-5\"\u003e🚀\u003c/div\u003e\n                    \u003cdiv class=\"card-title\"\u003e\n                        \u003ch2\u003ePhase 5: Launch \u0026 Optimierung\u003c/h2\u003e\n                        \u003cp\u003eGo-Live \u0026 Continuous Improvement • Geschätzte Dauer: 3–5 Tage\u003c/p\u003e\n                    \u003c/div\u003e\n                    \u003cspan class=\"card-badge badge-launch\"\u003eLaunch\u003c/span\u003e\n                \u003c/div\u003e\n                \u003cdiv class=\"card-body\"\u003e\n                    \u003cdiv class=\"section\"\u003e\n                        \u003ch3\u003ePre-Launch Checkliste\u003c/h3\u003e\n                        \u003cul class=\"checklist\"\u003e\n                            \u003cli\u003e\n                                \u003cdiv class=\"checklist-checkbox\"\u003e\u003c/div\u003e\n                                \u003cdiv class=\"checklist-content\"\u003e\n                                    \u003cspan class=\"checklist-title\"\u003eCustom Domain verbinden\u003cspan class=\"checklist-tag tag-technical\"\u003eTechnisch\u003c/span\u003e\u003c/span\u003e\n                                    \u003cp class=\"checklist-desc\"\u003eDNS-Einträge bei Strato setzen. SSL-Zertifikat aktivieren. www-Redirect konfigurieren.\u003c/p\u003e\n                                \u003c/div\u003e\n                            \u003c/li\u003e\n                            \u003cli\u003e\n                                \u003cdiv class=\"checklist-checkbox\"\u003e\u003c/div\u003e\n                                \u003cdiv class=\"checklist-content\"\u003e\n                                    \u003cspan class=\"checklist-title\"\u003eSEO \u0026 Metadaten\u003cspan class=\"checklist-tag tag-technical\"\u003eTechnisch\u003c/span\u003e\u003c/span\u003e\n                                    \u003cp class=\"checklist-desc\"\u003eMeta-Titles, Descriptions, Open Graph, Favicon, robots.txt, Sitemap.\u003c/p\u003e\n                                \u003c/div\u003e\n                            \u003c/li\u003e\n                            \u003cli\u003e\n                                \u003cdiv class=\"checklist-checkbox\"\u003e\u003c/div\u003e\n                                \u003cdiv class=\"checklist-content\"\u003e\n                                    \u003cspan class=\"checklist-title\"\u003ePerformance-Check\u003cspan class=\"checklist-tag tag-technical\"\u003eTechnisch\u003c/span\u003e\u003c/span\u003e\n                                    \u003cp class=\"checklist-desc\"\u003eLighthouse-Score \u003e90. Core Web Vitals prüfen. Bilder optimiert. Lazy Loading aktiv.\u003c/p\u003e\n                                \u003c/div\u003e\n                            \u003c/li\u003e\n                            \u003cli\u003e\n                                \u003cdiv class=\"checklist-checkbox\"\u003e\u003c/div\u003e\n                                \u003cdiv class=\"checklist-content\"\u003e\n                                    \u003cspan class=\"checklist-title\"\u003eAnalytics einrichten\u003cspan class=\"checklist-tag tag-technical\"\u003eTechnisch\u003c/span\u003e\u003c/span\u003e\n                                    \u003cp class=\"checklist-desc\"\u003ePlausible oder Google Analytics 4 (DSGVO-konform). Privacy-Policy aktualisieren.\u003c/p\u003e\n                                \u003c/div\u003e\n                            \u003c/li\u003e\n                        \u003c/ul\u003e\n                    \u003c/div\u003e\n\n                    \u003cdiv class=\"section\"\u003e\n                        \u003ch3\u003ePost-Launch\u003c/h3\u003e\n                        \u003cul class=\"checklist\"\u003e\n                            \u003cli\u003e\n                                \u003cdiv class=\"checklist-checkbox\"\u003e\u003c/div\u003e\n                                \u003cdiv class=\"checklist-content\"\u003e\n                                    \u003cspan class=\"checklist-title\"\u003eMonitoring aktivieren\u003cspan class=\"checklist-tag tag-technical\"\u003eTechnisch\u003c/span\u003e\u003c/span\u003e\n                                    \u003cp class=\"checklist-desc\"\u003eVercel Analytics, Uptime-Monitoring. Fehler-Tracking (Sentry optional).\u003c/p\u003e\n                                \u003c/div\u003e\n                            \u003c/li\u003e\n                            \u003cli\u003e\n                                \u003cdiv class=\"checklist-checkbox\"\u003e\u003c/div\u003e\n                                \u003cdiv class=\"checklist-content\"\u003e\n                                    \u003cspan class=\"checklist-title\"\u003eFeedback-Runde mit Agenten\u003cspan class=\"checklist-tag tag-agent\"\u003eAgenten\u003c/span\u003e\u003c/span\u003e\n                                    \u003cp class=\"checklist-desc\"\u003eNach 1 Woche: Was klappt? Was ist umständlich? Schnelle Iterationen.\u003c/p\u003e\n                                \u003c/div\u003e\n                            \u003c/li\u003e\n                            \u003cli\u003e\n                                \u003cdiv class=\"checklist-checkbox\"\u003e\u003c/div\u003e\n                                \u003cdiv class=\"checklist-content\"\u003e\n                                    \u003cspan class=\"checklist-title\"\u003eContent-Kalender etablieren\u003cspan class=\"checklist-tag tag-content\"\u003eContent\u003c/span\u003e\u003c/span\u003e\n                                    \u003cp class=\"checklist-desc\"\u003eWer postet wann? Regelmäßige Reviews. Quartalsweise Content-Planung.\u003c/p\u003e\n                                \u003c/div\u003e\n                            \u003c/li\u003e\n                        \u003c/ul\u003e\n                    \u003c/div\u003e\n                \u003c/div\u003e\n            \u003c/div\u003e\n        \u003c/section\u003e\n\n        \u003c!-- Agent Workflow --\u003e\n        \u003csection id=\"workflow\" class=\"section-anchor\"\u003e\n            \u003cdiv class=\"card\"\u003e\n                \u003cdiv class=\"card-header\"\u003e\n                    \u003cdiv class=\"card-title\"\u003e\n                        \u003ch2\u003e🤖 Agenten-Content-Workflow\u003c/h2\u003e\n                        \u003cp\u003eWie Agenten Inhalte erstellen und veröffentlichen\u003c/p\u003e\n                    \u003c/div\u003e\n                \u003c/div\u003e\n                \u003cdiv class=\"card-body\"\u003e\n                    \u003cdiv class=\"section\"\u003e\n                        \u003ch3\u003eWorkflow-Optionen\u003c/h3\u003e\n                        \n                        \u003cdiv style=\"margin-bottom: 2rem;\"\u003e\n                            \u003ch4 style=\"font-size: 0.875rem; color: var(--text-light); margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.05em;\"\u003eOption A: Direkt via Git (empfohlen für Agents)\u003c/h4\u003e\n                            \u003cdiv class=\"workflow\"\u003e\n                                \u003cdiv class=\"workflow-step\"\u003e\n                                    \u003cdiv class=\"workflow-step-num\"\u003e1\u003c/div\u003e\n                                    \u003cspan class=\"workflow-step-text\"\u003eAgent erstellt Content\u003c/span\u003e\n                                \u003c/div\u003e\n                                \u003cspan class=\"workflow-arrow\"\u003e→\u003c/span\u003e\n                                \u003cdiv class=\"workflow-step\"\u003e\n                                    \u003cdiv class=\"workflow-step-num\"\u003e2\u003c/div\u003e\n                                    \u003cspan class=\"workflow-step-text\"\u003eMarkdown-Datei im Repo\u003c/span\u003e\n                                \u003c/div\u003e\n                                \u003cspan class=\"workflow-arrow\"\u003e→\u003c/span\u003e\n                                \u003cdiv class=\"workflow-step\"\u003e\n                                    \u003cdiv class=\"workflow-step-num\"\u003e3\u003c/div\u003e\n                                    \u003cspan class=\"workflow-step-text\"\u003eAuto-Deploy auf Vercel\u003c/span\u003e\n                                \u003c/div\u003e\n                                \u003cspan class=\"workflow-arrow\"\u003e→\u003c/span\u003e\n                                \u003cdiv class=\"workflow-step\"\u003e\n                                    \u003cdiv class=\"workflow-step-num\"\u003e4\u003c/div\u003e\n                                    \u003cspan class=\"workflow-step-text\"\u003eLive in \u0026lt;2 Min\u003c/span\u003e\n                                \u003c/div\u003e\n                            \u003c/div\u003e\n                        \u003c/div\u003e\n\n                        \u003cdiv\u003e\n                            \u003ch4 style=\"font-size: 0.875rem; color: var(--text-light); margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.05em;\"\u003eOption B: Via Decap CMS (empfohlen für Menschen)\u003c/h4\u003e\n                            \u003cdiv class=\"workflow\"\u003e\n                                \u003cdiv class=\"workflow-step\"\u003e\n                                    \u003cdiv class=\"workflow-step-num\"\u003e1\u003c/div\u003e\n                                    \u003cspan class=\"workflow-step-text\"\u003eLogin im CMS (/admin)\u003c/span\u003e\n                                \u003c/div\u003e\n                                \u003cspan class=\"workflow-arrow\"\u003e→\u003c/span\u003e\n                                \u003cdiv class=\"workflow-step\"\u003e\n                                    \u003cdiv class=\"workflow-step-num\"\u003e2\u003c/div\u003e\n                                    \u003cspan class=\"workflow-step-text\"\u003eVisueller Editor\u003c/span\u003e\n                                \u003c/div\u003e\n                                \u003cspan class=\"workflow-arrow\"\u003e→\u003c/span\u003e\n                                \u003cdiv class=\"workflow-step\"\u003e\n                                    \u003cdiv class=\"workflow-step-num\"\u003e3\u003c/div\u003e\n                                    \u003cspan class=\"workflow-step-text\"\u003eReview \u0026 Publish\u003c/span\u003e\n                                \u003c/div\u003e\n                                \u003cspan class=\"workflow-arrow\"\u003e→\u003c/span\u003e\n                                \u003cdiv class=\"workflow-step\"\u003e\n                                    \u003cdiv class=\"workflow-step-num\"\u003e4\u003c/div\u003e\n                                    \u003cspan class=\"workflow-step-text\"\u003eGit Commit + Deploy\u003c/span\u003e\n                                \u003c/div\u003e\n                            \u003c/div\u003e\n                        \u003c/div\u003e\n                    \u003c/div\u003e\n\n                    \u003cdiv class=\"section\"\u003e\n                        \u003ch3\u003eEmpfohlene Hybrid-Lösung\u003c/h3\u003e\n                        \u003cdiv class=\"grid\"\u003e\n                            \u003cdiv class=\"feature-card\"\u003e\n                                \u003ch4\u003e🤖 Für Agents (Juan, Luis, etc.)\u003c/h4\u003e\n                                \u003cp\u003eDirekte Datei-Erstellung im Git-Repo via OpenClaw. Schnell, automatisiert, kein GUI nötig.\u003c/p\u003e\n                                \u003cul class=\"feature-list\"\u003e\n                                    \u003cli\u003eMarkdown-Dateien generieren\u003c/li\u003e\n                                    \u003cli\u003eFrontmatter automatisch füllen\u003c/li\u003e\n                                    \u003cli\u003eBilder in /public kopieren\u003c/li\u003e\n                                    \u003cli\u003eCommit + Push via API\u003c/li\u003e\n                                \u003c/ul\u003e\n                            \u003c/div\u003e\n                            \u003cdiv class=\"feature-card\"\u003e\n                                \u003ch4\u003e👤 Für Menschen (Christian)\u003c/h4\u003e\n                                \u003cp\u003eDecap CMS Interface für manuelle Bearbeitungen, Review, schnelle Korrekturen.\u003c/p\u003e\n                                \u003cul class=\"feature-list\"\u003e\n                                    \u003cli\u003eWYSIWYG-Editor\u003c/li\u003e\n                                    \u003cli\u003eBild-Upload per Drag \u0026 Drop\u003c/li\u003e\n                                    \u003cli\u003ePreview vor Publish\u003c/li\u003e\n                                    \u003cli\u003eEditorial Workflow\u003c/li\u003e\n                                \u003c/ul\u003e\n                            \u003c/div\u003e\n                        \u003c/div\u003e\n                    \u003c/div\u003e\n\n                    \u003cdiv class=\"info-box\"\u003e\n                        \u003cdiv class=\"info-box-title\"\u003e🔧 Technische Umsetzung für Agents\u003c/div\u003e\n                        \u003cp\u003eOpenClaw kann direkt auf das GitHub-Repository zugreifen: Neue Markdown-Dateien erstellen, Bilder hochladen, Commits pushen. Vercel deployed automatisch. Kein manueller Schritt nötig.\u003c/p\u003e\n                    \u003c/div\u003e\n                \u003c/div\u003e\n            \u003c/div\u003e\n        \u003c/section\u003e\n\n        \u003c!-- Technische Details --\u003e\n        \u003csection id=\"technik\" class=\"section-anchor\"\u003e\n            \u003cdiv class=\"card\"\u003e\n                \u003cdiv class=\"card-header\"\u003e\n                    \u003cdiv class=\"card-title\"\u003e\n                        \u003ch2\u003e🔧 Technische Details\u003c/h2\u003e\n                        \u003cp\u003eArchitektur, Kosten \u0026 Sicherheit\u003c/p\u003e\n                    \u003c/div\u003e\n                \u003c/div\u003e\n                \u003cdiv class=\"card-body\"\u003e\n                    \u003cdiv class=\"grid\"\u003e\n                        \u003cdiv class=\"feature-card\"\u003e\n                            \u003ch4\u003eArchitektur-Übersicht\u003c/h4\u003e\n                            \u003cp\u003eModerne JAMstack-Architektur für maximale Performance und minimale Wartung.\u003c/p\u003e\n                            \u003cul class=\"feature-list\"\u003e\n                                \u003cli\u003eStatic Site Generation (SSG)\u003c/li\u003e\n                                \u003cli\u003eCDN-gestützte Auslieferung\u003c/li\u003e\n                                \u003cli\u003eKein Server-Management\u003c/li\u003e\n                                \u003cli\u003eAutomatische Backups via Git\u003c/li\u003e\n                            \u003c/ul\u003e\n                        \u003c/div\u003e\n                        \u003cdiv class=\"feature-card\"\u003e\n                            \u003ch4\u003eKostenübersicht (geschätzt)\u003c/h4\u003e\n                            \u003cp\u003eMonatliche Kosten für den Betrieb des Intranets.\u003c/p\u003e\n                            \u003cul class=\"feature-list\"\u003e\n                                \u003cli\u003eVercel Pro: $20/Monat\u003c/li\u003e\n                                \u003cli\u003eGitHub: Kostenlos (Public) oder $4 (Private)\u003c/li\u003e\n                                \u003cli\u003eDomain: ~€10/Jahr\u003c/li\u003e\n                                \u003cli\u003eAnalytics: Plausible $9/Monat (optional)\u003c/li\u003e\n                            \u003c/ul\u003e\n                        \u003c/div\u003e\n                        \u003cdiv class=\"feature-card\"\u003e\n                            \u003ch4\u003eSicherheit \u0026 DSGVO\u003c/h4\u003e\n                            \u003cp\u003eIntranet-spezifische Sicherheitsmaßnahmen.\u003c/p\u003e\n                            \u003cul class=\"feature-list\"\u003e\n                                \u003cli\u003eAuth für interne Bereiche\u003c/li\u003e\n                                \u003cli\u003eKeine externen Tracker (optional)\u003c/li\u003e\n                                \u003cli\u003eSSL/TLS enforced\u003c/li\u003e\n                                \u003cli\u003eKeine sensiblen Daten im Repo\u003c/li\u003e\n                            \u003c/ul\u003e\n                        \u003c/div\u003e\n                        \u003cdiv class=\"feature-card\"\u003e\n                            \u003ch4\u003eBackup \u0026 Wiederherstellung\u003c/h4\u003e\n                            \u003cp\u003eRobuste Strategie gegen Datenverlust.\u003c/p\u003e\n                            \u003cul class=\"feature-list\"\u003e\n                                \u003cli\u003eGit = automatisches Backup\u003c/li\u003e\n                                \u003cli\u003eBranch-basierte Versionierung\u003c/li\u003e\n                                \u003cli\u003eRollbacks in Sekunden\u003c/li\u003e\n                                \u003cli\u003eContent-Export als JSON/Markdown\u003c/li\u003e\n                            \u003c/ul\u003e\n                        \u003c/div\u003e\n                    \u003c/div\u003e\n                \u003c/div\u003e\n            \u003c/div\u003e\n        \u003c/section\u003e\n\n        \u003c!-- Zusammenfassung --\u003e\n        \u003cdiv class=\"card\"\u003e\n            \u003cdiv class=\"card-header\"\u003e\n                \u003cdiv class=\"card-title\"\u003e\n                    \u003ch2\u003e📊 Projekt-Zusammenfassung\u003c/h2\u003e\n                    \u003cp\u003eNächste Schritte \u0026 Timeline\u003c/p\u003e\n                \u003c/div\u003e\n            \u003c/div\u003e\n            \u003cdiv class=\"card-body\"\u003e\n                \u003cdiv class=\"timeline\"\u003e\n                    \u003cdiv class=\"timeline-item completed\"\u003e\n                        \u003cdiv class=\"timeline-date\"\u003eJetzt\u003c/div\u003e\n                        \u003cdiv class=\"timeline-title\"\u003eEntscheidungen treffen\u003c/div\u003e\n                        \u003cdiv class=\"timeline-desc\"\u003eDomain, Auth-Strategie, Content-Struktur festlegen. Budget freigeben.\u003c/div\u003e\n                    \u003c/div\u003e\n                    \u003cdiv class=\"timeline-item\"\u003e\n                        \u003cdiv class=\"timeline-date\"\u003eWoche 1–2\u003c/div\u003e\n                        \u003cdiv class=\"timeline-title\"\u003eSetup \u0026 Entwicklung\u003c/div\u003e\n                        \u003cdiv class=\"timeline-desc\"\u003eRepository, Vercel, CMS-Setup. Basis-Layout und erste Komponenten.\u003c/div\u003e\n                    \u003c/div\u003e\n                    \u003cdiv class=\"timeline-item\"\u003e\n                        \u003cdiv class=\"timeline-date\"\u003eWoche 3–4\u003c/div\u003e\n                        \u003cdiv class=\"timeline-title\"\u003eContent-Bereiche\u003c/div\u003e\n                        \u003cdiv class=\"timeline-desc\"\u003eBlog, Newsletter, Agenten-Profile. Design-Feinschliff.\u003c/div\u003e\n                    \u003c/div\u003e\n                    \u003cdiv class=\"timeline-item\"\u003e\n                        \u003cdiv class=\"timeline-date\"\u003eWoche 5\u003c/div\u003e\n                        \u003cdiv class=\"timeline-title\"\u003eContent \u0026 Onboarding\u003c/div\u003e\n                        \u003cdiv class=\"timeline-desc\"\u003eMigration bestehender Inhalte. Agenten-Schulung. Testphase.\u003c/div\u003e\n                    \u003c/div\u003e\n                    \u003cdiv class=\"timeline-item\"\u003e\n                        \u003cdiv class=\"timeline-date\"\u003eWoche 6\u003c/div\u003e\n                        \u003cdiv class=\"timeline-title\"\u003eLaunch\u003c/div\u003e\n                        \u003cdiv class=\"timeline-desc\"\u003eDomain-Connect, SEO, Analytics. Go-Live und Feedback-Runde.\u003c/div\u003e\n                    \u003c/div\u003e\n                \u003c/div\u003e\n            \u003c/div\u003e\n        \u003c/div\u003e\n    \u003c/main\u003e\n\n    \u003c!-- Footer --\u003e\n    \u003cfooter class=\"footer\"\u003e\n        \u003cdiv class=\"footer-logo\"\u003eDos Aguas Consulting\u003c/div\u003e\n        \u003cp\u003eIntranet-Konzept • Erstellt von Juan \u0026 Luis • Februar 2026\u003c/p\u003e\n    \u003c/footer\u003e\n\u003c/body\u003e\n\u003c/html\u003e\n"])</script><script>self.__next_f.push([1,"9:[]\n"])</script><script>self.__next_f.push([1,"0:[\"$\",\"$L2\",null,{\"buildId\":\"-OuHW6zrxfGO4eylJyM4T\",\"assetPrefix\":\"\",\"urlParts\":[\"\",\"docs\",\"intranet-konzept\"],\"initialTree\":[\"\",{\"children\":[\"docs\",{\"children\":[\"intranet-konzept\",{\"children\":[\"__PAGE__\",{}]}]}]},\"$undefined\",\"$undefined\",true],\"initialSeedData\":[\"\",{\"children\":[\"docs\",{\"children\":[\"intranet-konzept\",{\"children\":[\"__PAGE__\",{},[[\"$L3\",[\"$\",\"div\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"$4\"},\"style\":{\"width\":\"100%\",\"minHeight\":\"100vh\",\"margin\":0,\"padding\":0}}],null],null],null]},[null,[\"$\",\"$L5\",null,{\"parallelRouterKey\":\"children\",\"segmentPath\":[\"children\",\"docs\",\"children\",\"intranet-konzept\",\"children\"],\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L6\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"notFoundStyles\":\"$undefined\"}]],null]},[null,[\"$\",\"$L5\",null,{\"parallelRouterKey\":\"children\",\"segmentPath\":[\"children\",\"docs\",\"children\"],\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L6\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"notFoundStyles\":\"$undefined\"}]],null]},[[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/717463fb5ac3cf8b.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"de\",\"children\":[[\"$\",\"head\",null,{\"children\":[[\"$\",\"link\",null,{\"rel\":\"preconnect\",\"href\":\"https://fonts.googleapis.com\"}],[\"$\",\"link\",null,{\"rel\":\"preconnect\",\"href\":\"https://fonts.gstatic.com\",\"crossOrigin\":\"anonymous\"}],[\"$\",\"link\",null,{\"href\":\"https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400\u0026family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400\u0026family=Qwitcher+Grypen:wght@400;700\u0026display=swap\",\"rel\":\"stylesheet\"}]]}],[\"$\",\"body\",null,{\"children\":[\"$\",\"$L5\",null,{\"parallelRouterKey\":\"children\",\"segmentPath\":[\"children\"],\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L6\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":\"404\"}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],\"notFoundStyles\":[]}]}]]}]],null],null],\"couldBeIntercepted\":false,\"initialHead\":[null,\"$L7\"],\"globalErrorComponent\":\"$8\",\"missingSlots\":\"$W9\"}]\n"])</script><script>self.__next_f.push([1,"7:[[\"$\",\"meta\",\"0\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}],[\"$\",\"meta\",\"1\",{\"charSet\":\"utf-8\"}],[\"$\",\"title\",\"2\",{\"children\":\"Dos Aguas Consulting | Deutschland – Mexiko\"}],[\"$\",\"meta\",\"3\",{\"name\":\"description\",\"content\":\"Steuerberatung, IT-Recht, Odoo und digitale Transformation. Ihr Partner für grenzüberschreitendes Geschäft.\"}]]\n3:null\n"])</script></body></html>

@@ -1,0 +1,153 @@
+3:I[4707,[],""]
+5:I[6423,[],""]
+4:["id","decap-cms-setup","d"]
+0:["-OuHW6zrxfGO4eylJyM4T",[[["",{"children":["de",{"children":["docs",{"children":[["id","decap-cms-setup","d"],{"children":["__PAGE__?{\"id\":\"decap-cms-setup\"}",{}]}]}]}]},"$undefined","$undefined",true],["",{"children":["de",{"children":["docs",{"children":[["id","decap-cms-setup","d"],{"children":["__PAGE__",{},[["$L1","$L2",null],null],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","de","children","docs","children","$4","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","de","children","docs","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","de","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/717463fb5ac3cf8b.css","precedence":"next","crossOrigin":"$undefined"}]],["$","html",null,{"lang":"de","children":[["$","head",null,{"children":[["$","link",null,{"rel":"preconnect","href":"https://fonts.googleapis.com"}],["$","link",null,{"rel":"preconnect","href":"https://fonts.gstatic.com","crossOrigin":"anonymous"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Qwitcher+Grypen:wght@400;700&display=swap","rel":"stylesheet"}]]}],["$","body",null,{"children":["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":"404"}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],"notFoundStyles":[]}]}]]}]],null],null],["$L6",null]]]]
+7:I[2972,["972","static/chunks/972-ceea3baa05359a1c.js","513","static/chunks/app/de/docs/%5Bid%5D/page-dc07d30dcae8c712.js"],""]
+8:T12fc,<h1>Decap CMS Einrichtung</h1>
+<h2>Übersicht</h2>
+<p>Decap CMS (früher Netlify CMS) ist ein Headless CMS für statische Websites. Es ermöglicht die Bearbeitung von Blog-Posts über eine webbasierte Oberfläche.</p>
+<h2>Voraussetzungen</h2>
+<ul>
+<li>GitHub Repository: <code>seebinator/dos-aguas-website</code></li>
+<li>Website deployed (z.B. Vercel, Netlify, oder eigener Server)</li>
+</ul>
+<h2>Option 1: Netlify Identity (Einfachste)</h2>
+<h3>Schritt 1: Website auf Netlify deployen</h3>
+<ol>
+<li>Gehe zu <a href="https://netlify.com">netlify.com</a></li>
+<li>Klicke "Add new site" → "Import an existing project"</li>
+<li>Wähle GitHub und das Repository <code>seebinator/dos-aguas-website</code></li>
+<li>Build settings:
+<ul>
+<li>Build command: <code>npm run build</code></li>
+<li>Publish directory: <code>out</code></li>
+</ul>
+</li>
+<li>Klicke "Deploy site"</li>
+</ol>
+<h3>Schritt 2: Netlify Identity aktivieren</h3>
+<ol>
+<li>Im Netlify Dashboard → "Identity"</li>
+<li>Klicke "Enable Identity"</li>
+<li>Gehe zu "Settings" → "Registration"</li>
+<li>Setze "Registration preferences" auf "Invite only" (empfohlen)</li>
+<li>Gehe zu "Services" → "Git Gateway"</li>
+<li>Klicke "Enable Git Gateway"</li>
+<li>Autorisiere mit GitHub</li>
+</ol>
+<h3>Schritt 3: Admin-Zugang einrichten</h3>
+<ol>
+<li>Gehe zu "Identity" → "Users"</li>
+<li>Klicke "Invite users"</li>
+<li>Gib deine E-Mail-Adresse ein</li>
+<li>Rolle: "Admin"</li>
+<li>Klicke "Send"</li>
+<li>Akzeptiere die Einladung per E-Mail</li>
+</ol>
+<h3>Schritt 4: CMS nutzen</h3>
+<ol>
+<li>Öffne <code>https://deine-site.netlify.app/admin/</code></li>
+<li>Klicke "Login with Netlify Identity"</li>
+<li>Gib deine E-Mail und Passwort ein</li>
+<li>Du kannst jetzt Blog-Posts erstellen und bearbeiten</li>
+</ol>
+<hr>
+<h2>Option 2: Vercel + Git Gateway</h2>
+<h3>Schritt 1: Vercel Project erstellen</h3>
+<ol>
+<li>Gehe zu <a href="https://vercel.com">vercel.com</a></li>
+<li>Klicke "Add New..." → "Project"</li>
+<li>Importiere <code>seebinator/dos-aguas-website</code></li>
+<li>Framework Preset: "Next.js"</li>
+<li>Klicke "Deploy"</li>
+</ol>
+<h3>Schritt 2: Git Gateway einrichten</h3>
+<p>Da Vercel kein eingebautes Identity hat:</p>
+<ol>
+<li>Erstelle einen Account auf <a href="https://netlify.com">netlify.com</a></li>
+<li>Gehe zu "Sites" → "Add new site" → "Deploy manually"</li>
+<li>Dies dient nur für Git Gateway, die Website läuft auf Vercel</li>
+<li>Aktiviere Identity und Git Gateway wie in Option 1 beschrieben</li>
+</ol>
+<hr>
+<h2>Option 3: GitHub OAuth</h2>
+<h3>Schritt 1: GitHub OAuth App erstellen</h3>
+<ol>
+<li>Gehe zu GitHub → Settings → Developer settings → OAuth Apps</li>
+<li>Klicke "New OAuth App"</li>
+<li>Application name: "Dos Aguas CMS"</li>
+<li>Homepage URL: <code>https://dos-aguas.consulting</code></li>
+<li>Authorization callback URL: <code>https://dos-aguas.consulting/admin/</code></li>
+<li>Klicke "Register application"</li>
+<li>Notiere Client ID und Client Secret</li>
+</ol>
+<h3>Schritt 2: Config anpassen</h3>
+<p>Ändere <code>public/admin/config.yml</code>:</p>
+<pre><code class="language-yaml">backend:
+  name: github
+  repo: seebinator/dos-aguas-website
+  branch: main
+</code></pre>
+<hr>
+<h2>Empfohlene Lösung</h2>
+<p><strong>Option 1 (Netlify)</strong> ist am einfachsten:</p>
+<ol>
+<li>Deploye auf Netlify (kostenlos)</li>
+<li>Aktiviere Identity</li>
+<li>Fertig</li>
+</ol>
+<hr>
+<h2>CMS Nutzung</h2>
+<h3>Blog-Post erstellen:</h3>
+<ol>
+<li>Öffne <code>/admin/</code></li>
+<li>Wähle "Blog (Deutsch)" oder "Blog (Español)"</li>
+<li>Klicke "New Blog (Deutsch)"</li>
+<li>Fülle alle Felder aus:
+<ul>
+<li>Titel</li>
+<li>Datum</li>
+<li>Autor</li>
+<li>Agent (für Filter)</li>
+<li>Kategorie (für Filter)</li>
+<li>Bild (Upload oder URL)</li>
+<li>Zusammenfassung</li>
+<li>Inhalt (Markdown)</li>
+</ul>
+</li>
+<li>Klicke "Save" → Erstellt einen Git Commit</li>
+<li>Klicke "Publish" → Pusht zu GitHub</li>
+</ol>
+<h3>Bilder hochladen:</h3>
+<ul>
+<li>Im "Bild"-Feld auf "Choose different image" klicken</li>
+<li>Bild auswählen oder per Drag &#x26; Drop hochladen</li>
+<li>Bild wird automatisch nach <code>public/images/blog/</code> gespeichert</li>
+</ul>
+<hr>
+<h2>Troubleshooting</h2>
+<h3>"Failed to load entries"</h3>
+<ul>
+<li>Prüfe Git Gateway Konfiguration</li>
+<li>Stelle sicher, dass das Repository öffentlich ist oder der Zugriff erlaubt ist</li>
+</ul>
+<h3>"Login not working"</h3>
+<ul>
+<li>Prüfe Identity-Einstellungen in Netlify</li>
+<li>Stelle sicher, dass die E-Mail bestätigt ist</li>
+</ul>
+<h3>"Changes not saving"</h3>
+<ul>
+<li>Prüfe Git Gateway Berechtigungen</li>
+<li>Stelle sicher, dass der GitHub Token gültig ist</li>
+</ul>
+<hr>
+<h2>Support</h2>
+<ul>
+<li>Decap CMS Docs: https://decapcms.org/docs/</li>
+<li>Netlify Identity: https://docs.netlify.com/visitor-access/identity/</li>
+<li>Git Gateway: https://github.com/netlify/git-gateway</li>
+</ul>
+2:[["$","nav",null,{"className":"nav","children":["$","div",null,{"className":"nav-content","children":[["$","$L7",null,{"href":"/de/","className":"nav-logo","children":[["$","span",null,{"className":"nav-logo-icon","children":"∞"}],["$","span",null,{"className":"nav-logo-text","children":[["$","span",null,{"className":"nav-logo-name","children":"Dos Aguas"}],["$","span",null,{"className":"nav-logo-tagline","children":"Consulting"}]]}]]}],["$","ul",null,{"className":"nav-links","children":[["$","li",null,{"children":["$","$L7",null,{"href":"/de/services/","children":"Services"}]}],["$","li",null,{"children":["$","$L7",null,{"href":"/de/team/","children":"Team"}]}],["$","li",null,{"children":["$","$L7",null,{"href":"/de/blog/","children":"Blog"}]}],["$","li",null,{"children":["$","$L7",null,{"href":"/de/docs/","children":"Docs"}]}],["$","li",null,{"children":["$","$L7",null,{"href":"/de/kontakt/","children":"Kontakt"}]}]]}]]}]}],["$","main",null,{"className":"page-content","children":["$","article",null,{"className":"doc-detail","children":[["$","header",null,{"className":"doc-header","children":[["$","div",null,{"className":"doc-meta","children":[["$","span",null,{"className":"doc-type","children":"Anleitungen"}],["$","span",null,{"className":"doc-date","children":"2026-03-01"}]]}],["$","h1",null,{"className":"doc-title","children":"Decap CMS Einrichtung"}],["$","span",null,{"className":"doc-author","children":["Von ","Juan"]}]]}],["$","div",null,{"className":"doc-content","dangerouslySetInnerHTML":{"__html":"$8"}}],["$","footer",null,{"className":"doc-footer","children":["$","$L7",null,{"href":"/de/docs/","className":"btn-secondary","children":"← Zurück zu Docs"}]}]]}]}]]
+6:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"charSet":"utf-8"}],["$","title","2",{"children":"Dos Aguas Consulting | Deutschland – Mexiko"}],["$","meta","3",{"name":"description","content":"Steuerberatung, IT-Recht, Odoo und digitale Transformation. Ihr Partner für grenzüberschreitendes Geschäft."}]]
+1:null
