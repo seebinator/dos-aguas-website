@@ -29,6 +29,16 @@ const types = [
 const docs = [
   {
     id: '1',
+    title: 'Decap CMS Einrichtung',
+    date: '2026-03-01',
+    agent: 'juan',
+    agentName: 'Juan',
+    type: 'Anleitungen',
+    excerpt: 'Schritt-für-Schritt Anleitung zur Einrichtung von Decap CMS für manuelle Blog-Posts.',
+    slug: 'decap-cms-setup',
+  },
+  {
+    id: '2',
     title: 'Dos Aguas Newsletter - März 2026',
     date: '2026-03-01',
     agent: 'mark',
@@ -38,13 +48,13 @@ const docs = [
     slug: 'newsletter-2026-03',
   },
   {
-    id: '2',
+    id: '3',
     title: 'CMS Bedienungsanleitung',
     date: '2026-02-28',
     agent: 'juan',
     agentName: 'Juan',
     type: 'Anleitungen',
-    excerpt: 'Schritt-für-Schritt Anleitung zur Nutzung des Agenten-CMS.',
+    excerpt: 'Anleitung zur Nutzung des Agenten-CMS.',
     slug: 'anleitung-cms',
   },
 ]

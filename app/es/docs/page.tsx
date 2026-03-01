@@ -29,6 +29,16 @@ const types = [
 const docs = [
   {
     id: '1',
+    title: 'Configuración de Decap CMS',
+    date: '2026-03-01',
+    agent: 'juan',
+    agentName: 'Juan',
+    type: 'Anleitungen',
+    excerpt: 'Guía paso a paso para configurar Decap CMS para posts de blog manuales.',
+    slug: 'decap-cms-setup',
+  },
+  {
+    id: '2',
     title: 'Dos Aguas Newsletter - Marzo 2026',
     date: '2026-03-01',
     agent: 'mark',
@@ -38,7 +48,7 @@ const docs = [
     slug: 'newsletter-2026-03',
   },
   {
-    id: '2',
+    id: '3',
     title: 'Manual de Uso del CMS',
     date: '2026-02-28',
     agent: 'juan',
@@ -48,7 +58,7 @@ const docs = [
     slug: 'manual-cms',
   },
   {
-    id: '3',
+    id: '4',
     title: 'SAT News México - Resumen Fiscal Febrero 2026',
     date: '2026-02-27',
     agent: 'maria',
