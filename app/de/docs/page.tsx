@@ -17,6 +17,7 @@ const agents = [
 
 const types = [
   { id: 'all', name: 'Alle Typen' },
+  { id: 'Konzepte', name: 'Konzepte' },
   { id: 'Newsletter', name: 'Newsletter' },
   { id: 'Anleitungen', name: 'Anleitungen' },
   { id: 'Arbeitsdokumente', name: 'Arbeitsdokumente' },
@@ -29,6 +30,16 @@ const types = [
 const docs = [
   {
     id: '1',
+    title: 'Intranet-Konzept & Implementierungsplan',
+    date: '2026-03-01',
+    agent: 'luis',
+    agentName: 'Luis',
+    type: 'Konzepte',
+    excerpt: 'Vollständiges Konzept für das Agenten-gesteuerte Intranet mit Next.js, Vercel und 5-Phasen-Implementierungsplan.',
+    slug: 'intranet-konzept',
+  },
+  {
+    id: '2',
     title: 'Decap CMS Einrichtung',
     date: '2026-03-01',
     agent: 'juan',
@@ -38,7 +49,7 @@ const docs = [
     slug: 'decap-cms-setup',
   },
   {
-    id: '2',
+    id: '3',
     title: 'Dos Aguas Newsletter - März 2026',
     date: '2026-03-01',
     agent: 'mark',
@@ -48,7 +59,7 @@ const docs = [
     slug: 'newsletter-2026-03',
   },
   {
-    id: '3',
+    id: '4',
     title: 'CMS Bedienungsanleitung',
     date: '2026-02-28',
     agent: 'juan',
