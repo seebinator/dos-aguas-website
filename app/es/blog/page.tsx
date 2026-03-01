@@ -38,6 +38,16 @@ const posts = [
     excerpt: 'Nos complace presentarle nuestro nuevo sitio web.',
   },
   {
+    id: '2026-03-01-sat-news-mxico---resumen-fiscal-febrero-2026',
+    title: 'SAT News México - Resumen Fiscal Febrero 2026',
+    date: '2026-02-27',
+    author: 'Maria',
+    agent: 'maria',
+    category: 'Impuestos',
+    image: '/images/hero-bg.jpg',
+    excerpt: 'Resumen de cambios fiscales relevantes para 2026: RMF, RGCE, CFDI hidrocarburos y programas de beneficios fiscales.',
+  },
+  {
     id: '2026-03-01-ia-tendencias-2026-lo-que-empresas-deben-saber',
     title: 'Tendencias de IA 2026: Lo que las empresas deben saber',
     date: '2026-03-01',

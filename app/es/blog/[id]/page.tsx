@@ -3,6 +3,7 @@ import Link from 'next/link'
 export function generateStaticParams() {
   return [
     { id: '2026-03-01-bienvenidos' },
+    { id: '2026-03-01-sat-news-mxico---resumen-fiscal-febrero-2026' },
     { id: '2026-03-01-ia-tendencias-2026-lo-que-empresas-deben-saber' },
     { id: '2026-02-28-consultoria-ia' },
     { id: '2026-02-25-precios-transferencia' },
@@ -35,6 +36,65 @@ export default function BlogPostES({ params }: { params: { id: string } }) {
 </ul>
 
 <p>Detrás de Dos Aguas hay un equipo de 8 especialistas.</p>
+      `
+    },
+    '2026-03-01-sat-news-mxico---resumen-fiscal-febrero-2026': {
+      title: 'SAT News México - Resumen Fiscal Febrero 2026',
+      date: '2026-02-27',
+      author: 'Maria',
+      category: 'Impuestos',
+      content: `
+<h2>Resolución Miscelánea Fiscal (RMF) 2026</h2>
+
+<p>La RMF 2026 fue publicada el <strong>28 de diciembre de 2025</strong> y entró en vigor para el ejercicio fiscal 2026.</p>
+
+<h3>Cambios Principales</h3>
+
+<h4>1. Simplificación de Trámites</h4>
+<ul>
+<li>Se eliminan requisitos en diversos trámites fiscales</li>
+<li>Se establecen formatos estandarizados para facilitar la presentación</li>
+<li>Reducción de carga administrativa para contribuyentes</li>
+</ul>
+
+<h4>2. Comprobantes Fiscales (CFDI) - Hidrocarburos</h4>
+<ul>
+<li>Reformas importantes en la emisión de CFDI que amparan hidrocarburos</li>
+<li>Objetivo: Combatir esquemas de evasión y simulación fiscal</li>
+<li>Enfoque en el mercado ilícito de combustible</li>
+</ul>
+
+<h4>3. Programas de Beneficios Fiscales 2026</h4>
+
+<p><strong>Programa de Regularización Fiscal:</strong></p>
+<ul>
+<li>Disposiciones operativas actualizadas</li>
+<li>Facilita el cumplimiento para contribuyentes con adeudos</li>
+</ul>
+
+<p><strong>Repatriación de Capitales:</strong></p>
+<ul>
+<li>Reglas de operación establecidas en la Ley de Ingresos 2026</li>
+<li>Beneficios para capital nacional en el extranjero</li>
+</ul>
+
+<h3>Reglas Generales de Comercio Exterior (RGCE) 2026</h3>
+
+<p>Publicadas el <strong>27 de diciembre de 2025</strong>, incluyen:</p>
+<ul>
+<li>Fortalecimiento de Medidas Antilavado</li>
+<li>Nuevo Acuerdo de Circunscripción Aduanera</li>
+<li>Reformas a la Ley Aduanera</li>
+</ul>
+
+<h3>Próximas Fechas Importantes</h3>
+<ul>
+<li><strong>Marzo 2026:</strong> Presentación de declaraciones anuales 2025 (personas morales)</li>
+<li><strong>17 de abril 2026:</strong> Declaración anual ISR personas físicas</li>
+<li><strong>17 de abril 2026:</strong> DIOT primer trimestre 2026</li>
+</ul>
+
+<p><em>Elaborado por: Maria 💰 - Dos Aguas Consulting</em></p>
       `
     },
     '2026-03-01-ia-tendencias-2026-lo-que-empresas-deben-saber': {
