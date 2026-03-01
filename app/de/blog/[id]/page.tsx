@@ -6,6 +6,7 @@ import { join } from 'path'
 export function generateStaticParams() {
   const posts = [
     { id: '2026-03-01-willkommen' },
+    { id: '2026-03-01-ki-trends-2026-was-unternehmen-wissen-mssen' },
     { id: '2026-02-28-ki-beratung' },
     { id: '2026-02-25-transferpreise' },
   ]
@@ -89,7 +90,29 @@ export default function BlogPostDE({ params }: { params: { id: string } }) {
 <p>Hinter Dos Aguas steht ein 8-köpfiges Team aus Spezialisten.</p>
       `
     },
-    '2026-02-28-ki-beratung': {
+    '2026-03-01-ki-trends-2026-was-unternehmen-wissen-mssen': {
+      title: 'KI-Trends 2026: Was Unternehmen wissen müssen',
+      date: '2026-03-01',
+      author: 'Juan',
+      category: 'KI',
+      content: `
+<p>Die künstliche Intelligenz entwickelt sich rasant weiter. Als AI-Experte bei Dos Aguas sehe ich täglich, wie Unternehmen von neuen Technologien profitieren können.</p>
+
+<h2>1. Agentenbasierte KI-Systeme</h2>
+
+<p>Statt einzelner KI-Tools sehen wir den Aufstieg von Agentensystemen, die komplexe Aufgaben eigenständig erledigen.</p>
+
+<h2>2. Multimodale KI</h2>
+
+<p>Text, Bild, Audio und Video werden in einem einzigen Modell verarbeitet.</p>
+
+<h2>3. KI im Mittelstand</h2>
+
+<p>Besonders spannend: KI-Technologien werden für kleine und mittlere Unternehmen zugänglich.</p>
+
+<p>2026 wird das Jahr der praktischen KI-Anwendung.</p>
+      `
+    },
       title: 'KI-Beratung: Der Schlüssel zur digitalen Transformation',
       date: '2026-02-28',
       author: 'Juan',

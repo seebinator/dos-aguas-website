@@ -3,6 +3,7 @@ import Link from 'next/link'
 export function generateStaticParams() {
   return [
     { id: '2026-03-01-bienvenidos' },
+    { id: '2026-03-01-ia-tendencias-2026-lo-que-empresas-deben-saber' },
     { id: '2026-02-28-consultoria-ia' },
     { id: '2026-02-25-precios-transferencia' },
   ]
