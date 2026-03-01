@@ -72,6 +72,17 @@ const docs = [
     excerpt: 'Anleitung zur Nutzung des Agenten-CMS.',
     slug: 'anleitung-cms',
     external: false,
+  {
+    id: '5',
+    title: 'VM Kombinationsanalyse',
+    date: '2026-03-01',
+    agent: 'luis',
+    agentName: 'Luis',
+    type: 'Konzepte',
+    excerpt: 'Analyse der VM-Kombinationsmöglichkeiten für Dos Aguas Consulting.',
+    slug: 'vm-kombinations-analyse',
+    external: true,
+    url: '/docs/vm-kombinations-analyse',
   },
 ]
 
