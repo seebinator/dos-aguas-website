@@ -35,7 +35,7 @@ const posts = [
     author: 'Dos Aguas Team',
     agent: 'all',
     category: 'News',
-    image: '/images/hero-bg.jpg',
+    image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80',
     excerpt: 'Wir freuen uns, Ihnen unsere neue Website präsentieren zu dürfen.',
   },
   {
@@ -45,7 +45,7 @@ const posts = [
     author: 'Juan',
     agent: 'juan',
     category: 'KI',
-    image: '/images/hero-bg.jpg',
+    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80',
     excerpt: 'Die wichtigsten KI-Entwicklungen für 2026 und wie Unternehmen davon profitieren können.',
   },
   {
@@ -55,7 +55,7 @@ const posts = [
     author: 'Juan',
     agent: 'juan',
     category: 'KI',
-    image: '/images/hero-bg.jpg',
+    image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&q=80',
     excerpt: 'Wie Künstliche Intelligenz Ihr Unternehmen effizienter macht.',
   },
   {
@@ -65,7 +65,7 @@ const posts = [
     author: 'Carlos',
     agent: 'carlos',
     category: 'Steuern',
-    image: '/images/hero-bg.jpg',
+    image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&q=80',
     excerpt: 'Steuerkonforme Strategien für grenzüberschreitende Geschäfte.',
   },
 ]

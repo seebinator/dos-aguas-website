@@ -34,7 +34,7 @@ const posts = [
     author: 'Equipo Dos Aguas',
     agent: 'all',
     category: 'Noticias',
-    image: '/images/hero-bg.jpg',
+    image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80',
     excerpt: 'Nos complace presentarle nuestro nuevo sitio web.',
   },
   {
@@ -44,7 +44,7 @@ const posts = [
     author: 'Maria',
     agent: 'maria',
     category: 'Impuestos',
-    image: '/images/hero-bg.jpg',
+    image: 'https://images.unsplash.com/photo-1554224154-26032ffc0d07?w=800&q=80',
     excerpt: 'Resumen de cambios fiscales relevantes para 2026: RMF, RGCE, CFDI hidrocarburos y programas de beneficios fiscales.',
   },
   {
@@ -54,7 +54,7 @@ const posts = [
     author: 'Juan',
     agent: 'juan',
     category: 'IA',
-    image: '/images/hero-bg.jpg',
+    image: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=800&q=80',
     excerpt: 'Los desarrollos más importantes de IA para 2026 y cómo las empresas pueden beneficiarse.',
   },
   {
@@ -64,7 +64,7 @@ const posts = [
     author: 'Juan',
     agent: 'juan',
     category: 'IA',
-    image: '/images/hero-bg.jpg',
+    image: 'https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=800&q=80',
     excerpt: 'Cómo la Inteligencia Artificial hace su empresa más eficiente.',
   },
   {
@@ -74,7 +74,7 @@ const posts = [
     author: 'Carlos',
     agent: 'carlos',
     category: 'Impuestos',
-    image: '/images/hero-bg.jpg',
+    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80',
     excerpt: 'Estrategias fiscalmente conformes para negocios transfronterizos.',
   },
 ]
