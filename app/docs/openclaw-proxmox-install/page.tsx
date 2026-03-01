@@ -1,4 +1,4 @@
-import Link from 'next/link'
+'use client'
 
 export default function OpenClawInstallPage() {
   return (
@@ -8,14 +8,17 @@ export default function OpenClawInstallPage() {
       color: '#e0e0e0',
       lineHeight: 1.6,
       minHeight: '100vh'
-    }}>
+    }}
+    >
       <div style={{ maxWidth: '800px', margin: '0 auto', padding: '40px 20px' }}>
+        
         <header style={{ 
           textAlign: 'center', 
           padding: '40px 0', 
           borderBottom: '2px solid #00d4aa',
           marginBottom: '40px'
-        }}>
+        }}
+        >
           <div style={{ fontSize: '2.5rem', fontWeight: 700, color: '#00d4aa', marginBottom: '10px' }}>∞ Dos Aguas</div>
           <div style={{ color: '#888', fontSize: '0.9rem', letterSpacing: '2px', textTransform: 'uppercase' }}>Consulting</div>
           <h1 style={{ color: '#fff', fontSize: '1.8rem', marginTop: '20px' }}>OpenClaw Installation in Proxmox VM</h1>
@@ -32,7 +35,8 @@ export default function OpenClawInstallPage() {
             padding: '20px',
             borderRadius: '8px',
             margin: '20px 0'
-          }}>
+          }}
+          >
             <strong style={{ color: '#00d4aa' }}>Voraussetzungen:</strong><br/>
             • Proxmox VE<br/>
             • Mindestens 4 GB RAM<br/>
@@ -64,7 +68,8 @@ export default function OpenClawInstallPage() {
             padding: '20px',
             overflowX: 'auto',
             margin: '15px 0'
-          }}><code style={{ color: '#e0e0e0' }}>sudo apt update && sudo apt upgrade -y
+          }}
+          ><code style={{ color: '#e0e0e0' }}>sudo apt update && sudo apt upgrade -y
 
 sudo apt install -y curl git nodejs npm docker.io docker-compose</code></pre>
         </div>
@@ -79,7 +84,8 @@ sudo apt install -y curl git nodejs npm docker.io docker-compose</code></pre>
             padding: '20px',
             overflowX: 'auto',
             margin: '15px 0'
-          }}><code style={{ color: '#e0e0e0' }}># Node.js 22 installieren
+          }}
+          ><code style={{ color: '#e0e0e0' }}>{`# Node.js 22 installieren
 curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash -
 sudo apt install -y nodejs
 
@@ -87,7 +93,7 @@ sudo apt install -y nodejs
 sudo npm install -g openclaw
 
 # OpenClaw initialisieren
-openclaw init</code></pre>
+openclaw init`}</code></pre>
         </div>
 
         <div style={{ marginBottom: '40px' }}>
@@ -100,7 +106,8 @@ openclaw init</code></pre>
             padding: '20px',
             overflowX: 'auto',
             margin: '15px 0'
-          }}><code style={{ color: '#e0e0e0' }}># Systemd Service erstellen
+          }}
+          ><code style={{ color: '#e0e0e0' }}>{`# Systemd Service erstellen
 sudo tee /etc/systemd/system/openclaw.service > /dev/null <<EOF
 [Unit]
 Description=OpenClaw Gateway
@@ -120,7 +127,7 @@ EOF
 # Service aktivieren und starten
 sudo systemctl daemon-reload
 sudo systemctl enable openclaw
-sudo systemctl start openclaw</code></pre>
+sudo systemctl start openclaw`}</code></pre>
         </div>
 
         <div style={{ marginBottom: '40px' }}>
@@ -135,7 +142,8 @@ sudo systemctl start openclaw</code></pre>
             padding: '20px',
             overflowX: 'auto',
             margin: '15px 0'
-          }}><code style={{ color: '#e0e0e0' }}>http://VM-IP-ADDRESS:8080</code></pre>
+          }}
+          ><code style={{ color: '#e0e0e0' }}>http://VM-IP-ADDRESS:8080</code></pre>
         </div>
 
         <footer style={{ 
@@ -143,8 +151,10 @@ sudo systemctl start openclaw</code></pre>
           padding: '40px 0', 
           borderTop: '1px solid rgba(255, 255, 255, 0.1)',
           marginTop: '60px'
-        }}>
-          <div style={{ fontSize: '1.5rem', fontWeight: 700, color: '#00d4aa', marginBottom: '15px' }}>∞ Dos Aguas</div>
+        }}
+        >
+          <div style={{ fontSize: '1.5rem', fontWeight: 700, color: '#00d4aa', marginBottom: '15px' }}
+003e∞ Dos Aguas</div>
           <p style={{ color: '#666', fontSize: '0.85rem' }}>© 2026 Dos Aguas Consulting. Alle Rechte vorbehalten.</p>
           <p style={{ color: '#666', fontSize: '0.85rem' }}>Erstellt von: Luis | Odoo & ERP Spezialist</p>
         </footer>
