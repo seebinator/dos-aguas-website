@@ -40,7 +40,7 @@ export default function KontaktES() {
         <section className="contact-section">
           <div className="contact-grid">
             <div className="contact-form-wrapper">
-              <form className="contact-form" action="https://formspree.io/f/xnqevwdr" method="POST">
+              <form className="contact-form" action="https://formspree.io/f/mjgedgjq" method="POST">
                 <input type="hidden" name="_language" value="es" />
                 
                 <div className="form-group"><label htmlFor="name">{content.form.name}</label><input type="text" id="name" name="name" required /></div>
