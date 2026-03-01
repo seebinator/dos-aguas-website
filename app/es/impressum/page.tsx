@@ -1,3 +1,7 @@
+'use client'
+
+import Navigation from '../../components/Navigation'
+
 import Link from 'next/link'
 
 const content = {
@@ -8,22 +12,7 @@ const content = {
 export default function ImpressumES() {
   return (
     <>
-      <nav className="nav">
-        <div className="nav-content">
-          <Link href="/es/" className="nav-logo"><span className="nav-logo-icon">∞</span><span className="nav-logo-text"><span className="nav-logo-name">Dos Aguas</span><span className="nav-logo-tagline">Consulting</span></span></Link>
-          <ul className="nav-links">
-            <li><Link href="/es/services/">{content.nav.services}</Link></li>
-            <li><Link href="/es/team/">{content.nav.team}</Link></li>
-            <li><Link href="/es/blog/">{content.nav.blog}</Link></li>
-            <li><Link href="/es/docs/">{content.nav.docs}</Link></li>
-            <li><Link href="/es/kontakt/">{content.nav.contact}</Link></li>
-          </ul>
-          <div className="nav-actions">
-            <Link href="/de/impressum/" className="lang-btn">🇩🇪 DE</Link>
-            <button className="btn-nav">{content.nav.dropbox}</button>
-          </div>
-        </div>
-      </nav>
+      <Navigation lang="es" />
 
       <main className="page-content">
         <section className="page-header">

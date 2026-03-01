@@ -1,7 +1,7 @@
 'use client'
 
+import Navigation from '../../components/Navigation'
 import Link from 'next/link'
-import { useState } from 'react'
 
 const agents = [
   { id: 'juan', name: 'Juan', role: 'AI & Strategie', image: '/images/agent-juan.png' },
@@ -15,86 +15,15 @@ const agents = [
 ]
 
 const content = {
-  nav: { services: 'Services', team: 'Team', blog: 'Blog', docs: 'Docs', contact: 'Kontakt', dropbox: 'Dropbox' },
   page: { subtitle: '8 KI-Spezialisten, ein Ziel', title: 'Unsere KI-Agenten', description: 'Lernen Sie unsere KI-Agenten hinter Dos Aguas kennen.' },
   cta: 'Kontakt aufnehmen',
   footer: { imprint: 'Impressum', privacy: 'Datenschutz', copyright: '© 2026 Dos Aguas Consulting' },
 }
 
 export default function TeamDE() {
-  const [dropdownOpen, setDropdownOpen] = useState(false)
-
   return (
     <>
-      <nav className="nav">
-        <div className="nav-content">
-          <Link href="/de/" className="nav-logo"><span className="nav-logo-icon">∞</span><span className="nav-logo-text"><span className="nav-logo-name">Dos Aguas</span><span className="nav-logo-tagline">Consulting</span></span></Link>
-          <ul className="nav-links">
-            <li><Link href="/de/services/">{content.nav.services}</Link></li>
-            <li><Link href="/de/team/">{content.nav.team}</Link></li>
-            <li><Link href="/de/blog/">{content.nav.blog}</Link></li>
-            <li><Link href="/de/docs/">{content.nav.docs}</Link></li>
-            <li><Link href="/de/kontakt/">{content.nav.contact}</Link></li>
-          </ul>
-          <div className="nav-actions">
-            <Link href="/es/team/" className="lang-btn">🇪🇸 ES</Link>
-            <div className="dropdown" style={{ position: 'relative' }}>
-              <button 
-                className="btn-nav" 
-                onClick={() => setDropdownOpen(!dropdownOpen)}
-                style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}
-              >
-                Menu ▼
-              </button>
-              {dropdownOpen && (
-                <div className="dropdown-menu" style={{
-                  position: 'absolute',
-                  top: '100%',
-                  right: 0,
-                  background: 'var(--color-bg-card)',
-                  border: '1px solid var(--color-border)',
-                  borderRadius: '8px',
-                  padding: '0.5rem 0',
-                  minWidth: '150px',
-                  boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
-                  zIndex: 100
-                }}>
-                  <Link href="/es/services/" style={{
-                    display: 'block',
-                    padding: '0.5rem 1rem',
-                    color: 'var(--color-text)',
-                    textDecoration: 'none'
-                  }} onClick={() => setDropdownOpen(false)}>Servicios</Link>
-                  <Link href="/es/team/" style={{
-                    display: 'block',
-                    padding: '0.5rem 1rem',
-                    color: 'var(--color-text)',
-                    textDecoration: 'none'
-                  }} onClick={() => setDropdownOpen(false)}>Equipo</Link>
-                  <Link href="/es/blog/" style={{
-                    display: 'block',
-                    padding: '0.5rem 1rem',
-                    color: 'var(--color-text)',
-                    textDecoration: 'none'
-                  }} onClick={() => setDropdownOpen(false)}>Blog</Link>
-                  <Link href="/es/docs/" style={{
-                    display: 'block',
-                    padding: '0.5rem 1rem',
-                    color: 'var(--color-text)',
-                    textDecoration: 'none'
-                  }} onClick={() => setDropdownOpen(false)}>Docs</Link>
-                  <Link href="/es/kontakt/" style={{
-                    display: 'block',
-                    padding: '0.5rem 1rem',
-                    color: 'var(--color-text)',
-                    textDecoration: 'none'
-                  }} onClick={() => setDropdownOpen(false)}>Contacto</Link>
-                </div>
-              )}
-            </div>
-          </div>
-        </div>
-      </nav>
+      <Navigation lang="de" />
 
       <main className="page-content">
         <section className="page-header">
@@ -110,18 +39,19 @@ export default function TeamDE() {
             {agents.map((agent) => (
               <div key={agent.id} className="team-card">
                 <div className="team-card-image"><img src={agent.image} alt={agent.name} /></div>
-                <div className="team-card-info"><h3>{agent.name}</h3><p>{agent.role}</p></div>
+                <div className="team-card-content">
+                  <h3>{agent.name}</h3>
+                  <p className="team-card-role">{agent.role}</p>
+                </div>
               </div>
             ))}
           </div>
         </section>
 
-        <section className="team-photo-section">
-          <div className="team-photo-container"><img src="/images/team-photo.png" alt="Dos Aguas Team" /></div>
-        </section>
-
         <section className="cta-section">
-          <Link href="/de/kontakt/" className="btn-primary btn-large">{content.cta}</Link>
+          <div className="cta-content">
+            <Link href="/de/kontakt/" className="btn-primary">{content.cta}</Link>
+          </div>
         </section>
       </main>
 
@@ -131,7 +61,6 @@ export default function TeamDE() {
           <ul className="footer-links">
             <li><Link href="/de/impressum/">{content.footer.imprint}</Link></li>
             <li><Link href="/de/datenschutz/">{content.footer.privacy}</Link></li>
-            <li><Link href="/de/kontakt/">{content.nav.contact}</Link></li>
           </ul>
           <span className="footer-copy">{content.footer.copyright}</span>
         </div>

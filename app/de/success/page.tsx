@@ -1,3 +1,7 @@
+'use client'
+
+import Navigation from '../../components/Navigation'
+
 import Link from 'next/link'
 
 const content = {
@@ -17,22 +21,7 @@ const content = {
 export default function SuccessDE() {
   return (
     <>
-      <nav className="nav">
-        <div className="nav-content">
-          <Link href="/de/" className="nav-logo"><span className="nav-logo-icon">∞</span><span className="nav-logo-text"><span className="nav-logo-name">Dos Aguas</span><span className="nav-logo-tagline">Consulting</span></span></Link>
-          <ul className="nav-links">
-            <li><Link href="/de/services/">{content.nav.services}</Link></li>
-            <li><Link href="/de/team/">{content.nav.team}</Link></li>
-            <li><Link href="/de/blog/">{content.nav.blog}</Link></li>
-            <li><Link href="/de/docs/">{content.nav.docs}</Link></li>
-            <li><Link href="/de/kontakt/">{content.nav.contact}</Link></li>
-          </ul>
-          <div className="nav-actions">
-            <Link href="/es/success/" className="lang-btn">🇪🇸 ES</Link>
-            <button className="btn-nav">{content.nav.dropbox}</button>
-          </div>
-        </div>
-      </nav>
+      <Navigation lang="de" />
 
       <main className="page-content">
         <section className="success-section">
