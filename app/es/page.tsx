@@ -29,6 +29,8 @@ const content = {
     transfer: { title: 'Estrategias de Precios de Transferencia', description: 'Optimización de su fijación de precios transfronteriza entre Alemania y México.' },
     odoo: { title: 'Implementación Odoo', description: 'Soluciones ERP a medida que escalan. Desde la consulta hasta el go-live.' },
     legal: { title: 'Derecho IT & Protección de Datos', description: 'GDPR, LFPDPPP y cumplimiento internacional. Procesos digitales seguros.' },
+    transformation: { title: 'Transformación Digital', description: 'Transformación digital integral de su empresa desde la estrategia hasta la implementación.' },
+    tax: { title: 'Asesoría Fiscal', description: 'Asesoría fiscal competente en Alemania y México. Conocemos ambos sistemas fiscales.' },
   },
   cta: {
     pretitle: '¿Listo para el siguiente paso?',
@@ -100,6 +102,8 @@ export default function HomeES() {
             <div className="feature-card"><div className="feature-icon">💱</div><h3>{content.services.transfer.title}</h3><p>{content.services.transfer.description}</p></div>
             <div className="feature-card"><div className="feature-icon">⚙️</div><h3>{content.services.odoo.title}</h3><p>{content.services.odoo.description}</p></div>
             <div className="feature-card"><div className="feature-icon">⚖️</div><h3>{content.services.legal.title}</h3><p>{content.services.legal.description}</p></div>
+            <div className="feature-card"><div className="feature-icon">🚀</div><h3>{content.services.transformation.title}</h3><p>{content.services.transformation.description}</p></div>
+            <div className="feature-card"><div className="feature-icon">💼</div><h3>{content.services.tax.title}</h3><p>{content.services.tax.description}</p></div>
           </div>
         </section>
 
