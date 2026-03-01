@@ -64,7 +64,7 @@ const docs = [
     excerpt: 'Vollständiges Konzept für das Agenten-gesteuerte Intranet mit Next.js, Vercel und 5-Phasen-Implementierungsplan.',
     slug: 'intranet-konzept',
     external: true,
-    url: '/docs/intranet-konzept',
+    url: '/docs/intranet-konzept.html',
   },
   {
     id: '2',
@@ -109,7 +109,7 @@ const docs = [
     excerpt: 'Analyse der VM-Kombinationsmöglichkeiten für Dos Aguas Consulting.',
     slug: 'vm-kombinations-analyse',
     external: true,
-    url: '/docs/vm-kombinations-analyse',
+    url: '/docs/vm-kombinations-analyse.html',
   },
 ]
 

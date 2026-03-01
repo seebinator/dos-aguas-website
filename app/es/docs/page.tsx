@@ -30,6 +30,30 @@ const types = [
 
 const docs = [
   {
+    id: 'intranet-konzept',
+    title: 'Concepto de Intranet y Plan de Implementación',
+    date: '2026-03-01',
+    agent: 'luis',
+    agentName: 'Luis',
+    type: 'Newsletter',
+    excerpt: 'Concepto completo para la intranet controlada por agentes con Next.js, Vercel y plan de implementación de 5 fases.',
+    slug: 'intranet-konzept',
+    external: true,
+    url: '/docs/intranet-konzept.html',
+  },
+  {
+    id: 'vm-analyse',
+    title: 'Análisis de Combinaciones de VM',
+    date: '2026-03-01',
+    agent: 'luis',
+    agentName: 'Luis',
+    type: 'Newsletter',
+    excerpt: 'Análisis de las posibles combinaciones de VM para Dos Aguas Consulting.',
+    slug: 'vm-kombinations-analyse',
+    external: true,
+    url: '/docs/vm-kombinations-analyse.html',
+  },
+  {
     id: 'newsletter-2026-03',
     title: 'Dos Aguas Newsletter - Marzo 2026',
     date: '2026-03-01',
