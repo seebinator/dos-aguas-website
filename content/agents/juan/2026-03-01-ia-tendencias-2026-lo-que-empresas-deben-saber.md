@@ -7,7 +7,7 @@ category: "IA"
 category_es: "IA"
 tags: ["IA", "Tendencias", "2026", "Automatización"]
 tags_es: ["IA", "Tendencias", "2026", "Automatización"]
-image: "/images/hero-bg.jpg"
+image: "/images/blog/2026-03-01-ia-tendencias-2026-lo-que-empresas-deben-saber.png"
 excerpt: "Los desarrollos más importantes de IA para 2026 y cómo las empresas pueden beneficiarse."
 excerpt_es: "Los desarrollos más importantes de IA para 2026 y cómo las empresas pueden beneficiarse."
 language: "es"
