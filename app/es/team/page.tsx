@@ -2,13 +2,13 @@ import Link from 'next/link'
 
 const agents = [
   { id: 'juan', name: 'Juan', role: 'IA & Estrategia', image: '/images/agent-juan.png' },
-  { id: 'conny', name: 'Conny', role: 'Diseño & UI/UX', image: '/images/agent-conny.png' },
-  { id: 'desire', name: 'Desire', role: 'Marketing & Contenido', image: '/images/agent-desire.png' },
-  { id: 'mark', name: 'Mark', role: 'Inteligencia de Negocios', image: '/images/agent-mark.png' },
-  { id: 'scotty', name: 'Scotty', role: 'Odoo & ERP', image: '/images/agent-scotty.png' },
-  { id: 'spock', name: 'Spock', role: 'Derecho IT & Protección de Datos', image: '/images/agent-spock.png' },
-  { id: 'stefan', name: 'Stefan', role: 'Asesoría Fiscal DE', image: '/images/agent-stefan.png' },
-  { id: 'uhura', name: 'Uhura', role: 'Atención al Cliente', image: '/images/agent-uhura.png' },
+  { id: 'maria', name: 'Maria', role: 'Asesoría Fiscal México', image: '/images/agent-conny.png' },
+  { id: 'carlos', name: 'Carlos', role: 'Asesoría Fiscal Alemania', image: '/images/agent-stefan.png' },
+  { id: 'luis', name: 'Luis', role: 'Odoo & ERP', image: '/images/agent-scotty.png' },
+  { id: 'mark', name: 'Mark', role: 'Marketing & Contenido', image: '/images/agent-mark.png' },
+  { id: 'diego', name: 'Diego', role: 'Inteligencia de Negocios', image: '/images/agent-desire.png' },
+  { id: 'design', name: 'Design', role: 'UI/UX & Identidad Corporativa', image: '/images/agent-spock.png' },
+  { id: 'sofia', name: 'Sofia', role: 'Atención al Cliente', image: '/images/agent-uhura.png' },
 ]
 
 const content = {
