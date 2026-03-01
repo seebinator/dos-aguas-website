@@ -1,7 +1,3 @@
-'use client'
-
-import Navigation from '../../components/Navigation'
-
 import Link from 'next/link'
 import fs from 'fs'
 import path from 'path'
@@ -114,7 +110,22 @@ export default function BlogDE() {
 
   return (
     <>
-      <Navigation lang="de" />
+      <nav className="nav">
+        <div className="nav-content">
+          <Link href="/de/" className="nav-logo"><span className="nav-logo-icon">∞</span><span className="nav-logo-text"><span className="nav-logo-name">Dos Aguas</span><span className="nav-logo-tagline">Consulting</span></span></Link>
+          <ul className="nav-links">
+            <li><Link href="/de/services/">Services</Link></li>
+            <li><Link href="/de/team/">Team</Link></li>
+            <li><Link href="/de/blog/">Blog</Link></li>
+            <li><Link href="/de/docs/">Docs</Link></li>
+            <li><Link href="/de/kontakt/">Kontakt</Link></li>
+          </ul>
+          <div className="nav-actions">
+            <Link href="/es/blog/" className="lang-btn">🇪🇸 ES</Link>
+            <button className="btn-nav">Dropbox</button>
+          </div>
+        </div>
+      </nav>
 
       <main className="page-content">
         <section className="page-header">
