@@ -55,6 +55,18 @@ const docs = [
     url: '/docs/newsletter-sofia-feb2026.html',
   },
   {
+    id: 'openclaw-proxmox',
+    title: 'OpenClaw Installation in Proxmox VM',
+    date: '2026-03-02',
+    agent: 'luis',
+    agentName: 'Luis',
+    type: 'Anleitungen',
+    excerpt: 'Schritt-für-Schritt Anleitung zur Installation von OpenClaw in einer Proxmox VM mit Ubuntu 22.04 LTS.',
+    slug: 'openclaw-proxmox-install',
+    external: true,
+    url: '/docs/openclaw-proxmox-install.html',
+  },
+  {
     id: '1',
     title: 'Intranet-Konzept & Implementierungsplan',
     date: '2026-03-01',

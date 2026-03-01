@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenClaw Installation in Proxmox VM - Anleitung</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            background: #0a0a0f;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .header {
+            text-align: center;
+            padding: 40px 0;
+            border-bottom: 2px solid #00d4aa;
+            margin-bottom: 40px;
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #00d4aa;
+            margin-bottom: 10px;
+        }
+        
+        .tagline {
+            color: #888;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        
+        h1 {
+            color: #fff;
+            font-size: 1.8rem;
+            margin-top: 20px;
+        }
+        
+        h2 {
+            color: #00d4aa;
+            font-size: 1.4rem;
+            margin: 40px 0 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(0, 212, 170, 0.3);
+        }
+        
+        h3 {
+            color: #fff;
+            font-size: 1.1rem;
+            margin: 30px 0 15px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            color: #b0b0b0;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        .step {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+        }
+        
+        .step-number {
+            display: inline-block;
+            background: #00d4aa;
+            color: #0a0a0f;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            font-weight: 700;
+            margin-right: 10px;
+        }
+        
+        .step-title {
+            color: #fff;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+        
+        code {
+            background: rgba(0, 212, 170, 0.1);
+            color: #00d4aa;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 0.9em;
+        }
+        
+        pre {
+            background: #1a1a2e;
+            border: 1px solid rgba(0, 212, 170, 0.2);
+            border-radius: 8px;
+            padding: 20px;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        
+        pre code {
+            background: none;
+            color: #e0e0e0;
+            padding: 0;
+        }
+        
+        .highlight-box {
+            background: rgba(0, 212, 170, 0.1);
+            border: 1px solid rgba(0, 212, 170, 0.3);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .highlight-box strong {
+            color: #00d4aa;
+        }
+        
+        ul, ol {
+            margin: 15px 0 15px 25px;
+            color: #b0b0b0;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        .warning {
+            background: rgba(255, 193, 7, 0.1);
+            border: 1px solid rgba(255, 193, 7, 0.3);
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .warning strong {
+            color: #ffc107;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 40px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 60px;
+        }
+        
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #00d4aa;
+            margin-bottom: 15px;
+        }
+        
+        .footer p {
+            color: #666;
+            font-size: 0.85rem;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px 15px;
+            }
+            
+            .logo {
+                font-size: 2rem;
+            }
+            
+            .step {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">∞ Dos Aguas</div>
+            <div class="tagline">Consulting</div>
+            <h1>OpenClaw Installation in Proxmox VM</h1>
+        </header>
+
+        <div class="section">
+            <h2>Überblick</h2>
+            <p>Diese Anleitung beschreibt die einfachste Methode, OpenClaw in einer Proxmox VM zu installieren. OpenClaw ist eine AI-Agent-Plattform, die es ermöglicht, automatisierte Workflows und Integrationen zu erstellen.</p>
+            
+            <div class="highlight-box">
+                <strong>Voraussetzungen:</strong><br>
+                • Proxmox VE (Virtual Environment)<br>
+                • Mindestens 4 GB RAM für die VM<br>
+                • 20 GB freier Speicherplatz<br>
+                • Internetverbindung
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Schritt-für-Schritt Anleitung</h2>
+
+            <div class="step">
+                <span class="step-number">1</span>
+                <span class="step-title">VM in Proxmox erstellen</span>
+                
+                <h3>1.1 Neue VM anlegen</h3>
+                <ol>
+                    <li>Im Proxmox Dashboard auf <code>Create CT</code> oder <code>Create VM</code> klicken</li>
+                    <li>Für OpenClaw empfehlen wir eine <strong>Ubuntu 22.04 LTS</strong> VM</li>
+                    <li>Folgende Ressourcen zuweisen:
+                        <ul>
+                            <li>CPU: 2 Kerne</li>
+                            <li>RAM: 4 GB</li>
+                            <li>Storage: 20 GB</li>
+                        </ul>
+                    </li>
+                </ol>
+
+                <h3>1.2 Netzwerk konfigurieren</h3>
+                <p>Stellen Sie sicher, dass die VM eine IP-Adresse im Netzwerk erhält (DHCP oder statisch).</p>
+            </div>
+
+            <div class="step">
+                <span class="step-number">2</span>
+                <span class="step-title">Ubuntu vorbereiten</span>
+                
+                <p>Nach der VM-Erstellung, mit SSH verbinden:</p>
+                <pre><code>ssh user@vm-ip-address</code></pre>
+
+                <p>System aktualisieren:</p>
+                <pre><code>sudo apt update && sudo apt upgrade -y</code></pre>
+
+                <p>Erforderliche Pakete installieren:</p>
+                <pre><code>sudo apt install -y curl git nodejs npm docker.io docker-compose</code></pre>
+            </div>
+
+            <div class="step">
+                <span class="step-number">3</span>
+                <span class="step-title">OpenClaw installieren</span>
+                
+                <h3>3.1 Installationsscript ausführen</h3>
+                <p>Das einfachste ist die offizielle Installation:</p>
+                <pre><code>curl -fsSL https://openclaw.dev/install.sh | bash</code></pre>
+
+                <div class="warning">
+                    <strong>Hinweis:</strong> Falls das Script nicht verfügbar ist, manuelle Installation siehe Schritt 3.2
+                </div>
+
+                <h3>3.2 Manuelle Installation (Alternative)</h3>
+                <pre><code># Node.js 22 installieren
+curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash -
+sudo apt install -y nodejs
+
+# OpenClaw global installieren
+sudo npm install -g openclaw
+
+# OpenClaw initialisieren
+openclaw init
+
+# Konfiguration bearbeiten
+nano ~/.openclaw/config.yaml</code></pre>
+            </div>
+
+            <div class="step">
+                <span class="step-number">4</span>
+                <span class="step-title">Konfiguration</span>
+                
+                <h3>4.1 Basis-Konfiguration</h3>
+                <p>Die Konfigurationsdatei befindet sich unter <code>~/.openclaw/config.yaml</code>:</p>
+                <pre><code># Beispiel-Konfiguration
+gateway:
+  port: 8080
+  host: 0.0.0.0
+
+channels:
+  telegram:
+    enabled: true
+    token: "YOUR_BOT_TOKEN"
+  
+  discord:
+    enabled: false
+    token: "YOUR_DISCORD_TOKEN"
+
+agents:
+  enabled: true
+  directory: ~/.openclaw/agents</code></pre>
+
+                <h3>4.2 Umgebungsvariablen (optional)</h3>
+                <pre><code>export OPENCLAW_API_KEY="your-api-key"
+export OPENCLAW_WEBHOOK_SECRET="your-webhook-secret"</code></pre>
+            </div>
+
+            <div class="step">
+                <span class="step-number">5</span>
+                <span class="step-title">OpenClaw starten</span>
+                
+                <h3>5.1 Als Service einrichten (empfohlen)</h3>
+                <pre><code># Systemd Service erstellen
+sudo tee /etc/systemd/system/openclaw.service > /dev/null <<EOF
+[Unit]
+Description=OpenClaw Gateway
+After=network.target
+
+[Service]
+Type=simple
+User=$USER
+WorkingDirectory=$HOME/.openclaw
+ExecStart=/usr/bin/openclaw gateway start
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+# Service aktivieren und starten
+sudo systemctl daemon-reload
+sudo systemctl enable openclaw
+sudo systemctl start openclaw</code></pre>
+
+                <h3>5.2 Status prüfen</h3>
+                <pre><code>sudo systemctl status openclaw</code></pre>
+
+                <h3>5.3 Logs anzeigen</h3>
+                <pre><code>sudo journalctl -u openclaw -f</code></pre>
+            </div>
+
+            <div class="step">
+                <span class="step-number">6</span>
+                <span class="step-title">Zugriff testen</span>
+                
+                <p>OpenClaw ist nun unter folgender URL erreichbar:</p>
+                <pre><code>http://VM-IP-ADDRESS:8080</code></pre>
+
+                <div class="highlight-box">
+                    <strong>Proxmox Port-Weiterleitung (optional):</strong><br>
+                    Falls Sie von außerhalb des Proxmox-Netzwerks zugreifen möchten, konfigurieren Sie eine Port-Weiterleitung im Router oder nutzen Sie einen Reverse Proxy.
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Nützliche Befehle</h2>
+            
+            <h3>OpenClaw verwalten</h3>
+            <pre><code># Service starten
+sudo systemctl start openclaw
+
+# Service stoppen
+sudo systemctl stop openclaw
+
+# Service neu starten
+sudo systemctl restart openclaw
+
+# Konfiguration neu laden
+sudo systemctl reload openclaw
+
+# Autostart deaktivieren
+sudo systemctl disable openclaw</code></pre>
+
+            <h3>Updates</h3>
+            <pre><code># OpenClaw aktualisieren
+sudo npm update -g openclaw
+
+# System aktualisieren
+sudo apt update && sudo apt upgrade -y</code></pre>
+        </div>
+
+        <div class="section">
+            <h2>Fehlerbehebung</h2>
+            
+            <h3>Problem: Port bereits belegt</h3>
+            <pre><code># Port 8080 prüfen
+sudo lsof -i :8080
+
+# Alternativen Port in config.yaml verwenden
+gateway:
+  port: 8081</code></pre>
+
+            <h3>Problem: Berechtigungsfehler</h3>
+            <pre><code># Berechtigungen korrigieren
+sudo chown -R $USER:$USER ~/.openclaw</code></pre>
+
+            <h3>Problem: Node.js Version zu alt</h3>
+            <pre><code># Node.js Version prüfen
+node --version
+
+# Mindestens v22 erforderlich
+# Aktualisierung siehe Schritt 3.2</code></pre>
+        </div>
+
+        <div class="section">
+            <h2>Sicherheitshinweise</h2>
+            
+            <div class="warning">
+                <strong>Wichtig:</strong><br>
+                • Ändern Sie Standard-Passwörter<br>
+                • Verwenden Sie HTTPS für Produktivumgebungen<br>
+                • Firewall-Regeln anpassen (nur benötigte Ports öffnen)<br>
+                • Regelmäßige Backups der VM erstellen
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="footer-logo">∞ Dos Aguas</div>
+            <p>© 2026 Dos Aguas Consulting. Alle Rechte vorbehalten.</p>
+            <p>Erstellt von: Luis | Odoo & ERP Spezialist</p>
+        </footer>
+    </div>
+</body>
+</html>
