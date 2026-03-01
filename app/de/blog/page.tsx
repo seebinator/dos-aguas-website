@@ -1,7 +1,86 @@
-'use client'
-
-import { useState } from 'react'
 import Link from 'next/link'
+import fs from 'fs'
+import path from 'path'
+
+interface Post {
+  id: string
+  title: string
+  date: string
+  author: string
+  agent: string
+  category: string
+  image: string
+  excerpt: string
+}
+
+// Einfacher Frontmatter-Parser
+function parseFrontmatter(content: string) {
+  const lines = content.split('\n')
+  const frontmatter: any = {}
+  let inFrontmatter = false
+  
+  for (const line of lines) {
+    if (line === '---') {
+      if (!inFrontmatter) {
+        inFrontmatter = true
+        continue
+      } else {
+        break
+      }
+    }
+    
+    if (inFrontmatter) {
+      const colonIndex = line.indexOf(':')
+      if (colonIndex > 0) {
+        const key = line.substring(0, colonIndex).trim()
+        let value = line.substring(colonIndex + 1).trim()
+        // Entferne Anführungszeichen
+        if (value.startsWith('"') && value.endsWith('"')) {
+          value = value.slice(1, -1)
+        }
+        frontmatter[key] = value
+      }
+    }
+  }
+  
+  return frontmatter
+}
+
+function getPosts(lang: string): Post[] {
+  try {
+    const postsDirectory = path.join(process.cwd(), 'content', 'blog', lang)
+    
+    if (!fs.existsSync(postsDirectory)) {
+      return []
+    }
+    
+    const files = fs.readdirSync(postsDirectory)
+    
+    return files
+      .filter(file => file.endsWith('.md'))
+      .map(file => {
+        const id = file.replace(/\.md$/, '')
+        const fullPath = path.join(postsDirectory, file)
+        const fileContents = fs.readFileSync(fullPath, 'utf8')
+        const data = parseFrontmatter(fileContents)
+        
+        return {
+          id,
+          title: data.title || 'Untitled',
+          date: data.date || '',
+          author: data.author || 'Dos Aguas',
+          agent: data.agent || 'all',
+          category: data.category || 'News',
+          image: data.image || 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80',
+          excerpt: data.excerpt || '',
+        }
+      })
+      .sort((a, b) => (a.date < b.date ? 1 : -1))
+  } catch (error) {
+    console.error('Error loading posts:', error)
+    return []
+  }
+}
 
 const agents = [
   { id: 'all', name: 'Alle' },
@@ -26,59 +105,8 @@ const categories = [
   { id: 'Service', name: 'Service' },
 ]
 
-// Posts werden zur Build-Zeit geladen
-const posts = [
-  {
-    id: '2026-03-01-willkommen',
-    title: 'Willkommen bei Dos Aguas Consulting',
-    date: '2026-03-01',
-    author: 'Dos Aguas Team',
-    agent: 'all',
-    category: 'News',
-    image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80',
-    excerpt: 'Wir freuen uns, Ihnen unsere neue Website präsentieren zu dürfen.',
-  },
-  {
-    id: '2026-03-01-ki-trends-2026-was-unternehmen-wissen-mssen',
-    title: 'KI-Trends 2026: Was Unternehmen wissen müssen',
-    date: '2026-03-01',
-    author: 'Juan',
-    agent: 'juan',
-    category: 'KI',
-    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80',
-    excerpt: 'Die wichtigsten KI-Entwicklungen für 2026 und wie Unternehmen davon profitieren können.',
-  },
-  {
-    id: '2026-02-28-ki-beratung',
-    title: 'KI-Beratung: Der Schlüssel zur digitalen Transformation',
-    date: '2026-02-28',
-    author: 'Juan',
-    agent: 'juan',
-    category: 'KI',
-    image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&q=80',
-    excerpt: 'Wie Künstliche Intelligenz Ihr Unternehmen effizienter macht.',
-  },
-  {
-    id: '2026-02-25-transferpreise',
-    title: 'Transferpreis-Optimierung',
-    date: '2026-02-25',
-    author: 'Carlos',
-    agent: 'carlos',
-    category: 'Steuern',
-    image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&q=80',
-    excerpt: 'Steuerkonforme Strategien für grenzüberschreitende Geschäfte.',
-  },
-]
-
 export default function BlogDE() {
-  const [selectedAgent, setSelectedAgent] = useState('all')
-  const [selectedCategory, setSelectedCategory] = useState('all')
-
-  const filteredPosts = posts.filter((post) => {
-    const agentMatch = selectedAgent === 'all' || post.agent === selectedAgent
-    const categoryMatch = selectedCategory === 'all' || post.category === selectedCategory
-    return agentMatch && categoryMatch
-  })
+  const posts = getPosts('de')
 
   return (
     <>
@@ -112,7 +140,7 @@ export default function BlogDE() {
           <div className="blog-filters">
             <div className="filter-group">
               <label>Agent:</label>
-              <select value={selectedAgent} onChange={(e) => setSelectedAgent(e.target.value)}>
+              <select name="agent" id="agent-filter">
                 {agents.map((agent) => (
                   <option key={agent.id} value={agent.id}>{agent.name}</option>
                 ))}
@@ -121,7 +149,7 @@ export default function BlogDE() {
             
             <div className="filter-group">
               <label>Kategorie:</label>
-              <select value={selectedCategory} onChange={(e) => setSelectedCategory(e.target.value)}>
+              <select name="category" id="category-filter">
                 {categories.map((cat) => (
                   <option key={cat.id} value={cat.id}>{cat.name}</option>
                 ))}
@@ -131,10 +159,15 @@ export default function BlogDE() {
         </section>
 
         <section className="blog-section">
-          <div className="blog-grid">
-            {filteredPosts.length > 0 ? (
-              filteredPosts.map((post) => (
-                <article key={post.id} className="blog-card">
+          <div className="blog-grid" id="blog-grid">
+            {posts.length > 0 ? (
+              posts.map((post) => (
+                <article 
+                  key={post.id} 
+                  className="blog-card"
+                  data-agent={post.agent}
+                  data-category={post.category}
+                >
                   <div className="blog-card-image"><img src={post.image} alt={post.title} /></div>
                   <div className="blog-card-content">
                     <div className="blog-card-meta">
@@ -149,7 +182,7 @@ export default function BlogDE() {
               ))
             ) : (
               <div className="blog-empty">
-                <p>Keine Posts gefunden.</p>
+                <p>Noch keine Blog-Posts vorhanden.</p>
               </div>
             )}
           </div>
@@ -167,6 +200,36 @@ export default function BlogDE() {
           <span className="footer-copy">© 2026 Dos Aguas Consulting</span>
         </div>
       </footer>
+
+      <script dangerouslySetInnerHTML={{ __html: `
+        document.addEventListener('DOMContentLoaded', function() {
+          const agentFilter = document.getElementById('agent-filter');
+          const categoryFilter = document.getElementById('category-filter');
+          const posts = document.querySelectorAll('.blog-card');
+          
+          function filterPosts() {
+            const selectedAgent = agentFilter.value;
+            const selectedCategory = categoryFilter.value;
+            
+            posts.forEach(post => {
+              const postAgent = post.dataset.agent;
+              const postCategory = post.dataset.category;
+              
+              const agentMatch = selectedAgent === 'all' || postAgent === selectedAgent;
+              const categoryMatch = selectedCategory === 'all' || postCategory === selectedCategory;
+              
+              if (agentMatch && categoryMatch) {
+                post.style.display = 'block';
+              } else {
+                post.style.display = 'none';
+              }
+            });
+          }
+          
+          agentFilter.addEventListener('change', filterPosts);
+          categoryFilter.addEventListener('change', filterPosts);
+        });
+      `}} />
     </>
   )
 }

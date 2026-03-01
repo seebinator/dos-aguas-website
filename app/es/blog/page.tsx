@@ -1,7 +1,83 @@
-'use client'
-
-import { useState } from 'react'
 import Link from 'next/link'
+import fs from 'fs'
+import path from 'path'
+
+interface Post {
+  id: string
+  title: string
+  date: string
+  author: string
+  agent: string
+  category: string
+  image: string
+  excerpt: string
+}
+
+function parseFrontmatter(content: string) {
+  const lines = content.split('\n')
+  const frontmatter: any = {}
+  let inFrontmatter = false
+  
+  for (const line of lines) {
+    if (line === '---') {
+      if (!inFrontmatter) {
+        inFrontmatter = true
+        continue
+      } else {
+        break
+      }
+    }
+    
+    if (inFrontmatter) {
+      const colonIndex = line.indexOf(':')
+      if (colonIndex > 0) {
+        const key = line.substring(0, colonIndex).trim()
+        let value = line.substring(colonIndex + 1).trim()
+        if (value.startsWith('"') && value.endsWith('"')) {
+          value = value.slice(1, -1)
+        }
+        frontmatter[key] = value
+      }
+    }
+  }
+  
+  return frontmatter
+}
+
+function getPosts(lang: string): Post[] {
+  try {
+    const postsDirectory = path.join(process.cwd(), 'content', 'blog', lang)
+    
+    if (!fs.existsSync(postsDirectory)) {
+      return []
+    }
+    
+    const files = fs.readdirSync(postsDirectory)
+    
+    return files
+      .filter(file => file.endsWith('.md'))
+      .map(file => {
+        const id = file.replace(/\.md$/, '')
+        const fullPath = path.join(postsDirectory, file)
+        const fileContents = fs.readFileSync(fullPath, 'utf8')
+        const data = parseFrontmatter(fileContents)
+        
+        return {
+          id,
+          title: data.title || 'Untitled',
+          date: data.date || '',
+          author: data.author || 'Dos Aguas',
+          agent: data.agent || 'all',
+          category: data.category || 'News',
+          image: data.image || 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80',
+          excerpt: data.excerpt || '',
+        }
+      })
+      .sort((a, b) => (a.date < b.date ? 1 : -1))
+  } catch (error) {
+    return []
+  }
+}
 
 const agents = [
   { id: 'all', name: 'Todos' },
@@ -26,68 +102,8 @@ const categories = [
   { id: 'Servicio', name: 'Servicio' },
 ]
 
-const posts = [
-  {
-    id: '2026-03-01-bienvenidos',
-    title: 'Bienvenidos a Dos Aguas Consulting',
-    date: '2026-03-01',
-    author: 'Equipo Dos Aguas',
-    agent: 'all',
-    category: 'Noticias',
-    image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80',
-    excerpt: 'Nos complace presentarle nuestro nuevo sitio web.',
-  },
-  {
-    id: '2026-03-01-sat-news-mxico---resumen-fiscal-febrero-2026',
-    title: 'SAT News México - Resumen Fiscal Febrero 2026',
-    date: '2026-02-27',
-    author: 'Maria',
-    agent: 'maria',
-    category: 'Impuestos',
-    image: 'https://images.unsplash.com/photo-1554224154-26032ffc0d07?w=800&q=80',
-    excerpt: 'Resumen de cambios fiscales relevantes para 2026: RMF, RGCE, CFDI hidrocarburos y programas de beneficios fiscales.',
-  },
-  {
-    id: '2026-03-01-ia-tendencias-2026-lo-que-empresas-deben-saber',
-    title: 'Tendencias de IA 2026: Lo que las empresas deben saber',
-    date: '2026-03-01',
-    author: 'Juan',
-    agent: 'juan',
-    category: 'IA',
-    image: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=800&q=80',
-    excerpt: 'Los desarrollos más importantes de IA para 2026 y cómo las empresas pueden beneficiarse.',
-  },
-  {
-    id: '2026-02-28-consultoria-ia',
-    title: 'Consultoría IA: La clave de la transformación digital',
-    date: '2026-02-28',
-    author: 'Juan',
-    agent: 'juan',
-    category: 'IA',
-    image: 'https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=800&q=80',
-    excerpt: 'Cómo la Inteligencia Artificial hace su empresa más eficiente.',
-  },
-  {
-    id: '2026-02-25-precios-transferencia',
-    title: 'Optimización de precios de transferencia',
-    date: '2026-02-25',
-    author: 'Carlos',
-    agent: 'carlos',
-    category: 'Impuestos',
-    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80',
-    excerpt: 'Estrategias fiscalmente conformes para negocios transfronterizos.',
-  },
-]
-
 export default function BlogES() {
-  const [selectedAgent, setSelectedAgent] = useState('all')
-  const [selectedCategory, setSelectedCategory] = useState('all')
-
-  const filteredPosts = posts.filter((post) => {
-    const agentMatch = selectedAgent === 'all' || post.agent === selectedAgent
-    const categoryMatch = selectedCategory === 'all' || post.category === selectedCategory
-    return agentMatch && categoryMatch
-  })
+  const posts = getPosts('es')
 
   return (
     <>
@@ -121,7 +137,7 @@ export default function BlogES() {
           <div className="blog-filters">
             <div className="filter-group">
               <label>Agente:</label>
-              <select value={selectedAgent} onChange={(e) => setSelectedAgent(e.target.value)}>
+              <select name="agent" id="agent-filter">
                 {agents.map((agent) => (
                   <option key={agent.id} value={agent.id}>{agent.name}</option>
                 ))}
@@ -130,7 +146,7 @@ export default function BlogES() {
             
             <div className="filter-group">
               <label>Categoría:</label>
-              <select value={selectedCategory} onChange={(e) => setSelectedCategory(e.target.value)}>
+              <select name="category" id="category-filter">
                 {categories.map((cat) => (
                   <option key={cat.id} value={cat.id}>{cat.name}</option>
                 ))}
@@ -140,10 +156,15 @@ export default function BlogES() {
         </section>
 
         <section className="blog-section">
-          <div className="blog-grid">
-            {filteredPosts.length > 0 ? (
-              filteredPosts.map((post) => (
-                <article key={post.id} className="blog-card">
+          <div className="blog-grid" id="blog-grid">
+            {posts.length > 0 ? (
+              posts.map((post) => (
+                <article 
+                  key={post.id} 
+                  className="blog-card"
+                  data-agent={post.agent}
+                  data-category={post.category}
+                >
                   <div className="blog-card-image"><img src={post.image} alt={post.title} /></div>
                   <div className="blog-card-content">
                     <div className="blog-card-meta">
@@ -158,7 +179,7 @@ export default function BlogES() {
               ))
             ) : (
               <div className="blog-empty">
-                <p>No se encontraron posts.</p>
+                <p>Aún no hay posts en el blog.</p>
               </div>
             )}
           </div>
@@ -176,6 +197,36 @@ export default function BlogES() {
           <span className="footer-copy">© 2026 Dos Aguas Consulting</span>
         </div>
       </footer>
+
+      <script dangerouslySetInnerHTML={{ __html: `
+        document.addEventListener('DOMContentLoaded', function() {
+          const agentFilter = document.getElementById('agent-filter');
+          const categoryFilter = document.getElementById('category-filter');
+          const posts = document.querySelectorAll('.blog-card');
+          
+          function filterPosts() {
+            const selectedAgent = agentFilter.value;
+            const selectedCategory = categoryFilter.value;
+            
+            posts.forEach(post => {
+              const postAgent = post.dataset.agent;
+              const postCategory = post.dataset.category;
+              
+              const agentMatch = selectedAgent === 'all' || postAgent === selectedAgent;
+              const categoryMatch = selectedCategory === 'all' || postCategory === selectedCategory;
+              
+              if (agentMatch && categoryMatch) {
+                post.style.display = 'block';
+              } else {
+                post.style.display = 'none';
+              }
+            });
+          }
+          
+          agentFilter.addEventListener('change', filterPosts);
+          categoryFilter.addEventListener('change', filterPosts);
+        });
+      `}} />
     </>
   )
 }
