@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import fs from 'fs'
 import path from 'path'
-import matter from 'gray-matter'
 
 interface Post {
   id: string
@@ -15,36 +14,72 @@ interface Post {
   slug: string
 }
 
-function getPosts(lang: string): Post[] {
-  const postsDirectory = path.join(process.cwd(), 'content', 'blog', lang)
+// Einfacher Frontmatter-Parser
+function parseFrontmatter(content: string) {
+  const lines = content.split('\n')
+  const frontmatter: any = {}
+  let inFrontmatter = false
   
-  if (!fs.existsSync(postsDirectory)) {
-    return []
+  for (const line of lines) {
+    if (line === '---') {
+      if (!inFrontmatter) {
+        inFrontmatter = true
+        continue
+      } else {
+        break
+      }
+    }
+    
+    if (inFrontmatter) {
+      const colonIndex = line.indexOf(':')
+      if (colonIndex > 0) {
+        const key = line.substring(0, colonIndex).trim()
+        let value = line.substring(colonIndex + 1).trim()
+        if (value.startsWith('"') && value.endsWith('"')) {
+          value = value.slice(1, -1)
+        }
+        frontmatter[key] = value
+      }
+    }
   }
   
-  const files = fs.readdirSync(postsDirectory)
-  
-  return files
-    .filter(file => file.endsWith('.md'))
-    .map(file => {
-      const id = file.replace(/\.md$/, '')
-      const fullPath = path.join(postsDirectory, file)
-      const fileContents = fs.readFileSync(fullPath, 'utf8')
-      const { data } = matter(fileContents)
-      
-      return {
-        id,
-        title: data.title,
-        date: data.date,
-        author: data.author,
-        agent: data.agent || 'all',
-        category: data.category,
-        image: data.image || '/images/hero-bg.jpg',
-        excerpt: data.excerpt,
-        slug: data.slug || id,
-      }
-    })
-    .sort((a, b) => (a.date < b.date ? 1 : -1))
+  return frontmatter
+}
+
+function getPosts(lang: string): Post[] {
+  try {
+    const postsDirectory = path.join(process.cwd(), 'content', 'blog', lang)
+    
+    if (!fs.existsSync(postsDirectory)) {
+      return []
+    }
+    
+    const files = fs.readdirSync(postsDirectory)
+    
+    return files
+      .filter(file => file.endsWith('.md'))
+      .map(file => {
+        const id = file.replace(/\.md$/, '')
+        const fullPath = path.join(postsDirectory, file)
+        const fileContents = fs.readFileSync(fullPath, 'utf8')
+        const data = parseFrontmatter(fileContents)
+        
+        return {
+          id,
+          title: data.title || 'Untitled',
+          date: data.date || '',
+          author: data.author || 'Dos Aguas',
+          agent: data.agent || 'all',
+          category: data.category || 'News',
+          image: data.image || '/images/hero-bg.jpg',
+          excerpt: data.excerpt || '',
+          slug: data.slug || id,
+        }
+      })
+      .sort((a, b) => (a.date < b.date ? 1 : -1))
+  } catch (error) {
+    return []
+  }
 }
 
 export default function BlogES() {

@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import fs from 'fs'
 import path from 'path'
-import matter from 'gray-matter'
 
 interface Post {
   id: string
@@ -15,36 +14,81 @@ interface Post {
   slug: string
 }
 
-function getPosts(lang: string): Post[] {
-  const postsDirectory = path.join(process.cwd(), 'content', 'blog', lang)
+// Einfacher Frontmatter-Parser
+function parseFrontmatter(content: string) {
+  const lines = content.split('\n')
+  const frontmatter: any = {}
+  let inFrontmatter = false
+  let i = 0
   
-  if (!fs.existsSync(postsDirectory)) {
-    return []
+  for (const line of lines) {
+    if (line === '---') {
+      if (!inFrontmatter) {
+        inFrontmatter = true
+        i++
+        continue
+      } else {
+        break
+      }
+    }
+    
+    if (inFrontmatter) {
+      const colonIndex = line.indexOf(':')
+      if (colonIndex > 0) {
+        const key = line.substring(0, colonIndex).trim()
+        let value = line.substring(colonIndex + 1).trim()
+        // Entferne Anführungszeichen
+        if (value.startsWith('"') && value.endsWith('"')) {
+          value = value.slice(1, -1)
+        }
+        frontmatter[key] = value
+      }
+    }
+    i++
   }
   
-  const files = fs.readdirSync(postsDirectory)
-  
-  return files
-    .filter(file => file.endsWith('.md'))
-    .map(file => {
-      const id = file.replace(/\.md$/, '')
-      const fullPath = path.join(postsDirectory, file)
-      const fileContents = fs.readFileSync(fullPath, 'utf8')
-      const { data } = matter(fileContents)
-      
-      return {
-        id,
-        title: data.title,
-        date: data.date,
-        author: data.author,
-        agent: data.agent || 'all',
-        category: data.category,
-        image: data.image || '/images/hero-bg.jpg',
-        excerpt: data.excerpt,
-        slug: data.slug || id,
-      }
-    })
-    .sort((a, b) => (a.date < b.date ? 1 : -1))
+  return frontmatter
+}
+
+function getPosts(lang: string): Post[] {
+  try {
+    const postsDirectory = path.join(process.cwd(), 'content', 'blog', lang)
+    
+    if (!fs.existsSync(postsDirectory)) {
+      console.log('Directory not found:', postsDirectory)
+      return []
+    }
+    
+    const files = fs.readdirSync(postsDirectory)
+    
+    const posts = files
+      .filter(file => file.endsWith('.md'))
+      .map(file => {
+        const id = file.replace(/\.md$/, '')
+        const fullPath = path.join(postsDirectory, file)
+        const fileContents = fs.readFileSync(fullPath, 'utf8')
+        const data = parseFrontmatter(fileContents)
+        
+        return {
+          id,
+          title: data.title || 'Untitled',
+          date: data.date || '',
+          author: data.author || 'Dos Aguas',
+          agent: data.agent || 'all',
+          category: data.category || 'News',
+          image: data.image || '/images/hero-bg.jpg',
+          excerpt: data.excerpt || '',
+          slug: data.slug || id,
+        }
+      })
+      .sort((a, b) => (a.date < b.date ? 1 : -1))
+    
+    console.log(`Found ${posts.length} posts for ${lang}`)
+    return posts
+  } catch (error) {
+    console.error('Error loading posts:', error)
+    return []
+  }
 }
 
 export default function BlogDE() {
