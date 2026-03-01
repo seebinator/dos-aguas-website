@@ -1,17 +1,17 @@
 #!/bin/bash
-# Alle Blog-Posts auflisten
+# CMS - Alle Posts auflisten
 
-echo "=== Blog-Posts Deutsch ==="
+echo "=== DEUTSCHE POSTS ==="
 ls -1 content/blog/de/*.md 2>/dev/null | while read file; do
-  title=$(grep "^title:" "$file" | cut -d'"' -f2)
-  date=$(grep "^date:" "$file" | cut -d'"' -f2)
-  echo "[$date] $title"
+    title=$(grep "^title:" "$file" | cut -d'"' -f2)
+    date=$(grep "^date:" "$file" | cut -d'"' -f2)
+    echo "[$date] $title"
 done
 
 echo ""
-echo "=== Blog-Posts Spanisch ==="
+echo "=== SPANISCHE POSTS ==="
 ls -1 content/blog/es/*.md 2>/dev/null | while read file; do
-  title=$(grep "^title:" "$file" | cut -d'"' -f2)
-  date=$(grep "^date:" "$file" | cut -d'"' -f2)
-  echo "[$date] $title"
+    title=$(grep "^title:" "$file" | cut -d'"' -f2)
+    date=$(grep "^date:" "$file" | cut -d'"' -f2)
+    echo "[$date] $title"
 done
