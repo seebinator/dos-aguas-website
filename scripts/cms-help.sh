@@ -1,0 +1,22 @@
+#!/bin/bash
+# CMS Hilfe
+
+echo "=== Dos Aguas CMS ==="
+echo ""
+echo "Verfügbare Befehle:"
+echo ""
+echo "  ./scripts/new-blog-post.sh [de|es] 'Titel'"
+echo "    - Erstellt einen neuen Blog-Post"
+echo ""
+echo "  ./scripts/list-posts.sh"
+echo "    - Listet alle Blog-Posts auf"
+echo ""
+echo "  ./scripts/build.sh"
+echo "    - Baut die statische Seite"
+echo ""
+echo "Workflow:"
+echo "  1. Post erstellen: ./scripts/new-blog-post.sh de 'Mein Titel'"
+echo "  2. Datei bearbeiten: content/blog/de/2026-03-01-mein-titel.md"
+echo "  3. Bilder hinzufügen (optional)"
+echo "  4. Commit: git add . && git commit -m 'Neuer Post'"
+echo "  5. Push: git push (automatischer Deploy)"
