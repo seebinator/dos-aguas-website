@@ -1,89 +1,83 @@
+'use client'
+
+import { useState } from 'react'
 import Link from 'next/link'
-import fs from 'fs'
-import path from 'path'
 
-interface Post {
-  id: string
-  title: string
-  date: string
-  author: string
-  agent: string
-  category: string
-  image: string
-  excerpt: string
-  slug: string
-}
+const agents = [
+  { id: 'all', name: 'Todos' },
+  { id: 'juan', name: 'Juan' },
+  { id: 'maria', name: 'Maria' },
+  { id: 'carlos', name: 'Carlos' },
+  { id: 'luis', name: 'Luis' },
+  { id: 'mark', name: 'Mark' },
+  { id: 'jenny', name: 'Jenny' },
+  { id: 'hector', name: 'Hector' },
+  { id: 'sofia', name: 'Sofia' },
+]
 
-// Einfacher Frontmatter-Parser
-function parseFrontmatter(content: string) {
-  const lines = content.split('\n')
-  const frontmatter: any = {}
-  let inFrontmatter = false
-  
-  for (const line of lines) {
-    if (line === '---') {
-      if (!inFrontmatter) {
-        inFrontmatter = true
-        continue
-      } else {
-        break
-      }
-    }
-    
-    if (inFrontmatter) {
-      const colonIndex = line.indexOf(':')
-      if (colonIndex > 0) {
-        const key = line.substring(0, colonIndex).trim()
-        let value = line.substring(colonIndex + 1).trim()
-        if (value.startsWith('"') && value.endsWith('"')) {
-          value = value.slice(1, -1)
-        }
-        frontmatter[key] = value
-      }
-    }
-  }
-  
-  return frontmatter
-}
+const categories = [
+  { id: 'all', name: 'Todas' },
+  { id: 'IA', name: 'IA' },
+  { id: 'Impuestos', name: 'Impuestos' },
+  { id: 'Odoo', name: 'Odoo' },
+  { id: 'Marketing', name: 'Marketing' },
+  { id: 'Inteligencia', name: 'Inteligencia de Negocios' },
+  { id: 'Diseño', name: 'Diseño' },
+  { id: 'Servicio', name: 'Servicio' },
+]
 
-function getPosts(lang: string): Post[] {
-  try {
-    const postsDirectory = path.join(process.cwd(), 'content', 'blog', lang)
-    
-    if (!fs.existsSync(postsDirectory)) {
-      return []
-    }
-    
-    const files = fs.readdirSync(postsDirectory)
-    
-    return files
-      .filter(file => file.endsWith('.md'))
-      .map(file => {
-        const id = file.replace(/\.md$/, '')
-        const fullPath = path.join(postsDirectory, file)
-        const fileContents = fs.readFileSync(fullPath, 'utf8')
-        const data = parseFrontmatter(fileContents)
-        
-        return {
-          id,
-          title: data.title || 'Untitled',
-          date: data.date || '',
-          author: data.author || 'Dos Aguas',
-          agent: data.agent || 'all',
-          category: data.category || 'News',
-          image: data.image || '/images/hero-bg.jpg',
-          excerpt: data.excerpt || '',
-          slug: data.slug || id,
-        }
-      })
-      .sort((a, b) => (a.date < b.date ? 1 : -1))
-  } catch (error) {
-    return []
-  }
-}
+const posts = [
+  {
+    id: '2026-03-01-bienvenidos',
+    title: 'Bienvenidos a Dos Aguas Consulting',
+    date: '2026-03-01',
+    author: 'Equipo Dos Aguas',
+    agent: 'all',
+    category: 'Noticias',
+    image: '/images/hero-bg.jpg',
+    excerpt: 'Nos complace presentarle nuestro nuevo sitio web.',
+  },
+  {
+    id: '2026-03-01-ia-tendencias-2026-lo-que-empresas-deben-saber',
+    title: 'Tendencias de IA 2026: Lo que las empresas deben saber',
+    date: '2026-03-01',
+    author: 'Juan',
+    agent: 'juan',
+    category: 'IA',
+    image: '/images/hero-bg.jpg',
+    excerpt: 'Los desarrollos más importantes de IA para 2026 y cómo las empresas pueden beneficiarse.',
+  },
+  {
+    id: '2026-02-28-consultoria-ia',
+    title: 'Consultoría IA: La clave de la transformación digital',
+    date: '2026-02-28',
+    author: 'Juan',
+    agent: 'juan',
+    category: 'IA',
+    image: '/images/hero-bg.jpg',
+    excerpt: 'Cómo la Inteligencia Artificial hace su empresa más eficiente.',
+  },
+  {
+    id: '2026-02-25-precios-transferencia',
+    title: 'Optimización de precios de transferencia',
+    date: '2026-02-25',
+    author: 'Carlos',
+    agent: 'carlos',
+    category: 'Impuestos',
+    image: '/images/hero-bg.jpg',
+    excerpt: 'Estrategias fiscalmente conformes para negocios transfronterizos.',
+  },
+]
 
 export default function BlogES() {
-  const posts = getPosts('es')
+  const [selectedAgent, setSelectedAgent] = useState('all')
+  const [selectedCategory, setSelectedCategory] = useState('all')
+
+  const filteredPosts = posts.filter((post) => {
+    const agentMatch = selectedAgent === 'all' || post.agent === selectedAgent
+    const categoryMatch = selectedCategory === 'all' || post.category === selectedCategory
+    return agentMatch && categoryMatch
+  })
 
   return (
     <>
@@ -113,10 +107,32 @@ export default function BlogES() {
           </div>
         </section>
 
+        <section className="blog-filter-section">
+          <div className="blog-filters">
+            <div className="filter-group">
+              <label>Agente:</label>
+              <select value={selectedAgent} onChange={(e) => setSelectedAgent(e.target.value)}>
+                {agents.map((agent) => (
+                  <option key={agent.id} value={agent.id}>{agent.name}</option>
+                ))}
+              </select>
+            </div>
+            
+            <div className="filter-group">
+              <label>Categoría:</label>
+              <select value={selectedCategory} onChange={(e) => setSelectedCategory(e.target.value)}>
+                {categories.map((cat) => (
+                  <option key={cat.id} value={cat.id}>{cat.name}</option>
+                ))}
+              </select>
+            </div>
+          </div>
+        </section>
+
         <section className="blog-section">
           <div className="blog-grid">
-            {posts.length > 0 ? (
-              posts.map((post) => (
+            {filteredPosts.length > 0 ? (
+              filteredPosts.map((post) => (
                 <article key={post.id} className="blog-card">
                   <div className="blog-card-image"><img src={post.image} alt={post.title} /></div>
                   <div className="blog-card-content">
@@ -124,7 +140,7 @@ export default function BlogES() {
                       <span className="blog-card-category">{post.category}</span>
                       <span className="blog-card-date">{post.date}</span>
                     </div>
-                    <h3><Link href={`/es/blog/${post.slug}/`}>{post.title}</Link></h3>
+                    <h3><Link href={`/es/blog/${post.id}/`}>{post.title}</Link></h3>
                     <p>{post.excerpt}</p>
                     <span className="blog-card-author">Por {post.author}</span>
                   </div>
@@ -132,7 +148,7 @@ export default function BlogES() {
               ))
             ) : (
               <div className="blog-empty">
-                <p>Aún no hay posts en el blog.</p>
+                <p>No se encontraron posts.</p>
               </div>
             )}
           </div>
