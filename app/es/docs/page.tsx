@@ -38,8 +38,7 @@ const docs = [
     type: 'Anleitungen',
     excerpt: 'Guía paso a paso para instalar OpenClaw en una VM Proxmox con Ubuntu 22.04 LTS.',
     slug: 'openclaw-proxmox-install',
-    external: true,
-    url: '/docs/openclaw-proxmox-install.html',
+    external: false,
   },
   {
     id: 'intranet-konzept',
