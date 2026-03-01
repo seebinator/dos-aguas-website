@@ -72,6 +72,7 @@ const docs = [
     excerpt: 'Anleitung zur Nutzung des Agenten-CMS.',
     slug: 'anleitung-cms',
     external: false,
+  },
   {
     id: '5',
     title: 'VM Kombinationsanalyse',
