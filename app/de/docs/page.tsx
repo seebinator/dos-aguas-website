@@ -31,6 +31,18 @@ const types = [
 
 const docs = [
   {
+    id: 'newsletter-2026-03',
+    title: 'Dos Aguas Newsletter - März 2026',
+    date: '2026-03-01',
+    agent: 'maria',
+    agentName: 'Maria',
+    type: 'Newsletter',
+    excerpt: 'Aktueller Newsletter mit KI-Updates, Steuernews aus DE und MX, Odoo-Tipps und Team-Spotlight.',
+    slug: 'newsletter-2026-03',
+    external: true,
+    url: '/docs/newsletter-2026-03.html',
+  },
+  {
     id: '1',
     title: 'Intranet-Konzept & Implementierungsplan',
     date: '2026-03-01',

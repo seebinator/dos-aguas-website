@@ -30,6 +30,18 @@ const types = [
 
 const docs = [
   {
+    id: 'newsletter-2026-03',
+    title: 'Dos Aguas Newsletter - Marzo 2026',
+    date: '2026-03-01',
+    agent: 'maria',
+    agentName: 'Maria',
+    type: 'Newsletter',
+    excerpt: 'Boletín actual con actualizaciones de IA, noticias fiscales de DE y MX, consejos de Odoo y spotlight del equipo.',
+    slug: 'newsletter-2026-03',
+    external: true,
+    url: '/docs/newsletter-2026-03.html',
+  },
+  {
     id: '1',
     title: 'Configuración de Decap CMS',
     date: '2026-03-01',
@@ -38,16 +50,6 @@ const docs = [
     type: 'Anleitungen',
     excerpt: 'Guía paso a paso para configurar Decap CMS para posts de blog manuales.',
     slug: 'decap-cms-setup',
-  },
-  {
-    id: '2',
-    title: 'Dos Aguas Newsletter - Marzo 2026',
-    date: '2026-03-01',
-    agent: 'mark',
-    agentName: 'Mark',
-    type: 'Newsletter',
-    excerpt: 'Newsletter mensual con actualizaciones de todas las áreas.',
-    slug: 'newsletter-2026-03',
   },
   {
     id: '3',
