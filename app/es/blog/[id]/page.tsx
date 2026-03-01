@@ -37,6 +37,26 @@ export default function BlogPostES({ params }: { params: { id: string } }) {
 <p>Detrás de Dos Aguas hay un equipo de 8 especialistas.</p>
       `
     },
+    '2026-03-01-ia-tendencias-2026-lo-que-empresas-deben-saber': {
+      title: 'Tendencias de IA 2026: Lo que las empresas deben saber',
+      date: '2026-03-01',
+      author: 'Juan',
+      category: 'IA',
+      content: `
+<p>La inteligencia artificial está evolucionando rápidamente. Como experto en IA en Dos Aguas, veo diariamente cómo las empresas pueden beneficiarse de las nuevas tecnologías.</p>
+
+<h2>1. Sistemas de IA basados en agentes</h2>
+<p>En lugar de herramientas de IA individuales, vemos el surgimiento de sistemas de agentes que realizan tareas complejas de forma autónoma.</p>
+
+<h2>2. IA multimodal</h2>
+<p>Texto, imagen, audio y video se procesan en un solo modelo.</p>
+
+<h2>3. IA en pymes</h2>
+<p>Especialmente emocionante: las tecnologías de IA se vuelven accesibles para pequeñas y medianas empresas.</p>
+
+<p>2026 será el año de la aplicación práctica de la IA.</p>
+      `
+    },
     '2026-02-28-consultoria-ia': {
       title: 'Consultoría IA: La clave de la transformación digital',
       date: '2026-02-28',
