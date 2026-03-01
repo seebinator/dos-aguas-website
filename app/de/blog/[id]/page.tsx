@@ -1,71 +1,18 @@
 import Link from 'next/link'
-import { readFileSync } from 'fs'
-import { join } from 'path'
 
-// Diese Funktion wird zur Build-Zeit ausgeführt
 export function generateStaticParams() {
-  const posts = [
+  return [
     { id: '2026-03-01-willkommen' },
     { id: '2026-03-01-ki-trends-2026-was-unternehmen-wissen-mssen' },
     { id: '2026-02-28-ki-beratung' },
     { id: '2026-02-25-transferpreise' },
   ]
-  return posts
-}
-
-// Markdown-Parser (einfache Version)
-function parseMarkdown(content: string) {
-  const lines = content.split('\n')
-  const frontmatter: any = {}
-  let body = ''
-  let inFrontmatter = false
-  let frontmatterDone = false
-
-  for (const line of lines) {
-    if (line === '---') {
-      if (!inFrontmatter && !frontmatterDone) {
-        inFrontmatter = true
-        continue
-      }
-      if (inFrontmatter) {
-        inFrontmatter = false
-        frontmatterDone = true
-        continue
-      }
-    }
-
-    if (inFrontmatter) {
-      const match = line.match(/^(.+?):\s*"?(.+?)"?$/)
-      if (match) {
-        frontmatter[match[1]] = match[2].replace(/"$/, '')
-      }
-    } else {
-      body += line + '\n'
-    }
-  }
-
-  return { frontmatter, body }
-}
-
-// Einfache Markdown-zu-HTML Konvertierung
-function markdownToHtml(markdown: string) {
-  return markdown
-    .replace(/^# (.+)$/gm, '<h1>$1</h1>')
-    .replace(/^## (.+)$/gm, '<h2>$1</h2>')
-    .replace(/^### (.+)$/gm, '<h3>$1</h3>')
-    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
-    .replace(/\*(.+?)\*/g, '<em>$1</em>')
-    .replace(/^- (.+)$/gm, '<li>$1</li>')
-    .replace(/\n\n/g, '</p><p>')
-    .replace(/---/g, '<hr/>')
 }
 
 export default function BlogPostDE({ params }: { params: { id: string } }) {
   const { id } = params
   
-  // In einer echten Implementierung würden wir die Datei laden
-  // Für Static Export laden wir die Daten hier
-  const postData = {
+  const postData: Record<string, any> = {
     '2026-03-01-willkommen': {
       title: 'Willkommen bei Dos Aguas Consulting',
       date: '2026-03-01',
@@ -75,18 +22,15 @@ export default function BlogPostDE({ params }: { params: { id: string } }) {
 <p>Wir freuen uns, Ihnen unsere neue Website präsentieren zu dürfen. Dos Aguas Consulting ist Ihre Brücke zwischen Deutschland und Mexiko.</p>
 
 <h2>Unsere Geschichte</h2>
-
 <p>Dos Aguas wurde mit der Vision gegründet, Unternehmen bei ihren deutsch-mexikanischen Geschäftsaktivitäten zu unterstützen.</p>
 
 <h2>Was wir bieten</h2>
-
 <ul>
 <li><strong>KI-Beratung</strong> - Strategische Beratung für KI-Implementierung</li>
 <li><strong>Transferpreis Strategien</strong> - Optimierung grenzüberschreitender Preisgestaltung</li>
 <li><strong>Odoo Implementierung</strong> - Maßgeschneiderte ERP-Lösungen</li>
 <li><strong>Digitale Transformation</strong> - Ganzheitliche Digitalisierung</li>
 </ul>
-
 <p>Hinter Dos Aguas steht ein 8-köpfiges Team aus Spezialisten.</p>
       `
     },
@@ -99,20 +43,18 @@ export default function BlogPostDE({ params }: { params: { id: string } }) {
 <p>Die künstliche Intelligenz entwickelt sich rasant weiter. Als AI-Experte bei Dos Aguas sehe ich täglich, wie Unternehmen von neuen Technologien profitieren können.</p>
 
 <h2>1. Agentenbasierte KI-Systeme</h2>
-
 <p>Statt einzelner KI-Tools sehen wir den Aufstieg von Agentensystemen, die komplexe Aufgaben eigenständig erledigen.</p>
 
 <h2>2. Multimodale KI</h2>
-
 <p>Text, Bild, Audio und Video werden in einem einzigen Modell verarbeitet.</p>
 
 <h2>3. KI im Mittelstand</h2>
-
 <p>Besonders spannend: KI-Technologien werden für kleine und mittlere Unternehmen zugänglich.</p>
 
 <p>2026 wird das Jahr der praktischen KI-Anwendung.</p>
       `
     },
+    '2026-02-28-ki-beratung': {
       title: 'KI-Beratung: Der Schlüssel zur digitalen Transformation',
       date: '2026-02-28',
       author: 'Juan',
@@ -121,11 +63,9 @@ export default function BlogPostDE({ params }: { params: { id: string } }) {
 <p>Künstliche Intelligenz revolutioniert die Art und Weise, wie Unternehmen arbeiten.</p>
 
 <h2>Warum KI-Beratung wichtig ist</h2>
-
 <p>Die Implementierung von KI erfordert strategische Planung und Fachwissen.</p>
 
 <h2>Unsere Services</h2>
-
 <ul>
 <li>Prozessanalyse</li>
 <li>KI-Strategieentwicklung</li>
@@ -143,17 +83,15 @@ export default function BlogPostDE({ params }: { params: { id: string } }) {
 <p>Transferpreise sind ein entscheidender Aspekt für Unternehmen mit grenzüberschreitenden Operationen.</p>
 
 <h2>Steuerliche Herausforderungen</h2>
-
 <p>Deutschland und Mexiko haben unterschiedliche Steuerregime, die sorgfältig berücksichtigt werden müssen.</p>
 
 <h2>Unsere Erfahrung</h2>
-
 <p>Wir helfen Unternehmen, ihre Transferpreisstrukturen steuerkonform zu optimieren.</p>
       `
     }
   }
   
-  const post = postData[id as keyof typeof postData]
+  const post = postData[id]
   
   if (!post) {
     return <div>Post not found</div>
