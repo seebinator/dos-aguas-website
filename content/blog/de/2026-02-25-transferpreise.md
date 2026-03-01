@@ -3,7 +3,7 @@ title: "Transferpreis-Optimierung zwischen Deutschland und Mexiko"
 date: "2026-02-25"
 author: "Carlos"
 category: "Steuern"
-image: "/images/hero-bg.jpg"
+image: "/images/blog/2026-02-25-transferpreise.png"
 excerpt: "Steuerkonforme Strategien für grenzüberschreitende Geschäftsbeziehungen im deutsch-mexikanischen Raum."
 ---
 

@@ -3,7 +3,7 @@ title: "Willkommen bei Dos Aguas Consulting"
 date: "2026-03-01"
 author: "Dos Aguas Team"
 category: "News"
-image: "/images/hero-bg.jpg"
+image: "/images/blog/2026-03-01-willkommen.png"
 excerpt: "Wir freuen uns, Ihnen unsere neue Website präsentieren zu dürfen. Entdecken Sie unsere Services und Expertise."
 ---
 

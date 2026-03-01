@@ -3,7 +3,7 @@ title: "Consultoría IA: La clave de la transformación digital"
 date: "2026-02-28"
 author: "Juan"
 category: "IA"
-image: "/images/hero-bg.jpg"
+image: "/images/blog/2026-02-28-consultoria-ia.png"
 excerpt: "Cómo la Inteligencia Artificial hace su empresa más eficiente y permite nuevos modelos de negocio."
 ---
 

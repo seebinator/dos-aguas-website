@@ -3,7 +3,7 @@ title: "Optimización de precios de transferencia entre Alemania y México"
 date: "2026-02-25"
 author: "Carlos"
 category: "Impuestos"
-image: "/images/hero-bg.jpg"
+image: "/images/blog/2026-02-25-precios-transferencia.png"
 excerpt: "Estrategias fiscalmente conformes para relaciones comerciales transfronterizas en el espacio germano-mexicano."
 ---
 

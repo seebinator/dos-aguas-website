@@ -3,7 +3,7 @@ title: "KI-Beratung: Der Schlüssel zur digitalen Transformation"
 date: "2026-02-28"
 author: "Juan"
 category: "KI"
-image: "/images/hero-bg.jpg"
+image: "/images/blog/2026-02-28-ki-beratung.png"
 excerpt: "Wie Künstliche Intelligenz Ihr Unternehmen effizienter macht und neue Geschäftsmodelle ermöglicht."
 ---
 
