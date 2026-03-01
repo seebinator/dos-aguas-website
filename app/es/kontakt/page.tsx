@@ -42,6 +42,7 @@ export default function KontaktES() {
             <div className="contact-form-wrapper">
               <form className="contact-form" action="https://formspree.io/f/mjgedgjq" method="POST">
                 <input type="hidden" name="_language" value="es" />
+                <input type="hidden" name="_next" value="https://dos-aguas.consulting/es/success/" />
                 
                 <div className="form-group"><label htmlFor="name">{content.form.name}</label><input type="text" id="name" name="name" required /></div>
                 
