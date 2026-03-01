@@ -37,6 +37,8 @@ const docs = [
     type: 'Konzepte',
     excerpt: 'Vollständiges Konzept für das Agenten-gesteuerte Intranet mit Next.js, Vercel und 5-Phasen-Implementierungsplan.',
     slug: 'intranet-konzept',
+    external: true,
+    url: '/docs/intranet-konzept.html',
   },
   {
     id: '2',
@@ -47,6 +49,7 @@ const docs = [
     type: 'Anleitungen',
     excerpt: 'Schritt-für-Schritt Anleitung zur Einrichtung von Decap CMS für manuelle Blog-Posts.',
     slug: 'decap-cms-setup',
+    external: false,
   },
   {
     id: '3',
@@ -57,6 +60,7 @@ const docs = [
     type: 'Newsletter',
     excerpt: 'Monatlicher Newsletter mit Updates aus allen Bereichen.',
     slug: 'newsletter-2026-03',
+    external: false,
   },
   {
     id: '4',
@@ -67,6 +71,7 @@ const docs = [
     type: 'Anleitungen',
     excerpt: 'Anleitung zur Nutzung des Agenten-CMS.',
     slug: 'anleitung-cms',
+    external: false,
   },
 ]
 
@@ -139,7 +144,13 @@ export default function DocsDE() {
                   <span className="doc-date">{doc.date}</span>
                 </div>
                 <h3 className="doc-title">
-                  <Link href={`/de/docs/${doc.slug}/`}>{doc.title}</Link>
+                  {doc.external ? (
+                    <a href={doc.url} target="_blank" rel="noopener noreferrer">
+                      {doc.title} ↗
+                    </a>
+                  ) : (
+                    <Link href={`/de/docs/${doc.slug}/`}>{doc.title}</Link>
+                  )}
                 </h3>
                 <p className="doc-excerpt">{doc.excerpt}</p>
                 <div className="doc-footer">
