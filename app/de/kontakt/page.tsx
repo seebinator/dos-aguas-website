@@ -3,7 +3,7 @@ import Link from 'next/link'
 const content = {
   nav: { services: 'Services', team: 'Team', blog: 'Blog', docs: 'Docs', contact: 'Kontakt', dropbox: 'Dropbox' },
   page: { subtitle: 'Lassen Sie uns sprechen', title: 'Kontakt', description: 'Haben Sie Fragen oder möchten Sie ein Projekt besprechen? Wir sind für Sie da.' },
-  form: { name: 'Name', email: 'E-Mail', company: 'Unternehmen', message: 'Nachricht', submit: 'Nachricht senden' },
+  form: { name: 'Name', email: 'E-Mail', company: 'Unternehmen', message: 'Nachricht', submit: 'Nachricht senden', sending: 'Wird gesendet...', success: 'Vielen Dank! Wir melden uns bald bei Ihnen.' },
   info: { title: 'Kontaktinformationen', email: 'E-Mail', phone: 'Telefon', address: 'Adresse', hours: 'Erreichbarkeit', hoursValue: 'Mo–Fr: 9:00–18:00 Uhr' },
   footer: { imprint: 'Impressum', privacy: 'Datenschutz', copyright: '© 2026 Dos Aguas Consulting' },
 }
@@ -40,17 +40,23 @@ export default function KontaktDE() {
         <section className="contact-section">
           <div className="contact-grid">
             <div className="contact-form-wrapper">
-              <form className="contact-form" action="mailto:contact@dos-aguas.info" method="post" encType="text/plain">
+              <form className="contact-form" action="https://formspree.io/f/xnqevwdr" method="POST">
+                <input type="hidden" name="_language" value="de" />
                 <div className="form-group"><label htmlFor="name">{content.form.name}</label><input type="text" id="name" name="name" required /></div>
+                
                 <div className="form-group"><label htmlFor="email">{content.form.email}</label><input type="email" id="email" name="email" required /></div>
+                
                 <div className="form-group"><label htmlFor="company">{content.form.company}</label><input type="text" id="company" name="company" /></div>
+                
                 <div className="form-group"><label htmlFor="message">{content.form.message}</label><textarea id="message" name="message" rows={5} required></textarea></div>
+                
                 <button type="submit" className="btn-primary btn-large">{content.form.submit}</button>
               </form>
             </div>
             
             <div className="contact-info">
               <h3>{content.info.title}</h3>
+              
               <div className="info-item"><span className="info-label">{content.info.email}</span><a href="mailto:contact@dos-aguas.info" className="info-value">contact@dos-aguas.info</a></div>
               <div className="info-item"><span className="info-label">{content.info.phone}</span><span className="info-value">+49 (0) 123 456789</span></div>
               <div className="info-item"><span className="info-label">{content.info.address}</span><span className="info-value">Dos Aguas Consulting<br/>Musterstraße 123<br/>12345 Berlin</span></div>
