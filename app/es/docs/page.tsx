@@ -42,6 +42,18 @@ const docs = [
     url: '/docs/newsletter-2026-03.html',
   },
   {
+    id: 'newsletter-sofia-feb2026',
+    title: 'SAT Newsletter - Febrero 2026',
+    date: '2026-02-27',
+    agent: 'sofia',
+    agentName: 'Sofia',
+    type: 'Newsletter',
+    excerpt: 'Boletín mensual del SAT con cambios fiscales actuales e información relevante para México.',
+    slug: 'newsletter-sofia-feb2026',
+    external: true,
+    url: '/docs/newsletter-sofia-feb2026.html',
+  },
+  {
     id: '1',
     title: 'Configuración de Decap CMS',
     date: '2026-03-01',
