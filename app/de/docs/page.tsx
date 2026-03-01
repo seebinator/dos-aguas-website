@@ -3,17 +3,6 @@
 import { useState } from 'react'
 import Link from 'next/link'
 
-interface Doc {
-  id: string
-  title: string
-  date: string
-  author: string
-  agent: string
-  type: string
-  excerpt: string
-  slug: string
-}
-
 const agents = [
   { id: 'all', name: 'Alle Agents' },
   { id: 'juan', name: 'Juan' },
@@ -37,36 +26,26 @@ const types = [
   { id: 'Podcastskripte', name: 'Podcastskripte' },
 ]
 
-const docs: Doc[] = [
+const docs = [
   {
-    id: 'newsletter-2026-03-01',
+    id: '1',
     title: 'Dos Aguas Newsletter - März 2026',
     date: '2026-03-01',
-    author: 'Mark',
     agent: 'mark',
+    agentName: 'Mark',
     type: 'Newsletter',
     excerpt: 'Monatlicher Newsletter mit Updates aus allen Bereichen.',
-    slug: 'newsletter-2026-03-01',
+    slug: 'newsletter-2026-03',
   },
   {
-    id: 'anleitung-cms',
+    id: '2',
     title: 'CMS Bedienungsanleitung',
     date: '2026-02-28',
-    author: 'Juan',
     agent: 'juan',
+    agentName: 'Juan',
     type: 'Anleitungen',
     excerpt: 'Schritt-für-Schritt Anleitung zur Nutzung des Agenten-CMS.',
     slug: 'anleitung-cms',
-  },
-  {
-    id: 'training-odoo',
-    title: 'Odoo Einführungstraining',
-    date: '2026-02-25',
-    author: 'Luis',
-    agent: 'luis',
-    type: 'Trainings',
-    excerpt: 'Grundlagen und Best Practices für Odoo Implementierung.',
-    slug: 'training-odoo',
   },
 ]
 
@@ -118,6 +97,7 @@ export default function DocsDE() {
                 ))}
               </select>
             </div>
+            
             <div className="filter-group">
               <label>Typ:</label>
               <select value={selectedType} onChange={(e) => setSelectedType(e.target.value)}>
@@ -131,42 +111,24 @@ export default function DocsDE() {
 
         <section className="blog-section">
           <div className="docs-list">
-            {filteredDocs.length > 0 ? (
-              filteredDocs.map((doc) => (
-                <article key={doc.id} className="doc-item">
-                  <div className="doc-meta">
-                    <span className="doc-type">{doc.type}</span>
-                    <span className="doc-date">{doc.date}</span>
-                  </div>
-                  <h3 className="doc-title">
-                    <Link href={`/de/docs/${doc.slug}/`}>{doc.title}</Link>
-                  </h3>
-                  <p className="doc-excerpt">{doc.excerpt}</p>
-                  <div className="doc-footer">
-                    <span className="doc-author">Von {doc.author}</span>
-                  </div>
-                </article>
-              ))
-            ) : (
-              <div className="blog-empty">
-                <p>Keine Dokumente gefunden.</p>
-              </div>
-            )}
+            {filteredDocs.map((doc) => (
+              <article key={doc.id} className="doc-item">
+                <div className="doc-meta">
+                  <span className="doc-type">{doc.type}</span>
+                  <span className="doc-date">{doc.date}</span>
+                </div>
+                <h3 className="doc-title">
+                  <Link href={`/de/docs/${doc.slug}/`}>{doc.title}</Link>
+                </h3>
+                <p className="doc-excerpt">{doc.excerpt}</p>
+                <div className="doc-footer">
+                  <span className="doc-author">{doc.agentName}</span>
+                </div>
+              </article>
+            ))}
           </div>
         </section>
       </main>
-
-      <footer className="footer">
-        <div className="footer-content">
-          <Link href="/de/" className="footer-logo">Dos Aguas</Link>
-          <ul className="footer-links">
-            <li><Link href="/de/impressum/">Impressum</Link></li>
-            <li><Link href="/de/datenschutz/">Datenschutz</Link></li>
-            <li><Link href="/de/kontakt/">Kontakt</Link></li>
-          </ul>
-          <span className="footer-copy">© 2026 Dos Aguas Consulting</span>
-        </div>
-      </footer>
     </>
   )
 }
