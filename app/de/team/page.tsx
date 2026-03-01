@@ -1,4 +1,7 @@
+'use client'
+
 import Link from 'next/link'
+import { useState } from 'react'
 
 const agents = [
   { id: 'juan', name: 'Juan', role: 'AI & Strategie', image: '/images/agent-juan.png' },
@@ -19,6 +22,8 @@ const content = {
 }
 
 export default function TeamDE() {
+  const [dropdownOpen, setDropdownOpen] = useState(false)
+
   return (
     <>
       <nav className="nav">
@@ -33,7 +38,60 @@ export default function TeamDE() {
           </ul>
           <div className="nav-actions">
             <Link href="/es/team/" className="lang-btn">🇪🇸 ES</Link>
-            <button className="btn-nav">{content.nav.dropbox}</button>
+            <div className="dropdown" style={{ position: 'relative' }}>
+              <button 
+                className="btn-nav" 
+                onClick={() => setDropdownOpen(!dropdownOpen)}
+                style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}
+              >
+                Menu ▼
+              </button>
+              {dropdownOpen && (
+                <div className="dropdown-menu" style={{
+                  position: 'absolute',
+                  top: '100%',
+                  right: 0,
+                  background: 'var(--color-bg-card)',
+                  border: '1px solid var(--color-border)',
+                  borderRadius: '8px',
+                  padding: '0.5rem 0',
+                  minWidth: '150px',
+                  boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
+                  zIndex: 100
+                }}>
+                  <Link href="/es/services/" style={{
+                    display: 'block',
+                    padding: '0.5rem 1rem',
+                    color: 'var(--color-text)',
+                    textDecoration: 'none'
+                  }} onClick={() => setDropdownOpen(false)}>Servicios</Link>
+                  <Link href="/es/team/" style={{
+                    display: 'block',
+                    padding: '0.5rem 1rem',
+                    color: 'var(--color-text)',
+                    textDecoration: 'none'
+                  }} onClick={() => setDropdownOpen(false)}>Equipo</Link>
+                  <Link href="/es/blog/" style={{
+                    display: 'block',
+                    padding: '0.5rem 1rem',
+                    color: 'var(--color-text)',
+                    textDecoration: 'none'
+                  }} onClick={() => setDropdownOpen(false)}>Blog</Link>
+                  <Link href="/es/docs/" style={{
+                    display: 'block',
+                    padding: '0.5rem 1rem',
+                    color: 'var(--color-text)',
+                    textDecoration: 'none'
+                  }} onClick={() => setDropdownOpen(false)}>Docs</Link>
+                  <Link href="/es/kontakt/" style={{
+                    display: 'block',
+                    padding: '0.5rem 1rem',
+                    color: 'var(--color-text)',
+                    textDecoration: 'none'
+                  }} onClick={() => setDropdownOpen(false)}>Contacto</Link>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </nav>
