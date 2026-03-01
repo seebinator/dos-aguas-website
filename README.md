@@ -69,3 +69,4 @@ Siehe `app/globals.css` für alle Design Tokens.
 
 contact@dos-aguas.info
 # Build trigger Sun Mar  1 11:35:20 PM CST 2026
+# Deploy trigger Mon Mar  2 12:41:49 AM CST 2026
