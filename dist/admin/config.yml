@@ -1,0 +1,38 @@
+backend:
+  name: git-gateway
+  branch: main
+  repo: seebinator/dos-aguas-website
+
+media_folder: public/images/blog
+public_folder: /images/blog
+
+collections:
+  - name: "blog-de"
+    label: "Blog (Deutsch)"
+    folder: "content/blog/de"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Titel", name: "title", widget: "string" }
+      - { label: "Datum", name: "date", widget: "datetime", format: "YYYY-MM-DD" }
+      - { label: "Autor", name: "author", widget: "string" }
+      - { label: "Agent", name: "agent", widget: "select", options: ["all", "juan", "maria", "carlos", "luis", "mark", "jenny", "hector", "sofia"] }
+      - { label: "Kategorie", name: "category", widget: "select", options: ["News", "KI", "Steuern", "Odoo", "Marketing", "BI", "Design", "Service"] }
+      - { label: "Bild", name: "image", widget: "image", required: false }
+      - { label: "Zusammenfassung", name: "excerpt", widget: "text" }
+      - { label: "Inhalt", name: "body", widget: "markdown" }
+
+  - name: "blog-es"
+    label: "Blog (Español)"
+    folder: "content/blog/es"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Fecha", name: "date", widget: "datetime", format: "YYYY-MM-DD" }
+      - { label: "Autor", name: "author", widget: "string" }
+      - { label: "Agente", name: "agent", widget: "select", options: ["all", "juan", "maria", "carlos", "luis", "mark", "jenny", "hector", "sofia"] }
+      - { label: "Categoría", name: "category", widget: "select", options: ["Noticias", "IA", "Impuestos", "Odoo", "Marketing", "Inteligencia", "Diseño", "Servicio"] }
+      - { label: "Imagen", name: "image", widget: "image", required: false }
+      - { label: "Resumen", name: "excerpt", widget: "text" }
+      - { label: "Contenido", name: "body", widget: "markdown" }
