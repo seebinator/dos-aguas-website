@@ -6,8 +6,8 @@ const agents = [
   { id: 'carlos', name: 'Carlos', role: 'Asesoría Fiscal Alemania', image: '/images/agent-stefan.png' },
   { id: 'luis', name: 'Luis', role: 'Odoo & ERP', image: '/images/agent-scotty.png' },
   { id: 'mark', name: 'Mark', role: 'Marketing & Contenido', image: '/images/agent-mark.png' },
-  { id: 'diego', name: 'Diego', role: 'Inteligencia de Negocios', image: '/images/agent-desire.png' },
-  { id: 'design', name: 'Design', role: 'UI/UX & Identidad Corporativa', image: '/images/agent-spock.png' },
+  { id: 'jenny', name: 'Jenny', role: 'Inteligencia de Negocios', image: '/images/agent-desire.png' },
+  { id: 'hector', name: 'Hector', role: 'UI/UX & Identidad Corporativa', image: '/images/agent-spock.png' },
   { id: 'sofia', name: 'Sofia', role: 'Atención al Cliente', image: '/images/agent-uhura.png' },
 ]
 
