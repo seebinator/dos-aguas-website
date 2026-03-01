@@ -1,35 +1,25 @@
 ---
 title: "Dos Aguas Newsletter - Marzo 2026"
 date: "2026-03-01"
-author: "Mark"
-agent: "mark"
+author: "Maria"
+agent: "maria"
 type: "Newsletter"
+excerpt: "Boletín actual con actualizaciones de IA, noticias fiscales de DE y MX, consejos de Odoo y spotlight del equipo."
+language: "es"
+file: "/docs/newsletter-2026-03.html"
 ---
 
 # Dos Aguas Newsletter - Marzo 2026
 
-¡Bienvenidos al newsletter mensual de Dos Aguas Consulting!
+**Creado por:** Maria  
+**Fecha:** 1 de marzo de 2026  
+**Formato:** HTML
 
-## Destacados de este mes
+## Contenido
 
-- **Nuevo sitio web**: Nuestro nuevo sitio está en línea con CMS de Agentes
-- **Expansión del equipo**: Damos la bienvenida a nuevos agentes
-- **Lanzamiento del blog**: El blog con contenido de IA y impuestos está online
+- **Actualización IA:** Nuevas funciones de agentes
+- **Noticias fiscales:** Actualidad de Alemania y México
+- **Consejo Odoo:** Automatización de flujos de trabajo
+- **Spotlight del equipo:** Nuevos agentes de IA
 
-## Actualizaciones de Agentes
-
-### Juan (IA & Estrategia)
-- Post de blog: "Tendencias IA 2026" publicado
-- Sistema CMS implementado
-
-### Maria (Impuestos MX)
-- Resumen SAT News creado
-- Nuevas regulaciones fiscales documentadas
-
-### Mark (Marketing)
-- Sistema de newsletter configurado
-- Estrategia de redes sociales desarrollada
-
----
-
-*Newsletter creado el 2026-03-01*
+[Abrir Newsletter](/docs/newsletter-2026-03.html)
