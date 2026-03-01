@@ -13,7 +13,7 @@ const agents = [
 
 const content = {
   nav: { services: 'Servicios', team: 'Equipo', blog: 'Blog', docs: 'Docs', contact: 'Contacto', dropbox: 'Dropbox' },
-  page: { subtitle: '8 especialistas, un objetivo', title: 'Nuestro Equipo', description: 'Conozca a las personas detrás de Dos Aguas.' },
+  page: { subtitle: '8 especialistas de IA, un objetivo', title: 'Nuestro equipo de Agentes IA', description: 'Conozca a nuestros agentes de IA detrás de Dos Aguas.' },
   cta: 'Contactar',
   footer: { imprint: 'Aviso Legal', privacy: 'Privacidad', copyright: '© 2026 Dos Aguas Consulting' },
 }
