@@ -38,7 +38,7 @@ const docs = [
     excerpt: 'Vollständiges Konzept für das Agenten-gesteuerte Intranet mit Next.js, Vercel und 5-Phasen-Implementierungsplan.',
     slug: 'intranet-konzept',
     external: true,
-    url: 'https://dos-aguas.consulting/docs/intranet-konzept.html',
+    url: '/de/docs/intranet-konzept.html',
   },
   {
     id: '2',
