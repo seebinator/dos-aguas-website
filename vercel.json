@@ -3,7 +3,7 @@
   "name": "dos-aguas-website",
   "framework": "nextjs",
   "buildCommand": "next build",
-  "outputDirectory": ".next",
+  "outputDirectory": "dist",
   "installCommand": "npm install",
   "regions": ["fra1"],
   "env": {
