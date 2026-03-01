@@ -1,42 +1,59 @@
 import Link from 'next/link'
+import fs from 'fs'
+import path from 'path'
+import matter from 'gray-matter'
 
-const posts = [
-  {
-    id: 1,
-    title: 'Bienvenidos a Dos Aguas Consulting',
-    excerpt: 'Nos complace presentarle nuestro nuevo sitio web. Descubra nuestros servicios y experiencia.',
-    date: '2026-03-01',
-    author: 'Equipo Dos Aguas',
-    category: 'Noticias',
-    image: '/images/hero-bg.jpg',
-  },
-  {
-    id: 2,
-    title: 'Consultoría IA: La clave de la transformación digital',
-    excerpt: 'Cómo la Inteligencia Artificial hace su empresa más eficiente y permite nuevos modelos de negocio.',
-    date: '2026-02-28',
-    author: 'Juan',
-    category: 'IA',
-    image: '/images/hero-bg.jpg',
-  },
-  {
-    id: 3,
-    title: 'Optimización de precios de transferencia entre Alemania y México',
-    excerpt: 'Estrategias fiscalmente conformes para relaciones comerciales transfronterizas en el espacio germano-mexicano.',
-    date: '2026-02-25',
-    author: 'Carlos',
-    category: 'Impuestos',
-    image: '/images/hero-bg.jpg',
-  },
-]
+interface Post {
+  id: string
+  title: string
+  date: string
+  author: string
+  category: string
+  image: string
+  excerpt: string
+  slug: string
+}
 
-const content = {
-  nav: { services: 'Servicios', team: 'Equipo', blog: 'Blog', docs: 'Docs', contact: 'Contacto', dropbox: 'Dropbox' },
-  page: { subtitle: 'Noticias & Insights', title: 'Blog', description: 'Información actual sobre IA, impuestos, Odoo y transformación digital.' },
-  footer: { imprint: 'Aviso Legal', privacy: 'Privacidad', copyright: '© 2026 Dos Aguas Consulting' },
+function getPosts(lang: string): Post[] {
+  const postsDirectory = path.join(process.cwd(), 'content', 'blog', lang)
+  
+  if (!fs.existsSync(postsDirectory)) {
+    return []
+  }
+  
+  const files = fs.readdirSync(postsDirectory)
+  
+  return files
+    .filter(file => file.endsWith('.md'))
+    .map(file => {
+      const id = file.replace(/\.md$/, '')
+      const fullPath = path.join(postsDirectory, file)
+      const fileContents = fs.readFileSync(fullPath, 'utf8')
+      const { data } = matter(fileContents)
+      
+      return {
+        id,
+        title: data.title,
+        date: data.date,
+        author: data.author,
+        category: data.category,
+        image: data.image || '/images/hero-bg.jpg',
+        excerpt: data.excerpt,
+        slug: data.slug || id,
+      }
+    })
+    .sort((a, b) => (a.date < b.date ? 1 : -1))
 }
 
 export default function BlogES() {
+  const posts = getPosts('es')
+  
+  const content = {
+    nav: { services: 'Servicios', team: 'Equipo', blog: 'Blog', docs: 'Docs', contact: 'Contacto', dropbox: 'Dropbox' },
+    page: { subtitle: 'Noticias & Insights', title: 'Blog', description: 'Información actual sobre IA, impuestos, Odoo y transformación digital.' },
+    footer: { imprint: 'Aviso Legal', privacy: 'Privacidad', copyright: '© 2026 Dos Aguas Consulting' },
+  }
+
   return (
     <>
       <nav className="nav">
@@ -67,20 +84,27 @@ export default function BlogES() {
 
         <section className="blog-section">
           <div className="blog-grid">
-            {posts.map((post) => (
-              <article key={post.id} className="blog-card">
-                <div className="blog-card-image"><img src={post.image} alt={post.title} /></div>
-                <div className="blog-card-content">
-                  <div className="blog-card-meta">
-                    <span className="blog-card-category">{post.category}</span>
-                    <span className="blog-card-date">{post.date}</span>
+            {posts.length > 0 ? (
+              posts.map((post) => (
+                <article key={post.id} className="blog-card">
+                  <div className="blog-card-image"><img src={post.image} alt={post.title} /></div>
+                  <div className="blog-card-content">
+                    <div className="blog-card-meta">
+                      <span className="blog-card-category">{post.category}</span>
+                      <span className="blog-card-date">{post.date}</span>
+                    </div>
+                    <h3><Link href={`/es/blog/${post.slug}/`}>{post.title}</Link></h3>
+                    <p>{post.excerpt}</p>
+                    <span className="blog-card-author">Por {post.author}</span>
                   </div>
-                  <h3><Link href={`/es/blog/${post.id}/`}>{post.title}</Link></h3>
-                  <p>{post.excerpt}</p>
-                  <span className="blog-card-author">Por {post.author}</span>
-                </div>
-              </article>
-            ))}
+                </article>
+              ))
+            ) : (
+              <div className="blog-empty">
+                <p>Aún no hay posts en el blog.</p>
+                <p>Crea uno con: ./scripts/new-blog-post.sh es "Título"</p>
+              </div>
+            )}
           </div>
         </section>
       </main>

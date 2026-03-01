@@ -7,6 +7,7 @@ export function generateStaticParams() {
   const posts = [
     { id: '2026-03-01-willkommen' },
     { id: '2026-02-28-ki-beratung' },
+    { id: '2026-02-25-transferpreise' },
   ]
   return posts
 }
@@ -108,6 +109,23 @@ export default function BlogPostDE({ params }: { params: { id: string } }) {
 <li>Implementierungsbegleitung</li>
 <li>Schulung und Support</li>
 </ul>
+      `
+    },
+    '2026-02-25-transferpreise': {
+      title: 'Transferpreis-Optimierung zwischen Deutschland und Mexiko',
+      date: '2026-02-25',
+      author: 'Carlos',
+      category: 'Steuern',
+      content: `
+<p>Transferpreise sind ein entscheidender Aspekt für Unternehmen mit grenzüberschreitenden Operationen.</p>
+
+<h2>Steuerliche Herausforderungen</h2>
+
+<p>Deutschland und Mexiko haben unterschiedliche Steuerregime, die sorgfältig berücksichtigt werden müssen.</p>
+
+<h2>Unsere Erfahrung</h2>
+
+<p>Wir helfen Unternehmen, ihre Transferpreisstrukturen steuerkonform zu optimieren.</p>
       `
     }
   }

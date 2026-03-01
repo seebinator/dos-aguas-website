@@ -3,13 +3,15 @@ import Link from 'next/link'
 export function generateStaticParams() {
   return [
     { id: '2026-03-01-bienvenidos' },
+    { id: '2026-02-28-consultoria-ia' },
+    { id: '2026-02-25-precios-transferencia' },
   ]
 }
 
 export default function BlogPostES({ params }: { params: { id: string } }) {
   const { id } = params
   
-  const postData = {
+  const postData: Record<string, any> = {
     '2026-03-01-bienvenidos': {
       title: 'Bienvenidos a Dos Aguas Consulting',
       date: '2026-03-01',
@@ -33,10 +35,49 @@ export default function BlogPostES({ params }: { params: { id: string } }) {
 
 <p>Detrás de Dos Aguas hay un equipo de 8 especialistas.</p>
       `
+    },
+    '2026-02-28-consultoria-ia': {
+      title: 'Consultoría IA: La clave de la transformación digital',
+      date: '2026-02-28',
+      author: 'Juan',
+      category: 'IA',
+      content: `
+<p>La Inteligencia Artificial está revolucionando la forma en que las empresas trabajan.</p>
+
+<h2>Por qué la consultoría de IA es importante</h2>
+
+<p>La implementación de IA requiere planificación estratégica y conocimientos especializados.</p>
+
+<h2>Nuestros servicios</h2>
+
+<ul>
+<li>Análisis de procesos</li>
+<li>Desarrollo de estrategia de IA</li>
+<li>Acompañamiento en la implementación</li>
+<li>Formación y soporte</li>
+</ul>
+      `
+    },
+    '2026-02-25-precios-transferencia': {
+      title: 'Optimización de precios de transferencia entre Alemania y México',
+      date: '2026-02-25',
+      author: 'Carlos',
+      category: 'Impuestos',
+      content: `
+<p>Los precios de transferencia son un aspecto crucial para las empresas con operaciones transfronterizas.</p>
+
+<h2>Desafíos fiscales</h2>
+
+<p>Alemania y México tienen diferentes regímenes fiscales que deben considerarse cuidadosamente.</p>
+
+<h2>Nuestra experiencia</h2>
+
+<p>Ayudamos a empresas a optimizar sus estructuras de precios de transferencia de manera conforme.</p>
+      `
     }
   }
   
-  const post = postData[id as keyof typeof postData]
+  const post = postData[id]
   
   if (!post) {
     return <div>Post not found</div>
