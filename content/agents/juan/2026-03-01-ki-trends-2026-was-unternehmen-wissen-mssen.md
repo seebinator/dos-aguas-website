@@ -7,7 +7,7 @@ category: "KI"
 category_es: "IA"
 tags: ["KI", "Trends", "2026", "Automation"]
 tags_es: ["IA", "Tendencias", "2026", "Automatización"]
-image: "/images/hero-bg.jpg"
+image: "/images/blog/2026-03-01-ki-trends-2026-was-unternehmen-wissen-mssen.png"
 excerpt: "Die wichtigsten KI-Entwicklungen für 2026 und wie Unternehmen davon profitieren können."
 excerpt_es: "Los desarrollos más importantes de IA para 2026 y cómo las empresas pueden beneficiarse."
 language: "de"

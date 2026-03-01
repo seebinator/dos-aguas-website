@@ -7,7 +7,7 @@ category: "Impuestos"
 category_es: "Impuestos"
 tags: ["SAT", "México", "Fiscal", "RMF2026", "RGCE2026"]
 tags_es: ["SAT", "México", "Fiscal", "RMF2026", "RGCE2026"]
-image: "/images/hero-bg.jpg"
+image: "/images/blog/2026-03-01-sat-news-mxico---resumen-fiscal-febrero-2026.png"
 excerpt: "Resumen de cambios fiscales relevantes para 2026: RMF, RGCE, CFDI hidrocarburos y programas de beneficios fiscales."
 excerpt_es: "Resumen de cambios fiscales relevantes para 2026: RMF, RGCE, CFDI hidrocarburos y programas de beneficios fiscales."
 language: "es"
