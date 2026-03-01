@@ -1,164 +1,106 @@
 import Link from 'next/link'
+import fs from 'fs'
+import path from 'path'
+
+interface Post {
+  id: string
+  title: string
+  date: string
+  author: string
+  category: string
+  content: string
+}
+
+function parseFrontmatter(content: string) {
+  const lines = content.split('\n')
+  const frontmatter: any = {}
+  let inFrontmatter = false
+  let bodyStart = 0
+  
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i]
+    if (line === '---') {
+      if (!inFrontmatter) {
+        inFrontmatter = true
+        continue
+      } else {
+        bodyStart = i + 1
+        break
+      }
+    }
+    
+    if (inFrontmatter) {
+      const colonIndex = line.indexOf(':')
+      if (colonIndex > 0) {
+        const key = line.substring(0, colonIndex).trim()
+        let value = line.substring(colonIndex + 1).trim()
+        if (value.startsWith('"') && value.endsWith('"')) {
+          value = value.slice(1, -1)
+        }
+        frontmatter[key] = value
+      }
+    }
+  }
+  
+  const body = lines.slice(bodyStart).join('\n')
+  return { frontmatter, body }
+}
+
+function markdownToHtml(markdown: string): string {
+  return markdown
+    .replace(/^# (.+)$/gm, '<h1>$1</h1>')
+    .replace(/^## (.+)$/gm, '<h2>$1</h2>')
+    .replace(/^### (.+)$/gm, '<h3>$1</h3>')
+    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+    .replace(/\*(.+?)\*/g, '<em>$1</em>')
+    .replace(/^- (.+)$/gm, '<li>$1</li>')
+    .replace(/\n\n/g, '</p><p>')
+    .replace(/^---$/gm, '<hr/>')
+}
+
+function getPost(id: string, lang: string): Post | null {
+  try {
+    const filePath = path.join(process.cwd(), 'content', 'blog', lang, `${id}.md`)
+    
+    if (!fs.existsSync(filePath)) {
+      return null
+    }
+    
+    const fileContents = fs.readFileSync(filePath, 'utf8')
+    const { frontmatter, body } = parseFrontmatter(fileContents)
+    
+    return {
+      id,
+      title: frontmatter.title || 'Untitled',
+      date: frontmatter.date || '',
+      author: frontmatter.author || 'Dos Aguas',
+      category: frontmatter.category || 'News',
+      content: markdownToHtml(body),
+    }
+  } catch (error) {
+    return null
+  }
+}
 
 export function generateStaticParams() {
-  return [
-    { id: '2026-03-01-bienvenidos' },
-    { id: '2026-03-01-sat-news-mxico---resumen-fiscal-febrero-2026' },
-    { id: '2026-03-01-ia-tendencias-2026-lo-que-empresas-deben-saber' },
-    { id: '2026-02-28-consultoria-ia' },
-    { id: '2026-02-25-precios-transferencia' },
-  ]
+  const postsDirectory = path.join(process.cwd(), 'content', 'blog', 'es')
+  
+  if (!fs.existsSync(postsDirectory)) {
+    return []
+  }
+  
+  const files = fs.readdirSync(postsDirectory)
+  
+  return files
+    .filter(file => file.endsWith('.md'))
+    .map(file => ({
+      id: file.replace(/\.md$/, ''),
+    }))
 }
 
 export default function BlogPostES({ params }: { params: { id: string } }) {
   const { id } = params
-  
-  const postData: Record<string, any> = {
-    '2026-03-01-bienvenidos': {
-      title: 'Bienvenidos a Dos Aguas Consulting',
-      date: '2026-03-01',
-      author: 'Equipo Dos Aguas',
-      category: 'Noticias',
-      content: `
-<p>Nos complace presentarle nuestro nuevo sitio web. Dos Aguas Consulting es su puente entre Alemania y México.</p>
-
-<h2>Nuestra historia</h2>
-
-<p>Dos Aguas fue fundada con la visión de apoyar a las empresas en sus actividades comerciales germano-mexicanas.</p>
-
-<h2>Lo que ofrecemos</h2>
-
-<ul>
-<li><strong>Consultoría IA</strong> - Asesoramiento estratégico para implementación de IA</li>
-<li><strong>Estrategias de precios de transferencia</strong> - Optimización de precios transfronterizos</li>
-<li><strong>Implementación Odoo</strong> - Soluciones ERP a medida</li>
-<li><strong>Transformación digital</strong> - Digitalización integral</li>
-</ul>
-
-<p>Detrás de Dos Aguas hay un equipo de 8 especialistas.</p>
-      `
-    },
-    '2026-03-01-sat-news-mxico---resumen-fiscal-febrero-2026': {
-      title: 'SAT News México - Resumen Fiscal Febrero 2026',
-      date: '2026-02-27',
-      author: 'Maria',
-      category: 'Impuestos',
-      content: `
-<h2>Resolución Miscelánea Fiscal (RMF) 2026</h2>
-
-<p>La RMF 2026 fue publicada el <strong>28 de diciembre de 2025</strong> y entró en vigor para el ejercicio fiscal 2026.</p>
-
-<h3>Cambios Principales</h3>
-
-<h4>1. Simplificación de Trámites</h4>
-<ul>
-<li>Se eliminan requisitos en diversos trámites fiscales</li>
-<li>Se establecen formatos estandarizados para facilitar la presentación</li>
-<li>Reducción de carga administrativa para contribuyentes</li>
-</ul>
-
-<h4>2. Comprobantes Fiscales (CFDI) - Hidrocarburos</h4>
-<ul>
-<li>Reformas importantes en la emisión de CFDI que amparan hidrocarburos</li>
-<li>Objetivo: Combatir esquemas de evasión y simulación fiscal</li>
-<li>Enfoque en el mercado ilícito de combustible</li>
-</ul>
-
-<h4>3. Programas de Beneficios Fiscales 2026</h4>
-
-<p><strong>Programa de Regularización Fiscal:</strong></p>
-<ul>
-<li>Disposiciones operativas actualizadas</li>
-<li>Facilita el cumplimiento para contribuyentes con adeudos</li>
-</ul>
-
-<p><strong>Repatriación de Capitales:</strong></p>
-<ul>
-<li>Reglas de operación establecidas en la Ley de Ingresos 2026</li>
-<li>Beneficios para capital nacional en el extranjero</li>
-</ul>
-
-<h3>Reglas Generales de Comercio Exterior (RGCE) 2026</h3>
-
-<p>Publicadas el <strong>27 de diciembre de 2025</strong>, incluyen:</p>
-<ul>
-<li>Fortalecimiento de Medidas Antilavado</li>
-<li>Nuevo Acuerdo de Circunscripción Aduanera</li>
-<li>Reformas a la Ley Aduanera</li>
-</ul>
-
-<h3>Próximas Fechas Importantes</h3>
-<ul>
-<li><strong>Marzo 2026:</strong> Presentación de declaraciones anuales 2025 (personas morales)</li>
-<li><strong>17 de abril 2026:</strong> Declaración anual ISR personas físicas</li>
-<li><strong>17 de abril 2026:</strong> DIOT primer trimestre 2026</li>
-</ul>
-
-<p><em>Elaborado por: Maria 💰 - Dos Aguas Consulting</em></p>
-      `
-    },
-    '2026-03-01-ia-tendencias-2026-lo-que-empresas-deben-saber': {
-      title: 'Tendencias de IA 2026: Lo que las empresas deben saber',
-      date: '2026-03-01',
-      author: 'Juan',
-      category: 'IA',
-      content: `
-<p>La inteligencia artificial está evolucionando rápidamente. Como experto en IA en Dos Aguas, veo diariamente cómo las empresas pueden beneficiarse de las nuevas tecnologías.</p>
-
-<h2>1. Sistemas de IA basados en agentes</h2>
-<p>En lugar de herramientas de IA individuales, vemos el surgimiento de sistemas de agentes que realizan tareas complejas de forma autónoma.</p>
-
-<h2>2. IA multimodal</h2>
-<p>Texto, imagen, audio y video se procesan en un solo modelo.</p>
-
-<h2>3. IA en pymes</h2>
-<p>Especialmente emocionante: las tecnologías de IA se vuelven accesibles para pequeñas y medianas empresas.</p>
-
-<p>2026 será el año de la aplicación práctica de la IA.</p>
-      `
-    },
-    '2026-02-28-consultoria-ia': {
-      title: 'Consultoría IA: La clave de la transformación digital',
-      date: '2026-02-28',
-      author: 'Juan',
-      category: 'IA',
-      content: `
-<p>La Inteligencia Artificial está revolucionando la forma en que las empresas trabajan.</p>
-
-<h2>Por qué la consultoría de IA es importante</h2>
-
-<p>La implementación de IA requiere planificación estratégica y conocimientos especializados.</p>
-
-<h2>Nuestros servicios</h2>
-
-<ul>
-<li>Análisis de procesos</li>
-<li>Desarrollo de estrategia de IA</li>
-<li>Acompañamiento en la implementación</li>
-<li>Formación y soporte</li>
-</ul>
-      `
-    },
-    '2026-02-25-precios-transferencia': {
-      title: 'Optimización de precios de transferencia entre Alemania y México',
-      date: '2026-02-25',
-      author: 'Carlos',
-      category: 'Impuestos',
-      content: `
-<p>Los precios de transferencia son un aspecto crucial para las empresas con operaciones transfronterizas.</p>
-
-<h2>Desafíos fiscales</h2>
-
-<p>Alemania y México tienen diferentes regímenes fiscales que deben considerarse cuidadosamente.</p>
-
-<h2>Nuestra experiencia</h2>
-
-<p>Ayudamos a empresas a optimizar sus estructuras de precios de transferencia de manera conforme.</p>
-      `
-    }
-  }
-  
-  const post = postData[id]
+  const post = getPost(id, 'es')
   
   if (!post) {
     return <div>Post not found</div>

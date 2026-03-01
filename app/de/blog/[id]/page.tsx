@@ -1,97 +1,110 @@
 import Link from 'next/link'
+import fs from 'fs'
+import path from 'path'
 
+interface Post {
+  id: string
+  title: string
+  date: string
+  author: string
+  category: string
+  content: string
+}
+
+// Einfacher Frontmatter-Parser
+function parseFrontmatter(content: string) {
+  const lines = content.split('\n')
+  const frontmatter: any = {}
+  let inFrontmatter = false
+  let bodyStart = 0
+  
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i]
+    if (line === '---') {
+      if (!inFrontmatter) {
+        inFrontmatter = true
+        continue
+      } else {
+        bodyStart = i + 1
+        break
+      }
+    }
+    
+    if (inFrontmatter) {
+      const colonIndex = line.indexOf(':')
+      if (colonIndex > 0) {
+        const key = line.substring(0, colonIndex).trim()
+        let value = line.substring(colonIndex + 1).trim()
+        if (value.startsWith('"') && value.endsWith('"')) {
+          value = value.slice(1, -1)
+        }
+        frontmatter[key] = value
+      }
+    }
+  }
+  
+  const body = lines.slice(bodyStart).join('\n')
+  return { frontmatter, body }
+}
+
+// Einfache Markdown-zu-HTML Konvertierung
+function markdownToHtml(markdown: string): string {
+  return markdown
+    .replace(/^# (.+)$/gm, '<h1>$1</h1>')
+    .replace(/^## (.+)$/gm, '<h2>$1</h2>')
+    .replace(/^### (.+)$/gm, '<h3>$1</h3>')
+    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+    .replace(/\*(.+?)\*/g, '<em>$1</em>')
+    .replace(/^- (.+)$/gm, '<li>$1</li>')
+    .replace(/\n\n/g, '</p><p>')
+    .replace(/^---$/gm, '<hr/>')
+}
+
+function getPost(id: string, lang: string): Post | null {
+  try {
+    const filePath = path.join(process.cwd(), 'content', 'blog', lang, `${id}.md`)
+    
+    if (!fs.existsSync(filePath)) {
+      return null
+    }
+    
+    const fileContents = fs.readFileSync(filePath, 'utf8')
+    const { frontmatter, body } = parseFrontmatter(fileContents)
+    
+    return {
+      id,
+      title: frontmatter.title || 'Untitled',
+      date: frontmatter.date || '',
+      author: frontmatter.author || 'Dos Aguas',
+      category: frontmatter.category || 'News',
+      content: markdownToHtml(body),
+    }
+  } catch (error) {
+    console.error('Error loading post:', error)
+    return null
+  }
+}
+
+// Statische Pfade zur Build-Zeit generieren
 export function generateStaticParams() {
-  return [
-    { id: '2026-03-01-willkommen' },
-    { id: '2026-03-01-ki-trends-2026-was-unternehmen-wissen-mssen' },
-    { id: '2026-02-28-ki-beratung' },
-    { id: '2026-02-25-transferpreise' },
-  ]
+  const postsDirectory = path.join(process.cwd(), 'content', 'blog', 'de')
+  
+  if (!fs.existsSync(postsDirectory)) {
+    return []
+  }
+  
+  const files = fs.readdirSync(postsDirectory)
+  
+  return files
+    .filter(file => file.endsWith('.md'))
+    .map(file => ({
+      id: file.replace(/\.md$/, ''),
+    }))
 }
 
 export default function BlogPostDE({ params }: { params: { id: string } }) {
   const { id } = params
-  
-  const postData: Record<string, any> = {
-    '2026-03-01-willkommen': {
-      title: 'Willkommen bei Dos Aguas Consulting',
-      date: '2026-03-01',
-      author: 'Dos Aguas Team',
-      category: 'News',
-      content: `
-<p>Wir freuen uns, Ihnen unsere neue Website präsentieren zu dürfen. Dos Aguas Consulting ist Ihre Brücke zwischen Deutschland und Mexiko.</p>
-
-<h2>Unsere Geschichte</h2>
-<p>Dos Aguas wurde mit der Vision gegründet, Unternehmen bei ihren deutsch-mexikanischen Geschäftsaktivitäten zu unterstützen.</p>
-
-<h2>Was wir bieten</h2>
-<ul>
-<li><strong>KI-Beratung</strong> - Strategische Beratung für KI-Implementierung</li>
-<li><strong>Transferpreis Strategien</strong> - Optimierung grenzüberschreitender Preisgestaltung</li>
-<li><strong>Odoo Implementierung</strong> - Maßgeschneiderte ERP-Lösungen</li>
-<li><strong>Digitale Transformation</strong> - Ganzheitliche Digitalisierung</li>
-</ul>
-<p>Hinter Dos Aguas steht ein 8-köpfiges Team aus Spezialisten.</p>
-      `
-    },
-    '2026-03-01-ki-trends-2026-was-unternehmen-wissen-mssen': {
-      title: 'KI-Trends 2026: Was Unternehmen wissen müssen',
-      date: '2026-03-01',
-      author: 'Juan',
-      category: 'KI',
-      content: `
-<p>Die künstliche Intelligenz entwickelt sich rasant weiter. Als AI-Experte bei Dos Aguas sehe ich täglich, wie Unternehmen von neuen Technologien profitieren können.</p>
-
-<h2>1. Agentenbasierte KI-Systeme</h2>
-<p>Statt einzelner KI-Tools sehen wir den Aufstieg von Agentensystemen, die komplexe Aufgaben eigenständig erledigen.</p>
-
-<h2>2. Multimodale KI</h2>
-<p>Text, Bild, Audio und Video werden in einem einzigen Modell verarbeitet.</p>
-
-<h2>3. KI im Mittelstand</h2>
-<p>Besonders spannend: KI-Technologien werden für kleine und mittlere Unternehmen zugänglich.</p>
-
-<p>2026 wird das Jahr der praktischen KI-Anwendung.</p>
-      `
-    },
-    '2026-02-28-ki-beratung': {
-      title: 'KI-Beratung: Der Schlüssel zur digitalen Transformation',
-      date: '2026-02-28',
-      author: 'Juan',
-      category: 'KI',
-      content: `
-<p>Künstliche Intelligenz revolutioniert die Art und Weise, wie Unternehmen arbeiten.</p>
-
-<h2>Warum KI-Beratung wichtig ist</h2>
-<p>Die Implementierung von KI erfordert strategische Planung und Fachwissen.</p>
-
-<h2>Unsere Services</h2>
-<ul>
-<li>Prozessanalyse</li>
-<li>KI-Strategieentwicklung</li>
-<li>Implementierungsbegleitung</li>
-<li>Schulung und Support</li>
-</ul>
-      `
-    },
-    '2026-02-25-transferpreise': {
-      title: 'Transferpreis-Optimierung zwischen Deutschland und Mexiko',
-      date: '2026-02-25',
-      author: 'Carlos',
-      category: 'Steuern',
-      content: `
-<p>Transferpreise sind ein entscheidender Aspekt für Unternehmen mit grenzüberschreitenden Operationen.</p>
-
-<h2>Steuerliche Herausforderungen</h2>
-<p>Deutschland und Mexiko haben unterschiedliche Steuerregime, die sorgfältig berücksichtigt werden müssen.</p>
-
-<h2>Unsere Erfahrung</h2>
-<p>Wir helfen Unternehmen, ihre Transferpreisstrukturen steuerkonform zu optimieren.</p>
-      `
-    }
-  }
-  
-  const post = postData[id]
+  const post = getPost(id, 'de')
   
   if (!post) {
     return <div>Post not found</div>
